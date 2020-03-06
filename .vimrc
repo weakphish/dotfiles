@@ -4,16 +4,23 @@ syntax on
 
 colo monokai
 
-set nocompatible 
-
+set nocompatible
+set ff=unix
+:imap hh <C-X><C-O>
+:imap jj <Esc> 
+syntax on
 set number
-
+highlight LineNr ctermfg=grey
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set showmatch
 set hlsearch
- 
 set incsearch
-
-call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/goyo.vim'
-call plug#end()
-
+set visualbell
+set noerrorbells
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+vmap '' :w !pbcopy<CR><CR>
+se mouse+=a
