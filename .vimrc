@@ -1,9 +1,13 @@
 filetype plugin indent on
 
+call plug#begin('~/.vim/plugged')
+Plug 'gilgigilgil/anderson.vim'
+Plug 'morhetz/gruvbox'
+call plug#end()
+
 syntax on
 
-colo monokai
-
+colo gruvbox
 set nocompatible
 set ff=unix
 :imap hh <C-X><C-O>
@@ -20,6 +24,7 @@ set hlsearch
 set incsearch
 set visualbell
 set noerrorbells
+set linespace=3 
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 vmap '' :w !pbcopy<CR><CR>
