@@ -2,11 +2,13 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 Plug 'gilgigilgil/anderson.vim'
+Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax on
 
+autocmd vimenter * NERDTree
 colo gruvbox
 set nocompatible
 set ff=unix
