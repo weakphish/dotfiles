@@ -7,7 +7,7 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax on
-
+set background=dark
 autocmd vimenter * NERDTree
 colo gruvbox
 set nocompatible
