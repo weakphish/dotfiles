@@ -1,15 +1,17 @@
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-Plug 'gilgigilgil/anderson.vim'
 Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax on
 set background=dark
 autocmd vimenter * NERDTree
-colo gruvbox
+colo gruvbox 
 set nocompatible
 set ff=unix
 :imap hh <C-X><C-O>
