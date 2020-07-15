@@ -5,13 +5,14 @@ Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 call plug#end()
 
+let g:airline_theme='one'
 syntax on
+colorscheme one
 set background=dark
 autocmd vimenter * NERDTree
-colo gruvbox 
 set nocompatible
 set ff=unix
 :imap hh <C-X><C-O>
