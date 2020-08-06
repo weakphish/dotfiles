@@ -5,12 +5,18 @@ Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Townk/vim-autoclose'
+Plug 'vim-syntastic/syntastic'
+Plug 'lervag/vimtex'
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 let g:airline_theme='one'
 syntax on
-colorscheme one
+colorscheme gruvbox 
 set background=dark
 autocmd vimenter * NERDTree
 set nocompatible
