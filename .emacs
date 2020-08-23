@@ -35,15 +35,27 @@
 (use-package gruvbox-theme
   :ensure t)
 (enable-theme 'gruvbox)
-(set-frame-font "JetBrains Mono 12" nil t)
+(set-frame-font "Cascadia Code 12" nil t)
 
 (use-package which-key
   :ensure t
   :config
   (which-key-mode))
 
+;; Set up package.el to work with MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
+
+;; Download Evil
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+;; Enable Evil
 (require 'evil)
- (evil-mode 1)
+(evil-mode 1)
 
 (use-package company
   :ensure t
