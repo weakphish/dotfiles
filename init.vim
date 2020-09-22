@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim'
 Plug 'vim-syntastic/syntastic'
+Plug 'andymass/vim-matchup'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
@@ -19,12 +20,3 @@ autocmd vimenter * NERDTree
 syntax on
 colorscheme codedark
 
-" Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
