@@ -2,12 +2,13 @@ call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'andymass/vim-matchup'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 " Aesthetic/Appearance
+Plug 'crusoexia/vim-monokai'
 Plug 'rakr/vim-one'
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
@@ -37,4 +38,4 @@ endif
 set number
 set background=dark " for the dark version
 " set background=light " for the light version
-colorscheme one
+colorscheme codedark
