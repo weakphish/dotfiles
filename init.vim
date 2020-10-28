@@ -1,3 +1,4 @@
+" ### PLUGINS ###
 call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
@@ -15,7 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-" Make it pretty :) 
+" ### APPEARANCE ###
 syntax on
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -34,8 +35,26 @@ if (empty($TMUX))
   endif
 endif
 
-
-set number
 set background=dark " for the dark version
 " set background=light " for the light version
 colorscheme codedark
+
+" ### EDITOR ###
+" Editor Settings
+set number
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
