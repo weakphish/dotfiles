@@ -12,8 +12,7 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'gabrielelana/vim-markdown'
 " Aesthetic/Appearance
-Plug 'crusoexia/vim-monokai'
-Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -36,8 +35,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-set background=dark"
-colorscheme codedark
+colorscheme onedark
 
 " ### EDITOR ###
 " Editor Settings
