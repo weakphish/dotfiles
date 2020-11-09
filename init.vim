@@ -5,23 +5,22 @@ Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
 Plug 'andymass/vim-matchup'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/goyo.vim'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
+Plug 'gabrielelana/vim-markdown'
 " Aesthetic/Appearance
-Plug 'crusoexia/vim-monokai'
-Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " ### APPEARANCE ###
-syntax on
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -35,9 +34,8 @@ if (empty($TMUX))
   endif
 endif
 
-set background=dark " for the dark version
-" set background=light " for the light version
-colorscheme codedark
+syntax on
+colorscheme onedark
 
 " ### EDITOR ###
 " Editor Settings
