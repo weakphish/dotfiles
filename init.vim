@@ -13,7 +13,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'gabrielelana/vim-markdown'
 " Aesthetic/Appearance
 Plug 'joshdick/onedark.vim'
-Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
