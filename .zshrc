@@ -109,5 +109,5 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # startup greeting :)
-fortune -s | cowsay -n | lolcat -S 75
+fortune -s | lolcat -S 75
 
