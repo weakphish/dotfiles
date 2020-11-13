@@ -1,11 +1,15 @@
 # Get basic tools
-yes | sudo apt install zsh curl fortune lolcat cowsay neofetch neovim
+yes | sudo apt install zsh curl fortune lolcat neofetch neovim i3 i3status rofi
 
 # Copy configs
-cp i3 ~/.config/i3
-cp i3status ~/.config/i3status
-cp .icons ~/
-cp .themes ~/
+cp i3 ~/.config/i3 -r
+cp i3status ~/.config/i3status -r
+
+cp rofi ~/.config/rofi -r
+
+cp .icons ~/.icons -r
+cp .themes ~/.themes -r
+
 mkdir ~/.config/nvim/
 cp init.vim ~/.config/nvim/init.vim
 
