@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'w0rp/ale'
+Plug 'vim-syntastic/syntastic'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
