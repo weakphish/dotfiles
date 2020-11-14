@@ -5,6 +5,9 @@ yes | sudo apt install zsh curl fortune lolcat neofetch neovim i3 i3status rofi
 cp i3 ~/.config/i3 -r
 cp i3status ~/.config/i3status -r
 
+mkdir ~/.config/sublime-text-3/Packages
+cp ./User ~/.config/sublime-text-3/Packages/ -r
+
 cp rofi ~/.config/rofi -r
 
 cp .icons ~/.icons -r
