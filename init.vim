@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
+Plug 'w0rp/ale'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
