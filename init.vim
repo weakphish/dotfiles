@@ -5,12 +5,12 @@ Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
-Plug 'junegunn/goyo.vim'
 Plug 'w0rp/ale'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'gabrielelana/vim-markdown'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
@@ -43,6 +43,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set mouse=a
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
