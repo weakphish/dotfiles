@@ -5,12 +5,17 @@ Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
+<<<<<<< HEAD
 Plug 'junegunn/goyo.vim'
 Plug 'wsdjeg/vim-todo'
+=======
+Plug 'w0rp/ale'
+>>>>>>> c1d54ef0db6dda667dc57c4f9a57e5bef80e9b23
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'gabrielelana/vim-markdown'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
@@ -44,8 +49,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+<<<<<<< HEAD
 set wildmenu
 set wildmode=list:longest,full
+=======
+>>>>>>> c1d54ef0db6dda667dc57c4f9a57e5bef80e9b23
 set mouse=a
 
 " Use K to show documentation in preview window.
