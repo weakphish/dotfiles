@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
+Plug 'wsdjeg/vim-todo'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
@@ -13,6 +14,7 @@ Plug 'gabrielelana/vim-markdown'
 " Aesthetic/Appearance
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
@@ -42,6 +44,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
