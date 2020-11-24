@@ -13,6 +13,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -34,7 +35,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme onedark
+colorscheme gruvbox
 
 " ### EDITOR ###
 " Editor Settings
@@ -56,3 +57,9 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
+
+" Use jj as ESC
+imap jj <Esc>
+
+" Have GoDoc popup in a window, not a new buffer
+let g:go_doc_popup_window=1
