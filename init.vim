@@ -2,10 +2,8 @@
 call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
-Plug 'wsdjeg/vim-todo'
 Plug 'w0rp/ale'
 " Languages
 Plug 'fatih/vim-go'
@@ -13,7 +11,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
-Plug 'tomasiser/vim-code-dark'
 Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -36,7 +33,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme codedark 
+colorscheme monokai 
 
 " ### EDITOR ###
 " Editor Settings
