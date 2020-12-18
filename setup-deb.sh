@@ -20,7 +20,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 sudo apt install emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 yes | ~/.emacs.d/bin/doom install
-cp ./doom.d ~/ -r
+cp ./doom.d/* ~/.doom.d/ -r
 ./emacs.d/bin/doom sync
 
 # Copy zsh config over
