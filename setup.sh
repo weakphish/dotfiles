@@ -7,9 +7,6 @@ cp i3status ~/.config/i3status -r
 
 cp rofi ~/.config/rofi -r
 
-cp .icons ~/.icons -r
-cp .themes ~/.themes -r
-
 mkdir ~/.config/nvim/
 cp init.vim ~/.config/nvim/init.vim
 
