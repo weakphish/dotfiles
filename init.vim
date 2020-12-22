@@ -6,6 +6,7 @@ Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Yggdroot/indentLine'
 " Languages
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
