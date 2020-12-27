@@ -19,6 +19,7 @@ general {
 	color_degraded = "#B48EAD"
 }
 
+order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "load"

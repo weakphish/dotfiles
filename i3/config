@@ -39,7 +39,7 @@ set $mod Mod4
 exec xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output eDP-1-1 --mode 1920x1080 --pos 1920x579 --rotate normal
     
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/arctic.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/hiep-tong-TN5MFeu0JSQ-unsplash.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
