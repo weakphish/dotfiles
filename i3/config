@@ -177,9 +177,9 @@ bar {
 }
 #303743
 #class                      border         backgr	  text	   indicator
-client.focused		        #2C313D        #2e3440        $background  $background
-client.focused_inactive	    #2C313D        #303743        $background  $background
-client.unfocused	        #2C313D        #303743        $background  $background
+client.focused		        #fabd2f        #3c3836    $background  $background
+client.focused_inactive	    #3c3836        #3c3836    $background  $background
+client.unfocused	        #3c3836        #3c3836    $background  $background
 client.urgent		        $background    #282d37    $background  $background
 client.placeholder	        $background    #282D37    $background  $background
 
