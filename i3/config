@@ -175,27 +175,31 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status
 }
+
+# Pretty colors
 #303743
 #class                      border         backgr	  text	   indicator
-client.focused		        #fabd2f        #3c3836    $background  $background
-client.focused_inactive	    #3c3836        #3c3836    $background  $background
-client.unfocused	        #3c3836        #3c3836    $background  $background
+client.focused		        #fabd2f        #282828    $background  $background
+client.focused_inactive	    #282828        #282828    $background  $background
+client.unfocused	        #282828        #282828    $background  $background
 client.urgent		        $background    #282d37    $background  $background
 client.placeholder	        $background    #282D37    $background  $background
 
-#custom settings
+# Custom settings
 hide_edge_borders both
 new_window pixel 1
 new_float pixel 1
 focus_follows_mouse no
 
 # Multimedia Keys
-# increase volume
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-# decrease volume
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-# mute volume
-bindsym XF86AudioMute exec amixer -q set Master toggle
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+
+# Microphone
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
+
 # pause / play / next / previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -204,7 +208,7 @@ bindsym Print exec maim -s | tee ~/documents/images/screenshots/$(date +%d-%m-%Y
 bindsym Scroll_Lock exec i3lock -t -c 2d2d2d
 bindsym $mod+Shift+w exec emacs
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Open stuff 
 exec nm-applet
 exec dbus-launch compton --config ~/.config/compton.conf &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
