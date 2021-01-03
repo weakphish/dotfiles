@@ -36,7 +36,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme gruvbox 
+colorscheme monokai 
 
 " ### EDITOR ###
 " Editor Settings
@@ -50,6 +50,9 @@ set wildmenu
 set wildmode=list:longest,full
 set mouse=a
 
+" Use jj as ESC
+imap jj <Esc>
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -61,9 +64,6 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
-
-" Use jj as ESC
-imap jj <Esc>
 
 " Have GoDoc popup in a window, not a new buffer
 let g:go_doc_popup_window=1

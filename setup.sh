@@ -10,6 +10,8 @@ cp rofi ~/.config/rofi -r
 mkdir ~/.config/nvim/
 cp init.vim ~/.config/nvim/init.vim
 
+cp ./.ideavimrc ~/.ideavimrc
+
 # Install neovim plugin manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
