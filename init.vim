@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
-Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/indentLine'
 " Languages
@@ -36,7 +35,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme monokai 
+colorscheme gruvbox 
 
 " ### EDITOR ###
 " Editor Settings
