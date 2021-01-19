@@ -12,7 +12,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
-Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark'
 Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -35,7 +35,7 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme gruvbox 
+colorscheme codedark 
 
 " ### EDITOR ###
 " Editor Settings
