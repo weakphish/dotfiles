@@ -5,6 +5,7 @@ Plug 'preservim/nerdtree'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 " Languages
 Plug 'fatih/vim-go'
@@ -35,6 +36,8 @@ if (empty($TMUX))
 endif
 
 syntax on
+set t_Co=256
+set t_ut=
 colorscheme codedark 
 
 " ### EDITOR ###
