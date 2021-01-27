@@ -1,4 +1,7 @@
-" ### PLUGINS ###
+"" The prefix to use for leader commands
+let g:mapleader="<space>"
+
+"### PLUGINS ###
 call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
@@ -14,7 +17,8 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
 Plug 'tomasiser/vim-code-dark'
-Plug 'crusoexia/vim-monokai'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -38,7 +42,14 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme codedark 
+autocmd vimenter * ++nested colorscheme gruvbox
+
+" Set background based on time of day
+"if strftime("%H") < 17
+"    set background=light
+"else
+"   set background=dark
+"endif
 
 " ### EDITOR ###
 " Editor Settings
@@ -51,6 +62,17 @@ set mouse=a
 
 " Use jj as ESC
 imap jj <Esc>
+
+" ## CoC Bindings
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" gd - go to definition of word under cursor
+nmap <leader> gd <Plug>(coc-definition)
+nmap <leader> gy <Plug>(coc-type-definition)
+" gi - go to implementation
+nmap <leader> gi <Plug>(coc-implementation)
+" gr - find references
+nmap <leader> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -66,3 +88,4 @@ endfunction
 
 " Have GoDoc popup in a window, not a new buffer
 let g:go_doc_popup_window=1
+
