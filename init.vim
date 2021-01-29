@@ -16,9 +16,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
-Plug 'tomasiser/vim-code-dark'
-Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
