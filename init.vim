@@ -17,6 +17,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Aesthetic/Appearance
 Plug 'gruvbox-community/gruvbox'
+Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -40,7 +41,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme monokai 
 
 " Set background based on time of day
 "if strftime("%H") < 17
