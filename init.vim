@@ -11,10 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 " Languages
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
