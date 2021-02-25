@@ -13,9 +13,7 @@ Plug 'Yggdroot/indentLine'
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
-Plug 'tomasiser/vim-code-dark'
-Plug 'crusoexia/vim-monokai'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -39,7 +37,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme gruvbox 
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Set background based on time of day
 "if strftime("%H") < 17
