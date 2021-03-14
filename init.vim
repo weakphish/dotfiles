@@ -14,6 +14,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'gruvbox-community/gruvbox' 
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -37,7 +38,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme onedark
 
 " Set background based on time of day
 "if strftime("%H") < 17
@@ -49,6 +50,7 @@ autocmd vimenter * ++nested colorscheme gruvbox
 " ### EDITOR ###
 " Editor Settings
 set number
+set relativenumber
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set wildmenu
 set wildmode=list:longest,full
