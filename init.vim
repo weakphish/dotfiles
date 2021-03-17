@@ -10,7 +10,6 @@ Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
-Plug 'Olical/conjure'
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
