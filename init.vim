@@ -10,6 +10,7 @@ Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
+Plug 'Olical/conjure'
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
@@ -38,7 +39,8 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme onedark
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Set background based on time of day
 "if strftime("%H") < 17
