@@ -14,7 +14,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'gruvbox-community/gruvbox' 
-Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -40,13 +39,6 @@ set t_Co=256
 set t_ut=
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
-
-" Set background based on time of day
-"if strftime("%H") < 17
-"    set background=light
-"else
-"   set background=dark
-"endif
 
 " ### EDITOR ###
 " Editor Settings
