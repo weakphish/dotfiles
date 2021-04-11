@@ -11,7 +11,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 " Languages
-Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-jp/vim-cpp'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-python/python-syntax'
 " Aesthetic/Appearance
 Plug 'gruvbox-community/gruvbox' 
 Plug 'vim-airline/vim-airline'
@@ -39,6 +42,21 @@ set t_Co=256
 set t_ut=
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
+autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
+autocmd ColorScheme * highlight SignColumn guibg=#adadad
+
+" Go stuff
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_doc_popup_window=1
 
 " ### EDITOR ###
 " Editor Settings
@@ -74,7 +92,3 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
-
-" Have GoDoc popup in a window, not a new buffer
-let g:go_doc_popup_window=1
-
