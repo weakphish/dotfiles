@@ -11,12 +11,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 " Languages
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-jp/vim-cpp'
-Plug 'rust-lang/rust.vim'
-Plug 'vim-python/python-syntax'
+Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
-Plug 'gruvbox-community/gruvbox' 
+Plug 'gruvbox-community/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -40,12 +38,11 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-let g:gruvbox_contrast_dark = 'hard'
-autocmd vimenter * ++nested colorscheme gruvbox
-autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
-autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
-autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
-autocmd ColorScheme * highlight SignColumn guibg=#adadad
+autocmd vimenter * ++nested colorscheme onedark
+"autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
+"autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
+"autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
+"autocmd ColorScheme * highlight SignColumn guibg=#adadad
 
 " Go stuff
 let g:go_highlight_types = 1
