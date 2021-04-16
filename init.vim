@@ -14,7 +14,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -38,11 +37,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme onedark
-"autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
-"autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
-"autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
-"autocmd ColorScheme * highlight SignColumn guibg=#adadad
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Go stuff
 let g:go_highlight_types = 1
@@ -58,7 +53,6 @@ let g:go_doc_popup_window=1
 " ### EDITOR ###
 " Editor Settings
 set number
-set relativenumber
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set wildmenu
 set wildmode=list:longest,full
