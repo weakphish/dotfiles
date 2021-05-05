@@ -9,10 +9,10 @@ Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
+Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -38,6 +38,8 @@ syntax on
 set t_Co=256
 set t_ut=
 autocmd vimenter * ++nested colorscheme gruvbox
+set cc=100
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Go stuff
 let g:go_highlight_types = 1
@@ -53,10 +55,12 @@ let g:go_doc_popup_window=1
 " ### EDITOR ###
 " Editor Settings
 set number
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set wildmenu
 set wildmode=list:longest,full
 set mouse=a
+set autoindent
+set smartindent
+set tw=4
 
 " Use jj as ESC
 imap jj <Esc>
