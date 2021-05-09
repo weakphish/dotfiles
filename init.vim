@@ -59,8 +59,9 @@ set wildmenu
 set wildmode=list:longest,full
 set mouse=a
 set autoindent
-set smartindent
-set tw=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Use jj as ESC
 imap jj <Esc>
