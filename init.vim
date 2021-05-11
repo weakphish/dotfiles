@@ -5,6 +5,7 @@ let g:mapleader="<space>"
 call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
