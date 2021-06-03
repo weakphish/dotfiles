@@ -55,6 +55,7 @@ let g:go_doc_popup_window=1
 
 " ### EDITOR ###
 " Editor Settings
+set relativenumber
 set number
 set wildmenu
 set wildmode=list:longest,full
