@@ -1,5 +1,5 @@
 # Get basic tools
-yes | sudo apt install neovim
+yes | sudo apt install neovim nodejs npm
 
 mkdir ~/.config/nvim/
 cp init.vim ~/.config/nvim/init.vim

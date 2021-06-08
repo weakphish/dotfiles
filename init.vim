@@ -1,7 +1,6 @@
-"" The prefix to use for leader commands
-let g:mapleader="<space>"
-
-"### PLUGINS ###
+" =======================
+" PLUGINS
+" =======================
 call plug#begin('~/.config/nvim/plugged')
 " IDE-Features
 Plug 'preservim/nerdtree'
@@ -19,7 +18,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-" ### APPEARANCE ###
+" =======================
+" APPEARANCE
+" =======================
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 if (empty($TMUX))
@@ -35,6 +36,7 @@ if (empty($TMUX))
   endif
 endif
 
+" Syntax highlighting
 syntax on
 set t_Co=256
 set t_ut=
@@ -53,7 +55,14 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_doc_popup_window=1
 
-" ### EDITOR ###
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" =======================
+" EDITOR SETTINGS
+" =======================
 " Editor Settings
 set relativenumber
 set number
@@ -65,19 +74,40 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" =======================
+" BINDINGS
+" =======================
+" The prefix to use for leader commands
+let g:mapleader=" "
+
 " Use jj as ESC
 imap jj <Esc>
 
-" ## CoC Bindings
+" Toggle TagBar
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
+
+" Toggle NERDTree
+nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
+
+" Remap keys for gotos
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-" gd - go to definition of word under cursor
-nmap <leader> gd <Plug>(coc-definition)
-nmap <leader> gy <Plug>(coc-type-definition)
-" gi - go to implementation
-nmap <leader> gi <Plug>(coc-implementation)
-" gr - find references
-nmap <leader> gr <Plug>(coc-references)
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

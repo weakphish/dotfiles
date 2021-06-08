@@ -1,5 +1,5 @@
 # Get basic tools
-yes | sudo apt install zsh curl fortune lolcat neofetch neovim
+yes | sudo apt install zsh curl neovim nodejs npm
 
 # Copy configs
 mkdir ~/.config/nvim/
