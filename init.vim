@@ -14,8 +14,8 @@ Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " =======================
@@ -40,9 +40,15 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-autocmd vimenter * ++nested colorscheme gruvbox
+"autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme onedark
 set cc=100
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" Lightline
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
 
 " Go stuff
 let g:go_highlight_types = 1
@@ -54,11 +60,6 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_doc_popup_window=1
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " =======================
 " EDITOR SETTINGS
