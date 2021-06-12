@@ -13,8 +13,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
-Plug 'patstockwell/vim-monokai-tasty'
 Plug 'itchyny/lightline.vim'
+Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " =======================
@@ -39,13 +39,12 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-let g:vim_monokai_tasty_italic = 1
-colorscheme vim-monokai-tasty
+colorscheme gruvbox 
 set cc=100
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'monokai_tasty',
+  \ 'colorscheme': 'gruvbox',
   \ }
 
 
