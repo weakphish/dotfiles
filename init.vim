@@ -13,8 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
-Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
@@ -40,13 +39,13 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-"autocmd vimenter * ++nested colorscheme gruvbox
-colorscheme onedark
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 set cc=100
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
+  \ 'colorscheme': 'monokai_tasty',
   \ }
 
 
