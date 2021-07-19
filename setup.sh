@@ -1,5 +1,5 @@
 # Get basic tools
-yes | sudo apt install zsh curl neovim nodejs npm
+yes | sudo apt install zsh curl neovim nvm
 
 # Copy configs
 mkdir ~/.config/nvim/

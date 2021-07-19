@@ -9,12 +9,14 @@ Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " =======================
@@ -39,7 +41,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme gruvbox 
+colorscheme gruvbox
 set cc=100
 
 " Lightline
