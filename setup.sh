@@ -1,7 +1,8 @@
 # Get basic tools
-yes | sudo apt install zsh curl neovim nvm
+yes | sudo apt install zsh curl neovim
 
-# Copy configs
+#Copy configs
+mkdir ~/.config
 mkdir ~/.config/nvim/
 cp init.vim ~/.config/nvim/init.vim
 
