@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'andymass/vim-matchup'
-Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -16,7 +15,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " =======================
