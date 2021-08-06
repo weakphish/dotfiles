@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'andymass/vim-matchup'
+Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -14,7 +15,7 @@ Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 " =======================
@@ -39,12 +40,12 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme gruvbox
+colorscheme sonokai
 set cc=100
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'sonokai',
   \ }
 
 
