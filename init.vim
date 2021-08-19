@@ -9,6 +9,8 @@ Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Languages
 Plug 'sheerun/vim-polyglot'
@@ -40,6 +42,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
+let g:sonokai_style = "atlantis"
 colorscheme sonokai
 set cc=100
 
@@ -86,7 +89,7 @@ imap jj <Esc>
 " Toggle TagBar
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
-" Toggle NERDTree
+" Toggle FileTree
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Remap keys for gotos
@@ -96,6 +99,12 @@ nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
