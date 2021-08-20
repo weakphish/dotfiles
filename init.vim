@@ -12,6 +12,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'puremourning/vimspector'
 " Languages
 Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
@@ -42,7 +43,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-let g:sonokai_style = "atlantis"
+"let g:sonokai_style = "atlantis"
 colorscheme sonokai
 set cc=100
 
@@ -105,6 +106,14 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+" Neovim fixes
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
