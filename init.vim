@@ -18,7 +18,8 @@ Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/sonokai'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " =======================
@@ -43,13 +44,13 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-"let g:sonokai_style = "atlantis"
-colorscheme sonokai
+let g:gruvbox_material_background = 'hard'
+colorscheme gruvbox-material 
 set cc=100
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'sonokai',
+  \ 'colorscheme': 'gruvbox_material',
   \ }
 
 
@@ -77,6 +78,7 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nowrap
 
 " =======================
 " BINDINGS
