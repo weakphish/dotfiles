@@ -18,8 +18,7 @@ Plug 'sheerun/vim-polyglot'
 " Aesthetic/Appearance
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
+Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " =======================
@@ -44,13 +43,12 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-let g:gruvbox_material_background = 'hard'
-colorscheme gruvbox-material 
+colorscheme gruvbox
 set cc=100
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox_material',
+  \ 'colorscheme': 'gruvbox',
   \ }
 
 
