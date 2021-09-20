@@ -12,7 +12,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'puremourning/vimspector'
 " Languages
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
