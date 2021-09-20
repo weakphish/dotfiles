@@ -1,5 +1,5 @@
 # Get basic tools
-yes | sudo apt install zsh curl tmux
+yes | sudo apt install zsh curl tmux ripgrep
 
 # Copy configs
 mkdir ~/.config
