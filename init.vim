@@ -17,7 +17,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 " Aesthetic/Appearance
 Plug 'itchyny/lightline.vim'
-Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/sonokai'
 call plug#end()
 
@@ -43,6 +42,7 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
+let g:sonokai_style = 'shusia'
 colorscheme sonokai
 set cc=100
 
