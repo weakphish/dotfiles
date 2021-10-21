@@ -78,6 +78,9 @@ set shiftwidth=4
 set expandtab
 set nowrap
 
+" Autoformat on save with Rust
+let g:rustfmt_autosave = 1
+
 " =======================
 " BINDINGS
 " =======================
@@ -149,3 +152,11 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
+
+" Use <leader>aw to run code action on current word
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
