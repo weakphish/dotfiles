@@ -15,6 +15,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 " Languages
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go'
 " Aesthetic/Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/sonokai'
