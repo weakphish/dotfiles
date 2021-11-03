@@ -7,6 +7,7 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
