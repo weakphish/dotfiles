@@ -9,7 +9,6 @@ Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -18,8 +17,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go'
 " Aesthetic/Appearance
-Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/sonokai'
+Plug 'tomasiser/vim-code-dark'
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 " =======================
@@ -44,15 +44,9 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-let g:sonokai_style = 'shusia'
-colorscheme sonokai
+colorscheme codedark
+let g:airline_theme = 'codedark'
 set cc=100
-
-" Lightline
-let g:lightline = {
-  \ 'colorscheme': 'sonokai',
-  \ }
-
 
 " Go stuff
 let g:go_highlight_types = 1
