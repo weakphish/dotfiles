@@ -17,8 +17,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go'
 " Aesthetic/Appearance
-Plug 'tomasiser/vim-code-dark'
-Plug 'vim-airline/vim-airline'
+Plug 'sainnhe/sonokai'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -44,8 +44,9 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme codedark
-let g:airline_theme = 'codedark'
+colorscheme sonokai
+let g:lightline = {'colorscheme' : 'sonokai'}
+let g:sonokai_style = 'shusia'
 set cc=100
 
 " Go stuff
