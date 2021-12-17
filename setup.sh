@@ -8,9 +8,6 @@ cp init.vim ~/.config/nvim/init.vim
 cp ./.zshrc ~/.zshrc
 cp ./.tmux.conf ~/
 
-# Install Fira Code font
-sudo apt install fonts-firacode
-
 # Install neovim plugin manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
