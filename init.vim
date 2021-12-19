@@ -17,7 +17,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go'
 " Aesthetic/Appearance
-Plug 'sainnhe/sonokai'
+Plug 'sainnhe/gruvbox-material'
+Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
@@ -44,9 +45,8 @@ endif
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme sonokai
-let g:lightline = {'colorscheme' : 'sonokai'}
-let g:sonokai_style = 'shusia'
+colorscheme gruvbox-material
+let g:lightline = {'colorscheme' : 'gruvbox_material'}
 set cc=100
 
 " Go stuff
