@@ -7,6 +7,7 @@ return require('packer').startup(function()
     use 'andymass/vim-matchup'
     use 'godlygeek/tabular' -- Lining up text
     use 'tpope/vim-fugitive' -- Git stuff
+    use 'nvim-lua/plenary.nvim' -- Required by Telescope
     use 'nvim-telescope/telescope.nvim' -- Nice grep interface
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'neovim/nvim-lspconfig' -- LSP configurations
