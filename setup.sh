@@ -1,15 +1,14 @@
 # Get basic tools
 yes | sudo apt install zsh curl tmux ripgrep
 
-# Copy configs
+# Copy Neovim configuration
 mkdir ~/.config
 mkdir ~/.config/nvim/
-cp init.vim ~/.config/nvim/init.vim
-cp ./.zshrc ~/.zshrc
-cp ./.tmux.conf ~/
+cp init.lua ~/.config/nvim/init.lua
+cp lua/ ~/.config/nvim/ -r
 
-# Install neovim plugin manager
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Copy Zsh config
+cp ./.zshrc ~/.zshrc
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash &
