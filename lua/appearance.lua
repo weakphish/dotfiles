@@ -1,12 +1,12 @@
 -- Colorscheme
-vim.g.vscode_style = "dark"
-vim.cmd[[colorscheme vscode]]
+vim.cmd('colorscheme sonokai')
+vim.g.sonokai_disable_italic_comment = 1
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'vscode',
+    theme = 'sonokai',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
