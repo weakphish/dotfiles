@@ -1,14 +1,14 @@
 -- Colorscheme
-vim.o.background = 'dark'
-vim.cmd('colorscheme gruvbox-material')
+vim.g.vscode_style = "dark"
+vim.cmd[[colorscheme vscode]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
-    component_separators = { left = '|', right = '|'},
-    section_separators = { left = '|', right = '|'},
+    theme = 'vscode',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
   },

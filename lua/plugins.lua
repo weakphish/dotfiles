@@ -20,7 +20,7 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
-    use 'sainnhe/gruvbox-material'
+    use 'Mofiqul/vscode.nvim'
     use 'Yggdroot/indentLine'
     use 'nvim-lualine/lualine.nvim'
 end)

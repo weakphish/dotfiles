@@ -33,6 +33,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+-- THIS IS WHERE TO ADD NEW SERVERS
 local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'clangd', 'gopls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
