@@ -1,6 +1,6 @@
 -- Colorscheme
-vim.cmd('colorscheme sonokai')
 vim.g.sonokai_disable_italic_comment = 1
+vim.cmd('colorscheme sonokai')
 vim.cmd([[
     " Important!!
     if has('termguicolors')
