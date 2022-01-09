@@ -48,3 +48,24 @@ vim.g.go_highlight_extra_types = 1
 vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_generate_tags = 1
 vim.g.go_doc_popup_window=1
+
+-- DevIcons
+require'nvim-web-devicons'.setup {
+ -- your personnal icons can go here (to override)
+ -- you can specify color or cterm_color instead of specifying both of them
+ -- DevIcon will be appended to `name`
+ override = {
+  zsh = {
+    icon = "",
+    color = "#428850",
+    cterm_color = "65",
+    name = "Zsh"
+  }
+ };
+ -- globally enable default icons (default to false)
+ -- will get overriden by `get_icons` option
+ default = true;
+}
+
+-- Dashboard
+vim.g.dashboard_default_executive ='telescope'
