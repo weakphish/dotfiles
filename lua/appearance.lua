@@ -1,6 +1,6 @@
 -- Colorscheme
-vim.g.vscode_style = "dark"
-vim.cmd('colorscheme vscode')
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[
     " Important!!
     if has('termguicolors')
@@ -12,7 +12,7 @@ vim.cmd([[
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'vscode',
+    theme = 'gruvbox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

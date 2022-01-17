@@ -21,7 +21,7 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
-    use 'Mofiqul/vscode.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
 end)
