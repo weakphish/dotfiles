@@ -23,5 +23,4 @@ return require('packer').startup(function()
     -- Aesthetic/Appearance
     use { "ellisonleao/gruvbox.nvim" }
     use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
 end)
