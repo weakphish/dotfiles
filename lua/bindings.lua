@@ -35,11 +35,11 @@ vim.api.nvim_set_keymap(
     { noremap = true}
 )
 
--- NERDTree
+-- NVIMTree
 vim.api.nvim_set_keymap(
     "n",
     "<leader>nt",
-    ":NERDTreeToggle<cr>",
+    ":NvimTreeToggle<cr>",
     { noremap = true}
 )
 

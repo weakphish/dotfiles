@@ -1,6 +1,8 @@
 -- Colorscheme
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
 vim.cmd([[
     " Important!!
     if has('termguicolors')
@@ -11,10 +13,10 @@ vim.cmd([[
 -- Lualine
 require('lualine').setup {
   options = {
-    icons_enabled = false,
-    theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    icons_enabled = true,
+    theme = 'onedark',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
   },

@@ -2,7 +2,13 @@ return require('packer').startup(function()
     -- Packer manages itself, lol
     use 'wbthomason/packer.nvim'
     -- IDE-Features
-    use 'preservim/nerdtree' -- Filetree
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+              'kyazdani42/nvim-web-devicons', -- optional, for file icon
+            },
+        config = function() require'nvim-tree'.setup {} end
+    }
     use 'preservim/tagbar' -- Outline of file
     use 'andymass/vim-matchup'
     use 'godlygeek/tabular' -- Lining up text
@@ -21,6 +27,6 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
-    use { "ellisonleao/gruvbox.nvim" }
+    use "navarasu/onedark.nvim"
     use 'nvim-lualine/lualine.nvim'
 end)
