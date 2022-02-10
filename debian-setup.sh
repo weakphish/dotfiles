@@ -3,7 +3,7 @@ yes | sudo apt update
 yes | sudo apt install fish curl tmux
 
 # Copy vimrc
-cp .vimrc ~/.vimrc
+cp vimrc ~/.vimrc
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash &
