@@ -1,15 +1,9 @@
 # Get basic tools
 yes | sudo apt update 
-yes | sudo apt install fish curl tmux ripgrep
+yes | sudo apt install fish curl tmux
 
-# Copy Neovim configuration
-mkdir ~/.config
-mkdir ~/.config/nvim/
-cp init.lua ~/.config/nvim/init.lua
-cp lua/ ~/.config/nvim/ -r
-
-# Copy Zsh config
-cp ./.zshrc ~/.zshrc
+# Copy vimrc
+cp .vimrc ~/.vimrc
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash &
