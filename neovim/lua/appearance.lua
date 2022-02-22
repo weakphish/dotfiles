@@ -1,20 +1,20 @@
 -- Colorscheme
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
 vim.cmd([[
-    " Important!!
-    if has('termguicolors')
-        set termguicolors
-    endif
+  " Important!!
+  if has('termguicolors')
+      set termguicolors
+  endif
 ]])
+
+vim.cmd[[
+  colorscheme gruvbox-material
+]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'onedark',
+    theme = 'gruvbox-material',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

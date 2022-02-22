@@ -27,6 +27,6 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
-    use "navarasu/onedark.nvim"
+    use "sainnhe/gruvbox-material"
     use 'nvim-lualine/lualine.nvim'
 end)
