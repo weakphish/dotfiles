@@ -11,8 +11,6 @@ return require('packer').startup(function()
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
     use 'preservim/tagbar'              -- Outline of file
-    use 'andymass/vim-matchup'          -- Highlight matching words/braces
-    use 'godlygeek/tabular'             -- Lining up text
     use 'tpope/vim-fugitive'            -- Git stuff
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
     use 'nvim-telescope/telescope.nvim' -- Nice grep interface
