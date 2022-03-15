@@ -1,0 +1,83 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "git.autofetch": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontLigatures": true,
+    "java.semanticHighlighting.enabled": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "python.languageServer": "Pylance",
+    "editor.rulers": [
+        100
+    ],
+    "workbench.tree.indent": 20,
+    "rust-analyzer.cargo.allFeatures": true,
+    "git.enableSmartCommit": true,
+    "rust-client.engine": "rust-analyzer",
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "workbench.activityBar.visible": true,
+    "go.useLanguageServer": true,
+    "remote.SSH.remotePlatform": {
+        "remote.eos.ncsu.edu": "linux",
+        "ncsu-remote": "linux",
+        "hackpack": "linux"
+    },
+    "extensions.ignoreRecommendations": false,
+    "python.autoComplete.addBrackets": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.completeFunctionParens": true,
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "python.pythonPath": "/usr/bin/python3",
+    "python.analysis.typeCheckingMode": "basic",
+    "git.ignoreLegacyWarning": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.minimap.enabled": false,
+    "C_Cpp.default.cStandard": "c99",
+    "debug.onTaskErrors": "showErrors",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "metals.javaHome": "C:\\Program Files\\Java\\jdk-15.0.2",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "C_Cpp.updateChannel": "Insiders",
+    "zenMode.fullScreen": false,
+    "zenMode.hideStatusBar": false,
+    "editor.lineNumbers": "relative",
+    "editor.insertSpaces": false,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "vim.smartRelativeLine": true,
+    "editor.inlineSuggest.enabled": true,
+    "tabnine.experimentalAutoImports": true,
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "vscode-neovim.useWSL": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.statusBarColors.visualblock": "",
+    "vim.useSystemClipboad": true,
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": true,
+    "editor.fontSize": 13,
+    "explorer.confirmDelete": false
+}
