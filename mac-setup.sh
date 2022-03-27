@@ -4,6 +4,9 @@
 # Copy vim config
 cp vimrc ~/.vimrc
 
+# Copy VS Code config (FIXME assumes the correct path which should be fixed)
+cp ./vs-code/* /Users/weakphish/Library/Application\ Support/Code/User/
+
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash &
 

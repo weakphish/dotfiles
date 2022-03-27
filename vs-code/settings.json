@@ -78,6 +78,5 @@
     "vim.useSystemClipboad": true,
     "go.toolsManagement.autoUpdate": true,
     "redhat.telemetry.enabled": true,
-    "editor.fontSize": 13,
     "explorer.confirmDelete": false
 }
