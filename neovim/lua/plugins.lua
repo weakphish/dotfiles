@@ -10,7 +10,7 @@ return require('packer').startup(function()
         config = function() require'nvim-tree'.setup {} end
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
-    use 'preservim/tagbar'              -- Outline of file
+    use {'stevearc/aerial.nvim'}        -- Outline of file
     use 'tpope/vim-fugitive'            -- Git stuff
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
     use 'nvim-telescope/telescope.nvim' -- Nice grep interface

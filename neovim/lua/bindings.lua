@@ -27,13 +27,12 @@ vim.api.nvim_set_keymap(
     { noremap = true}
 )
 
--- Tagbar
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>tb",
-    ":TagbarToggle<cr>",
-    { noremap = true}
-)
+-- Aerial
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>at', '<cmd>AerialToggle!<CR>', {})
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
+vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
 
 -- NVIMTree
 vim.api.nvim_set_keymap(
