@@ -16,5 +16,3 @@ vim.o.expandtab = true
 -- Misc
 vim.o.mouse = 'a'
 vim.o.autoindent = true
-
-

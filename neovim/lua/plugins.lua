@@ -27,4 +27,5 @@ return require('packer').startup(function()
     -- Aesthetic/Appearance
     use "sainnhe/gruvbox-material"
     use 'nvim-lualine/lualine.nvim'
+    use "lukas-reineke/indent-blankline.nvim" -- Indent guides
 end)
