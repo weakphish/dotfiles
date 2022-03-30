@@ -28,4 +28,5 @@ return require('packer').startup(function()
     use "sainnhe/gruvbox-material"
     use 'nvim-lualine/lualine.nvim'
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
+    use {'stevearc/dressing.nvim'}
 end)
