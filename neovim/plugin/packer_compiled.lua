@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -140,16 +145,6 @@ _G.packer_plugins = {
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
   },
-  tabular = {
-    loaded = true,
-    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/tabular",
-    url = "https://github.com/godlygeek/tabular"
-  },
-  tagbar = {
-    loaded = true,
-    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/tagbar",
-    url = "https://github.com/preservim/tagbar"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -164,11 +159,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
-  },
-  ["vim-matchup"] = {
-    loaded = true,
-    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/vim-matchup",
-    url = "https://github.com/andymass/vim-matchup"
   },
   ["vim-polyglot"] = {
     loaded = true,
