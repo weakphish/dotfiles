@@ -6,15 +6,17 @@ vim.cmd([[
   endif
 ]])
 
+vim.g.vscode_style = "dark"
+vim.g.vscode_italic_comment = 1
 vim.cmd[[
-  colorscheme catppuccin
+  colorscheme vscode
 ]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'catppuccin',
+    theme = 'vscode',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

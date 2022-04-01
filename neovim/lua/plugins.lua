@@ -26,10 +26,7 @@ return require('packer').startup(function()
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
     use "sainnhe/gruvbox-material"
-    use({
-	"catppuccin/nvim",
-	as = "catppuccin"
-    })
+    use 'Mofiqul/vscode.nvim' 
     use 'nvim-lualine/lualine.nvim'
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
     use {'stevearc/dressing.nvim'}
