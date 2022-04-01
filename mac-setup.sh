@@ -24,3 +24,6 @@ omf install bass
 # Copy fish functions
 mkdir -p ~/.config/fish/functions
 cp ./fish/* ~/.config/fish/functions
+
+# Install The Good Font
+brew install font-jetbrains-mono-nerd-font
