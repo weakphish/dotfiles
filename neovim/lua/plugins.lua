@@ -25,7 +25,8 @@ return require('packer').startup(function()
     use 'rust-lang/rust.vim'
     use 'fatih/vim-go'
     -- Aesthetic/Appearance
-    use "sainnhe/gruvbox-material"
+    use 'sainnhe/gruvbox-material'
+    use 'sainnhe/sonokai'
     use 'Mofiqul/vscode.nvim' 
     use 'nvim-lualine/lualine.nvim'
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
