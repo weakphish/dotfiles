@@ -28,11 +28,11 @@ vim.api.nvim_set_keymap(
 )
 
 -- Aerial
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>tb', '<cmd>AerialToggle!<CR>', {})
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
-vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>tb', '<cmd>AerialToggle!<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '{', '<cmd>AerialPrev<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '}', '<cmd>AerialNext<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '[[', '<cmd>AerialPrevUp<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', ']]', '<cmd>AerialNextUp<CR>', {noremap=true})
 
 -- NVIMTree
 vim.api.nvim_set_keymap(

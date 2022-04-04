@@ -16,7 +16,8 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 # install fish and adjacent items
 brew install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-omf install lambda
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install ilancosman/tide
 
 # Install Bass
 omf install bass
