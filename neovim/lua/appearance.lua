@@ -10,14 +10,14 @@ vim.g.vscode_style = "dark"
 vim.g.vscode_italic_comment = 1
 vim.g.sonokai_better_performance = 1
 vim.cmd[[
-  colorscheme gruvbox-material
+  colorscheme vscode 
 ]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox-material',
+    theme = 'vscode',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -54,3 +54,8 @@ vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_generate_tags = 1
 vim.g.go_doc_popup_window=1
 
+-- Show LSP diagnostics in a float window on hover
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 100
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
