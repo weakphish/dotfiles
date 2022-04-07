@@ -10,14 +10,14 @@ vim.g.vscode_style = "dark"
 vim.g.vscode_italic_comment = 1
 vim.g.sonokai_better_performance = 1
 vim.cmd[[
-  colorscheme vscode 
+  colorscheme gruvbox-material 
 ]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'vscode',
+    theme = 'gruvbox-material',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
