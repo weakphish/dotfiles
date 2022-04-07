@@ -1,6 +1,6 @@
 vim.g.vimwiki_list = {
     {
-        ['path'] = '~/Developer/Notes/',
+        ['path'] = '~/Notes/',
         ['syntax'] = 'markdown',
         ['ext'] = '.md',
         ['auto_generate_tags'] = 1,
