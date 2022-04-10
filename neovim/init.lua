@@ -15,7 +15,6 @@ require('editor')
 require('aerial-config')
 require('nvim-tree-config')
 require('indent-config')
-require('vim-wiki-config')
 -- Keybindings and completion
 require('bindings')
 require('completion')
