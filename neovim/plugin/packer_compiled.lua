@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
   },
+  sonokai = {
+    loaded = true,
+    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -174,11 +179,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/Users/weakphish/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
