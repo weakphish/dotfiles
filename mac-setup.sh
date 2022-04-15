@@ -10,11 +10,10 @@ cp neovim/* ~/.config/neovim/
 
 # install fish and adjacent items
 brew install fish
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-omf install lambda
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Install Bass
-omf install bass
+fisher install bass
 
 # Copy fish functions
 mkdir -p ~/.config/fish/functions
