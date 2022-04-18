@@ -8,17 +8,17 @@ brew install neovim
 mkdir -p ~/.config/neovim/
 cp neovim/* ~/.config/neovim/
 
-# install fish and adjacent items
+# install fish and fisher
 brew install fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
-# Install Bass
+# install Bass
 fisher install bass
 
-# Copy fish functions
+# copy fish functions
 mkdir -p ~/.config/fish/functions
 cp ./fish/config.fish ~/.config/fish/
 cp ./fish/* ~/.config/fish/functions/
 
-# Install The Good Font
+# install The Good Font
 brew install font-jetbrains-mono-nerd-font
