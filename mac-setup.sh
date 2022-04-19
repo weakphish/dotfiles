@@ -17,4 +17,4 @@ cp ./fish/config.fish ~/.config/fish/
 cp ./fish/* ~/.config/fish/functions/
 
 # install tide prompt
-fisher install IlanCosman/tide@v5
+fisher install hasanozgan/theme-lambda
