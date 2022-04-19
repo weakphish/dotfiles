@@ -1,8 +1,9 @@
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# install neovim
+# install editor(s)
 brew install neovim
+brew install visual-studio-code
 
 # install neovim config
 mkdir -p ~/.config/neovim/
@@ -20,5 +21,5 @@ mkdir -p ~/.config/fish/functions
 cp ./fish/config.fish ~/.config/fish/
 cp ./fish/* ~/.config/fish/functions/
 
-# install The Good Font
-brew install font-jetbrains-mono-nerd-font
+# install tide prompt
+fisher install IlanCosman/tide@v5
