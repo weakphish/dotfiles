@@ -1,13 +1,8 @@
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# install editor(s)
-brew install neovim
+# install editor
 brew install visual-studio-code
-
-# install neovim config
-mkdir -p ~/.config/neovim/
-cp neovim/* ~/.config/neovim/
 
 # install fish and fisher
 brew install fish
