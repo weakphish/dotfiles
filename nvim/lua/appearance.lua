@@ -9,14 +9,14 @@ vim.cmd([[
 vim.g.sonokai_style = "shusia"
 vim.g.sonokai_better_performance = 1
 vim.cmd[[
-  colorscheme gruvbox-material 
+  colorscheme sonokai 
 ]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox-material',
+    theme = 'sonokai',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

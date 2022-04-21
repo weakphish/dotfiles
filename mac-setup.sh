@@ -2,13 +2,17 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # install editor
-brew install visual-studio-code
+brew install neovim
+
+# copy neovim config over
+mkdir -p ~/.config/nvim/
+cp -R ./nvim/* ~/.config/nvim/
 
 # install fish and fisher
 brew install fish
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
-# install Bass
+# install bass
 fisher install bass
 
 # copy fish config and functions
@@ -16,5 +20,8 @@ mkdir -p ~/.config/fish/functions
 cp ./fish/config.fish ~/.config/fish/
 cp ./fish/functions/* ~/.config/fish/functions/
 
-# install tide prompt
+# install lambd prompt
 fisher install hasanozgan/theme-lambda
+
+# install patched font
+brew install font-jetbrains-mono-nerd-font
