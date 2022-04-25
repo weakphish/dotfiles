@@ -1,7 +1,7 @@
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# install editor
+# install neovim
 brew install neovim
 
 # copy neovim config over
