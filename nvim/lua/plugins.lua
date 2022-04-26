@@ -1,6 +1,5 @@
 return require('packer').startup(function()
-    -- Packer manages itself, lol
-    use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'        -- Packer manages itself, lol
     -- IDE-Features
     use {
         'kyazdani42/nvim-tree.lua',
@@ -13,10 +12,14 @@ return require('packer').startup(function()
     use {'stevearc/aerial.nvim'}        -- Outline of file
     use 'tpope/vim-fugitive'            -- Git stuff
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
-    use 'mfussenegger/nvim-dap'         -- Debugging adapter
     use 'nvim-telescope/telescope.nvim' -- Nice grep interface
-    use 'neovim/nvim-lspconfig'         -- LSP configurations
-    use 'alexaandru/nvim-lspupdate'     -- Autoinstall LSP servers
+    use {                               -- Wrapper that makes configuring LSP way nicer
+        'junnplus/nvim-lsp-setup',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'williamboman/nvim-lsp-installer',
+        }
+    }
     use 'hrsh7th/nvim-cmp'              -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp'          -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip'      -- Snippets source for nvim-cmp
@@ -24,6 +27,8 @@ return require('packer').startup(function()
     -- Languages
     use 'sheerun/vim-polyglot'          -- Works for most languages
     use 'rust-lang/rust.vim'            -- More specific stuff for Rust
+    use 'simrat39/rust-tools.nvim'      -- ...and even more...
+    use 'p00f/clangd_extensions.nvim'   -- clangd extensions for C LSP
     use 'fatih/vim-go'                  -- Specific stuff for Go
     -- Aesthetic/Appearance
     use 'sainnhe/gruvbox-material'      -- A refresh on a classic
