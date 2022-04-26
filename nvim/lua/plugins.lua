@@ -13,6 +13,7 @@ return require('packer').startup(function()
     use {'stevearc/aerial.nvim'}        -- Outline of file
     use 'tpope/vim-fugitive'            -- Git stuff
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
+    use 'mfussenegger/nvim-dap'         -- Debugging adapter
     use 'nvim-telescope/telescope.nvim' -- Nice grep interface
     use 'neovim/nvim-lspconfig'         -- LSP configurations
     use 'alexaandru/nvim-lspupdate'     -- Autoinstall LSP servers
@@ -21,15 +22,15 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip'      -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip'              -- Snippets plugin
     -- Languages
-    use 'sheerun/vim-polyglot'
-    use 'rust-lang/rust.vim'
-    use 'fatih/vim-go'
+    use 'sheerun/vim-polyglot'          -- Works for most languages
+    use 'rust-lang/rust.vim'            -- More specific stuff for Rust
+    use 'fatih/vim-go'                  -- Specific stuff for Go
     -- Aesthetic/Appearance
-    use 'sainnhe/gruvbox-material'
-    use 'sainnhe/sonokai'
-    use 'sainnhe/everforest'
-    use 'Mofiqul/vscode.nvim'
-    use 'nvim-lualine/lualine.nvim'
+    use 'sainnhe/gruvbox-material'      -- A refresh on a classic
+    use 'sainnhe/sonokai'               -- Monokai Pro, but free
+    use 'sainnhe/everforest'            -- I like the color green
+    use 'Mofiqul/vscode.nvim'           -- So far, my favorite colorscheme ever
+    use 'nvim-lualine/lualine.nvim'     -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
-    use {'stevearc/dressing.nvim'}
+    use {'stevearc/dressing.nvim'}      -- Make things generally prettier
 end)
