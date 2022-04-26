@@ -1,5 +1,7 @@
 My configuration for Neovim. All lua files in `lua/` are pulled into the `init.lua` which I tried to keep fairly minimal, mostly just bootstrapping packer and then pulling in each 'module' I've written.
 
+To get started, clone the contents here to your `~/.config/nvim/` and run `:PackerInstall`
+
 Here's a brief description of each file and it's purpose.
 
 - `aerial-config.lua`: Configuration for the Aerial plugin, which shows an outline of the current file.
