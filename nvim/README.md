@@ -1,4 +1,4 @@
-My configuration for Neovim.
+My configuration for Neovim. All lua files in `lua/` are pulled into the `init.lua` which I tried to keep fairly minimal, mostly just bootstrapping packer and then pulling in each 'module' I've written.
 
 Here's a brief description of each file and it's purpose.
 
