@@ -28,6 +28,7 @@ return require('packer').startup(function()
     use 'sainnhe/gruvbox-material'
     use 'sainnhe/sonokai'
     use 'sainnhe/everforest'
+    use 'Mofiqul/vscode.nvim'
     use 'nvim-lualine/lualine.nvim'
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
     use {'stevearc/dressing.nvim'}

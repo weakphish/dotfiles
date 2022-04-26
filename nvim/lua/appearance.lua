@@ -6,17 +6,19 @@ vim.cmd([[
   endif
 ]])
 
-vim.g.sonokai_style = "shusia"
 vim.g.sonokai_better_performance = 1
+vim.g.sonokai_style = "shusia"
+vim.g.vscode_style = "dark"
+
 vim.cmd[[
-  colorscheme sonokai 
+  colorscheme vscode 
 ]]
 
 -- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'sonokai',
+    theme = 'vscode',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
