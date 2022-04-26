@@ -20,8 +20,9 @@ mkdir -p ~/.config/fish/functions
 cp ./fish/config.fish ~/.config/fish/
 cp ./fish/functions/* ~/.config/fish/functions/
 
-# install lambd prompt
-fisher install hasanozgan/theme-lambda
+# install prompt
+# fisher install hasanozgan/theme-lambda
+fisher install IlanCosman/tide@v5
 
 # install patched font
 brew install font-jetbrains-mono-nerd-font
