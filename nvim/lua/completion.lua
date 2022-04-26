@@ -32,6 +32,22 @@ local on_attach = function(client, bufnr)
   -- Add Aerial
   require("aerial").on_attach(client, bufnr)
 
+  -- Show diagnostics in a float when hovered
+  vim.api.nvim_create_autocmd("CursorHold", {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        border = 'rounded',
+        source = 'always',
+        prefix = ' ',
+        scope = 'cursor',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end
+  })
+
 end
 
 --------------------------------------------------------------------------------------------------

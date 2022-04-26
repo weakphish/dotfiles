@@ -1,3 +1,10 @@
+-- Ruler at 100
+vim.o.cc = '100'
+
+-- Numbering
+vim.o.relativenumber = true
+vim.o.number = true
+
 -- Colorscheme
 vim.cmd([[
   " Important!!
@@ -55,8 +62,3 @@ vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_generate_tags = 1
 vim.g.go_doc_popup_window=1
 
--- Show LSP diagnostics in a float window on hover
--- You will likely want to reduce updatetime which affects CursorHold
--- note: this setting is global and should be set only once
-vim.o.updatetime = 100
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
