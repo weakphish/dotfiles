@@ -1,9 +1,9 @@
 # dotfiles
 My dots.
 
-**Current editor**: Neovim primarily, but dabbling in Doom Emacs. See: `nvim` and `emacs` directories, respectively.
+**Current editor**: Neovim primarily, but sometimes dabbling in others like `helix`
 
-**Shell:** Fish shell. See `fish` which just has my custom prompt. I typically use `fisher` to manage packages and use the `lambda` package, and my Mac setup script handles installing that.
+**Shell:** Fish shell. See `fish` which just has my custom prompt. I typically use `fisher` to manage packages and use the `lambda` prompt through it. My Mac setup script handles installing that.
 
 **Terminal:** iTerm2, see `itermcolors` for the colorschemes I like.
 
