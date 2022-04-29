@@ -24,5 +24,5 @@ cp ./fish/functions/* ~/.config/fish/functions/
 fisher install hasanozgan/theme-lambda
 #fisher install IlanCosman/tide@v5
 
-# install patched font
+# install patched font - 12 pt in iterm2 appears to work best with this 
 brew install font-jetbrains-mono-nerd-font
