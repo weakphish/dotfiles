@@ -5,8 +5,7 @@
 brew install neovim
 
 # copy neovim config over
-mkdir -p ~/.config/nvim/
-cp -R ./nvim/* ~/.config/nvim/
+cp -R ./nvim ~/.config/
 
 # install fish and fisher
 brew install fish
