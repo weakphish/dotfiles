@@ -1,5 +1,6 @@
 # dotfiles
 My dots.
+Run `link-mac.sh` to symlink the configuration to your system.
 
 **Current editor**: Neovim primarily, but sometimes dabbling in others like `helix`. I have a separate repository where I maintain my Neovim configuration, so that can be found on my GitHub profile.
 
