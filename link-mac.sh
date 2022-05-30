@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Bare Vim
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
+
 # Neovim
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 
