@@ -4,6 +4,7 @@ theme = "dark_plus"
 line-number = "relative"
 mouse = true
 rulers = [100]
+auto-format = true
 
 [editor.cursor-shape]
 insert = "bar"
