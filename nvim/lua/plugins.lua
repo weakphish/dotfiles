@@ -33,6 +33,10 @@ return require('packer').startup(function()
     use 'dart-lang/dart-vim-plugin'     -- Dart support
     -- Vim Wiki
     use 'vimwiki/vimwiki'               -- ...because I refuse to use Emacs
+    use ({                              -- ... and I like seeing my Markdown, sometimes
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
     -- Aesthetic/Appearance
     use 'sainnhe/gruvbox-material'      -- A refresh on a classic
     use 'sainnhe/sonokai'               -- Monokai Pro, but free
