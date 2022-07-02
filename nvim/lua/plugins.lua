@@ -1,11 +1,11 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'        -- Packer manages itself, lol
     -- IDE-Features
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
-    use {'stevearc/aerial.nvim'}        -- Outline of file
-    use 'tpope/vim-fugitive'            -- Git stuff
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Make highlighting based on an AST, no Regex
+    use {'stevearc/aerial.nvim'}        -- Show outline of file's symbols
+    use 'tpope/vim-fugitive'            -- Git inside NeoVim
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
-    use 'nvim-telescope/telescope.nvim' -- Nice grep interface
+    use 'nvim-telescope/telescope.nvim' -- Nice interface for various menus (mostly grep)
     use {                               -- Wrapper that makes configuring LSP way nicer
         'junnplus/nvim-lsp-setup',
         requires = {
@@ -26,11 +26,13 @@ return require('packer').startup(function()
     }
     -- Languages
     use 'sheerun/vim-polyglot'          -- Works for most languages
-    use 'rust-lang/rust.vim'            -- More specific stuff for Rust
+    use {'rust-lang/rust.vim', ft='.rs'}-- More specific stuff for Rust
     use 'simrat39/rust-tools.nvim'      -- ...and even more...
     use 'p00f/clangd_extensions.nvim'   -- clangd extensions for C LSP
     use 'fatih/vim-go'                  -- Specific stuff for Go
     use 'dart-lang/dart-vim-plugin'     -- Dart support
+    -- Vim Wiki
+    use 'vimwiki/vimwiki'               -- ...because I refuse to use Emacs
     -- Aesthetic/Appearance
     use 'sainnhe/gruvbox-material'      -- A refresh on a classic
     use 'sainnhe/sonokai'               -- Monokai Pro, but free
