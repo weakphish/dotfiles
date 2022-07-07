@@ -45,4 +45,5 @@ return require('packer').startup(function()
     use 'nvim-lualine/lualine.nvim'     -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim" -- Indent guides
     use {'stevearc/dressing.nvim'}      -- Make things generally prettier
+    use 'airblade/vim-gitgutter'        -- Git gutter indicators
 end)
