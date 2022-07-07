@@ -33,6 +33,7 @@ require('nvim-lsp-setup').setup({
     servers = {
         -- Install LSP servers automatically
         -- LSP server configuration please see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        gopls = {},
         pyright = {},
         clangd = require('nvim-lsp-setup.clangd_extensions').setup({}),
         rust_analyzer = require('nvim-lsp-setup.rust-tools').setup({

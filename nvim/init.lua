@@ -21,5 +21,6 @@ require('indent-config')
 require('lualine-config')
 require('telescope-config')
 require('vimwiki-config')
+require('tree-config')
 -- Completion
 require('completion')
