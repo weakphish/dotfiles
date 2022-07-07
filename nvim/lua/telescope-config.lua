@@ -30,7 +30,7 @@ vim.api.nvim_set_keymap(
 -- Show document symbols in Telescope
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>s",
+    "<leader>fs",
     ":Telescope lsp_document_symbols<cr>",
     { noremap = true}
 )
