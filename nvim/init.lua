@@ -22,5 +22,6 @@ require('lualine-config')
 require('telescope-config')
 require('vimwiki-config')
 require('tree-config')
+require('whichkey-config')
 -- Completion
 require('completion')
