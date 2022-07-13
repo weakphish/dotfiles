@@ -42,6 +42,14 @@ vim.api.nvim_set_keymap(
     { noremap = true}
 )
 
+-- Show all TODO comments
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>to",
+  ":TodoTelescope<cr>",
+  {noremap = true}
+)
+
 -- This is your opts table
 require("telescope").setup {
   extensions = {

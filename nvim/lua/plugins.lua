@@ -47,12 +47,6 @@ return require('packer').startup(function()
       },
       tag = 'nightly'                   -- optional, updated every week. (see issue #1193)
     }
-    use {                               -- Doom Emacs had _some_ good ideas ;)
-        'goolord/alpha-nvim',
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
-        end
-    }
     use 'sainnhe/gruvbox-material'      -- A refresh on a classic
     use 'sainnhe/sonokai'               -- Monokai Pro, but free
     use 'nvim-lualine/lualine.nvim'     -- Statusbar go brrrr
