@@ -3,14 +3,14 @@
 # Bare Vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
+# .config directory
+ln -s ~/.dotfiles/.config ~/.config
+
 # Doom Emacs
-ln -s ~/.dotfiles/.doom.d ~/.doom.d
-
+#ln -s ~/.dotfiles/.doom.d ~/.doom.d
 # Fish
-ln -s ~/.dotfiles/fish ~/.config/fish
-
+#ln -s ~/.dotfiles/fish ~/.config/fish
 # Helix
-ln -s ~/.dotfiles/helix ~/.config/helix
-
+#ln -s ~/.dotfiles/helix ~/.config/helix
 # Neovim
-ln -s ~/.dotfiles/nvim ~/.config/nvim
+#ln -s ~/.dotfiles/nvim ~/.config/nvim
