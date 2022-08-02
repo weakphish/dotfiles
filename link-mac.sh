@@ -10,10 +10,4 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.config/ ~/.config
 
 # Doom Emacs
-#ln -s ~/.dotfiles/.doom.d ~/.doom.d
-# Fish
-#ln -s ~/.dotfiles/fish ~/.config/fish
-# Helix
-#ln -s ~/.dotfiles/helix ~/.config/helix
-# Neovim
-#ln -s ~/.dotfiles/nvim ~/.config/nvim
+ln -s ~/.dotfiles/.doom.d ~/.doom.d
