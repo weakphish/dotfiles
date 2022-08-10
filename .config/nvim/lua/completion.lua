@@ -1,4 +1,4 @@
-require('nvim-lsp-setup').setup({
+require('lsp-setup').setup({
     installer = {},
     default_mappings = false,
     mappings = {
@@ -11,7 +11,7 @@ require('nvim-lsp-setup').setup({
     },
     -- Global on_attach
     on_attach = function(client, bufnr) 
-        require('nvim-lsp-setup.utils').format_on_save(client)
+        require('lsp-setup.utils').format_on_save(client)
         vim.api.nvim_create_autocmd("CursorHold", {
             buffer = bufnr,
             callback = function()
@@ -35,20 +35,5 @@ require('nvim-lsp-setup').setup({
         -- LSP server configuration please see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
         gopls = {},
         pyright = {},
-        clangd = require('nvim-lsp-setup.clangd_extensions').setup({}),
-        rust_analyzer = require('nvim-lsp-setup.rust-tools').setup({
-            server = {
-                settings = {
-                    ['rust-analyzer'] = {
-                        cargo = {
-                            loadOutDirsFromCheck = true,
-                        },
-                        procMacro = {
-                            enable = true,
-                        },
-                    },
-                },
-            },
-        }),
     },
 })
