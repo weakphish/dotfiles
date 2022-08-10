@@ -8,13 +8,14 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'         -- Required by Telescope
     use 'nvim-telescope/telescope.nvim' -- Nice interface for various menus (mostly grep)
     use {'nvim-telescope/telescope-ui-select.nvim' } -- And, use telescope for more default stuff
-    use {                               -- Wrapper that makes configuring LSP way nicer
-        'junnplus/nvim-lsp-setup',
-        requires = {
-            'neovim/nvim-lspconfig',
-            'williamboman/nvim-lsp-installer',
-        }
+    use {                               -- Nicer installation for LSP servers
+    'junnplus/lsp-setup.nvim',
+    requires = {
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
     }
+}
     use 'hrsh7th/nvim-cmp'              -- Autocompletion plugin
     use 'hrsh7th/vim-vsnip'             -- Dependency for above features
     use 'hrsh7th/cmp-nvim-lsp'          -- LSP source for nvim-cmp

@@ -20,7 +20,6 @@ require('cmp-config')
 require('indent-config')
 require('lualine-config')
 require('telescope-config')
-require('vimwiki-config')
 require('tree-config')
 require('whichkey-config')
 -- Completion
