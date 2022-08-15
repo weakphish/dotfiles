@@ -22,5 +22,10 @@ require('lualine-config')
 require('telescope-config')
 require('tree-config')
 require('whichkey-config')
+-- VimWiki
+vim.cmd([[
+let g:vimwiki_list = [{'path': '~/Developer/vim-wiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+]])
 -- Completion
 require('completion')
