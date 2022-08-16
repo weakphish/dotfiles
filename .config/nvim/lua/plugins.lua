@@ -34,6 +34,12 @@ return require('packer').startup(function()
     use 'p00f/clangd_extensions.nvim'   -- clangd extensions for C LSP
     use 'fatih/vim-go'                  -- Specific stuff for Go
     use 'dart-lang/dart-vim-plugin'     -- Dart support
+    -- Vim Wiki
+    use 'vimwiki/vimwiki'               -- ...because I refuse to use Emacs
+    use ({                              -- ... and I like seeing my Markdown, sometimes
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
     -- Aesthetic/Appearance
     use {                               -- File tree
       'kyazdani42/nvim-tree.lua',
