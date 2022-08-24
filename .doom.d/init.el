@@ -131,64 +131,125 @@
        ;;ess               ; emacs speaks statistics
        ;;factor
        ;;faust             ; dsp, but you get to keep your soul
-       ;;fortran           ; in FORTRAN, GOD is REAL (unless declared INTEGER)
-       ;;fsharp            ; ML stands for Microsoft's Language
-       ;;fstar             ; (dependent) types and (monadic) effects and Z3
-       ;;gdscript          ; the language you waited for
-       ;;(go +lsp)         ; the hipster dialect
-       ;;(graphql +lsp)    ; Give queries a REST
-       ;;(haskell +lsp)    ; a language that's lazier than I am
-       ;;hy                ; readability of scheme w/ speed of python
-       ;;idris             ; a language you can depend on
-       ;;json              ; At least it ain't XML
-       ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       ;;julia             ; a better, faster MATLAB
-       ;;kotlin            ; a better, slicker Java(Script)
-       ;;latex             ; writing papers in Emacs has never been so fun
-       ;;lean              ; for folks with too much to prove
-       ;;ledger            ; be audit you can be
-       ;;lua               ; one-based indices? one-based indices
-       markdown          ; writing docs for people to ignore
-       ;;nim               ; python + lisp at the speed of c
-       ;;nix               ; I hereby declare "nix geht mehr!"
-       ;;ocaml             ; an objective camel
-       org               ; organize your plain life in plain text
-       ;;php               ; perl's insecure younger brother
-       ;;plantuml          ; diagrams for confusing people more
-       ;;purescript        ; javascript, but functional
-       (python +lsp +pyright)            ; beautiful is better than ugly
-       ;;qt                ; the 'cutest' gui framework ever
-       ;;racket            ; a DSL for DSLs
-       ;;raku              ; the artist formerly known as perl6
-       ;;rest              ; Emacs as a REST client
-       ;;rst               ; ReST in peace
-       ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
-       ;;scala             ; java, but good
-       ;;(scheme +guile)   ; a fully conniving family of lisps
-       sh                ; she sells {ba,z,fi}sh shells on the C xor
-       ;;sml
-       ;;solidity          ; do you need a blockchain? No.
-       ;;swift             ; who asked for emoji variables?
-       ;;terra             ; Earth and Moon in alignment for performance.
-       ;;web               ; the tubes
-       ;;yaml              ; JSON, but readable
-       ;;zig               ; C, but simpler
+[~/.dotfiles/.doom.d]$ ls                                                                                                     *[master]
+config.el   custom.el   init.el     packages.el
+[~/.dotfiles/.doom.d]$ ls                                                                                                                                                                                                                                              *[master]
+config.el   custom.el   init.el     packages.el
+[~/.dotfiles/.doom.d]$ cd                                                                                                                                                                                                                                              *[master]
+[~]$ cd .dotfiles 
+[~/.dotfiles]$ git status                                                                                                                                                                                                                                              *[master]
+On branch master
+Your branch is up to date with 'origin/master'.
 
-       :email
-       ;;(mu4e +org +gmail)
-       ;;notmuch
-       ;;(wanderlust +gmail)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .config/nvim/lua/appearance.lua
+        modified:   .config/nvim/lua/lualine-config.lua
+        modified:   .doom.d/init.el
 
-       :app
-       ;;calendar
-       ;;emms
-       ;;everywhere        ; *leave* Emacs!? You must be joking
-       ;;irc               ; how neckbeards socialize
-       ;;(rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .config/.config
+        .doom.d/.doom.d
 
-       :config
-       ;;literate
-       (default +bindings +smartparens))
+no changes added to commit (use "git add" and/or "git commit -a")
+[~/.dotfiles]$ git add .doom.d/*                                                                                                                                                                                                                                       *[master]
+[~/.dotfiles]$ cd .doom.d                                                                                                                                                                                                                                              *[master]
+[~/.dotfiles/.doom.d]$ ls                                                                                                                                                                                                                                              *[master]
+config.el   custom.el   init.el     packages.el
+[~/.dotfiles/.doom.d]$ la                                                                                                                                                                                                                                              *[master]
+total 48
+lrwxr-xr-x  1 jacallis  staff    33B Aug 24 13:50 .doom.d -> /Users/jacallis/.dotfiles/.doom.d
+-rw-r--r--  1 jacallis  staff   3.3K Aug 15 12:43 config.el
+-rw-r--r--  1 jacallis  staff   657B Aug 15 12:43 custom.el
+-rw-r--r--  1 jacallis  staff   9.5K Aug 24 14:38 init.el
+-rw-r--r--  1 jacallis  staff   2.1K Aug  2 10:26 packages.el
+[~/.dotfiles/.doom.d]$ cd .doom.d                                                                                                                                                                                                                                      *[master]
+[~/.dotfiles/.doom.d/.doom.d]$ la                                                                                                                                                                                                                                      *[master]
+total 48
+lrwxr-xr-x  1 jacallis  staff    33B Aug 24 13:50 .doom.d -> /Users/jacallis/.dotfiles/.doom.d
+-rw-r--r--  1 jacallis  staff   3.3K Aug 15 12:43 config.el
+-rw-r--r--  1 jacallis  staff   657B Aug 15 12:43 custom.el
+-rw-r--r--  1 jacallis  staff   9.5K Aug 24 14:38 init.el
+-rw-r--r--  1 jacallis  staff   2.1K Aug  2 10:26 packages.el
+[~/.dotfiles/.doom.d/.doom.d]$ git                                                                                                                                                                                                                                     *[master]
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+   status            Show the working tree status
+
+grow, mark and tweak your common history
+   branch            List, create, or delete branches
+   commit            Record changes to the repository
+   merge             Join two or more development histories together
+   rebase            Reapply commits on top of another base tip
+   reset             Reset current HEAD to the specified state
+   switch            Switch branches
+   tag               Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch             Download objects and refs from another repository
+   pull              Fetch from and integrate with another repository or a local branch
+   push              Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+[~/.dotfiles/.doom.d/.doom.d]$ git status                                                                                                                                                                                                                              *[master]
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   init.el
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.config/nvim/lua/appearance.lua
+        modified:   ../.config/nvim/lua/lualine-config.lua
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.config/.config
+        .doom.d
+
+[~/.dotfiles/.doom.d/.doom.d]$ git commit -m "update init.el"                                                                                                                                                                                                          *[master]
+[master c3d076de] update init.el
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+[~/.dotfiles/.doom.d/.doom.d]$ git push                                                                                                                                                                                                                                *[master]
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 384 bytes | 384.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:weakphish/dotfiles.git
+   d6d02bf1..c3d076de  master -> master
+[~/.dotfiles/.doom.d/.doom.d]$                                                                                                                                                                                                                                         *[master]
