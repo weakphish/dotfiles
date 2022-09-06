@@ -45,6 +45,8 @@ return require('packer').startup(function()
     }
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
+    use 'shaunsingh/solarized.nvim'             -- Buttery smooth on the eyes
+    use 'navarasu/onedark.nvim'                 -- I never really got over atom being sunset
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim"   -- Indent guides
     use {'stevearc/dressing.nvim'}              -- Make things generally prettier
