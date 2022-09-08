@@ -1,0 +1,27 @@
+{
+  "$schema" : "https:\/\/app.linearmouse.org\/schema\/0.7.3",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.26,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Razer DeathAdder Chroma",
+          "productID" : "0x43",
+          "category" : "mouse",
+          "vendorID" : "0x1532"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "horizontal" : false,
+          "vertical" : true
+        },
+        "distance" : 3
+      }
+    }
+  ]
+}
