@@ -1,14 +1,14 @@
 require('lsp-setup').setup({
     installer = {},
     default_mappings = false,
-    mappings = {
-        ['<leader>gD']= 'lua vim.lsp.buf.declaration()',
-        ['<leader>gd'] = 'lua vim.lsp.buf.definition()',
-        ['<leader>k'] = 'lua vim.lsp.buf.hover()',
-        ['<leader>rn'] = 'lua vim.lsp.buf.rename()',
-        ['<leader>ca'] = 'lua vim.lsp.buf.code_action()',
-        ['<leader>fo'] = 'lua vim.lsp.buf.formatting()',
-    },
+--    mappings = {
+--        ['<leader>gD']= 'lua vim.lsp.buf.declaration()',
+--        ['<leader>gd'] = 'lua vim.lsp.buf.definition()',
+--        ['<leader>k'] = 'lua vim.lsp.buf.hover()',
+--        ['<leader>cr'] = 'lua vim.lsp.buf.rename()',
+--        ['<leader>ca'] = 'lua vim.lsp.buf.code_action()',
+--        ['<leader>cf'] = 'lua vim.lsp.buf.formatting()',
+--    },
     -- Global on_attach
     on_attach = function(client, bufnr) 
         require('lsp-setup.utils').format_on_save(client)

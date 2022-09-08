@@ -69,3 +69,40 @@ local setup = {
   },
 }
 which_key.setup(setup)
+
+-- FIND Group
+which_key.register({
+  f = {
+    name = "Find", -- Group name
+    f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File"}, 
+    g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    r = { "<cmd>Telescope lsp_references<cr>", "Symbol References" },
+    t = { "<cmd>TodoTelescope<cr>", "TODO" },
+  }
+}, {prefix = "<leader>"})
+
+-- CODE Group
+which_key.register({
+  c = {
+    name = "Code", -- Group name
+    r = { "lua vim.lsp.buf.rename()", "Rename" },
+    a = { "lua vim.lsp.buf.code_action()", "Action(s)" },
+    f = { "lua vim.lsp.buf.formatting()", "Format" },
+  }
+}, {prefix = "<leader>"})
+
+which_key.register({
+  ["<leader>k"] = {"lua vim.lsp.buf.hover()", "Hover"}
+})
+
+-- GOTO Group
+which_key.register({
+  ["<leader>g"] = { name = "+Go to" },
+  ['<leader>gD']= {'lua vim.lsp.buf.declaration()', "Go To Declaration"},
+  ['<leader>gd'] = {'lua vim.lsp.buf.definition()', "Go To Definition"},
+})
