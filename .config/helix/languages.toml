@@ -403,8 +403,8 @@ file-types = ["py"]
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "Poetry.lock"]
 comment-token = "#"
-#language-server = { command = "pyright-langserver", args = ["--stdio"] }
-language-server = { command = "pylsp" }
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+#language-server = { command = "pylsp" }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 config = {}
