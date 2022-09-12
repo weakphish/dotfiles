@@ -90,19 +90,19 @@ which_key.register({
 which_key.register({
   c = {
     name = "Code", -- Group name
-    r = { "lua vim.lsp.buf.rename()", "Rename" },
-    a = { "lua vim.lsp.buf.code_action()", "Action(s)" },
-    f = { "lua vim.lsp.buf.formatting()", "Format" },
+    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action(s)" },
+    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   }
 }, {prefix = "<leader>"})
 
 which_key.register({
-  ["<leader>k"] = {"lua vim.lsp.buf.hover()", "Hover"}
+  ["<leader>k"] = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover"}
 })
 
 -- GOTO Group
 which_key.register({
   ["<leader>g"] = { name = "+Go to" },
-  ['<leader>gD']= {'lua vim.lsp.buf.declaration()', "Go To Declaration"},
-  ['<leader>gd'] = {'lua vim.lsp.buf.definition()', "Go To Definition"},
+  ['<leader>gD']= {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
+  ['<leader>gd'] = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
 })
