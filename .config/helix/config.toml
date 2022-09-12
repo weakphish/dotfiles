@@ -5,6 +5,11 @@ line-number = "relative"
 mouse = true
 rulers = [100]
 auto-format = true
+cursorline = true
+
+[editor.indent-guides]
+render = true
+character = "╎"
 
 [editor.cursor-shape]
 insert = "bar"

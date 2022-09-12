@@ -1,5 +1,6 @@
 -- Bindings
 -- Find files
+--[[
 vim.api.nvim_set_keymap(
     "n",
     "<leader>ff",
@@ -37,7 +38,7 @@ vim.api.nvim_set_keymap(
 -- Show symbol references in Telescope
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>gr",
+    "<leader>fr",
     ":Telescope lsp_references<cr>",
     { noremap = true}
 )
@@ -49,7 +50,7 @@ vim.api.nvim_set_keymap(
   ":TodoTelescope<cr>",
   {noremap = true}
 )
-
+--]]
 -- This is your opts table
 require("telescope").setup {
   extensions = {
