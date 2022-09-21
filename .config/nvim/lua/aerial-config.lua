@@ -39,7 +39,6 @@ require("aerial").setup {
 }
 
 -- Bindings
-vim.api.nvim_set_keymap('n', '<leader>tb', '<cmd>AerialToggle!<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '{', '<cmd>AerialPrev<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '}', '<cmd>AerialNext<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '[[', '<cmd>AerialPrevUp<CR>', {noremap=true})

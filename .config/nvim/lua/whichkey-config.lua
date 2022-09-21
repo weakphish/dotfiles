@@ -70,6 +70,9 @@ local setup = {
 }
 which_key.setup(setup)
 
+--------------------------------------------------------------------------------------------------
+-- BINDINGS --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 -- FIND Group
 which_key.register({
   f = {
@@ -105,4 +108,11 @@ which_key.register({
   ["<leader>g"] = { name = "+Go to" },
   ['<leader>gD']= {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
   ['<leader>gd'] = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+})
+
+--Toggle 
+which_key.register({
+  ["<leader>t"] = { name = "+Toggle" },
+  ['<leader>tb']= {'<cmd>AerialToggle<cr>', "Aerial"},
+  ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
 })

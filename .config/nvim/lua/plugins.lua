@@ -1,13 +1,16 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'                -- Packer manages itself, lol
     use 'lewis6991/impatient.nvim'              -- Improve startup time
+
     -- IDE-Features
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Make highlighting based on an AST, no Regex
     use {'stevearc/aerial.nvim'}                -- Show outline of file's symbols
     use 'tpope/vim-fugitive'                    -- Git inside NeoVim
     use 'nvim-lua/plenary.nvim'                 -- Required by Telescope
     use 'nvim-telescope/telescope.nvim'         -- Nice interface for various menus (mostly grep)
-    use {'nvim-telescope/telescope-ui-select.nvim' } -- And, use telescope for more default stuff
+    use {                                       -- And, use telescope for more default stuff
+        'nvim-telescope/telescope-ui-select.nvim' 
+    } 
     use {                                       -- Nicer installation for LSP servers
     'junnplus/lsp-setup.nvim',
     requires = {
@@ -28,6 +31,7 @@ return require('packer').startup(function()
         require("which-key").setup {}
       end
     }
+
     -- Languages
     use 'sheerun/vim-polyglot'                  -- Works for most languages
     use {'rust-lang/rust.vim', ft='.rs'}        -- More specific stuff for Rust
@@ -35,6 +39,7 @@ return require('packer').startup(function()
     use 'p00f/clangd_extensions.nvim'           -- clangd extensions for C LSP
     use 'fatih/vim-go'                          -- Specific stuff for Go
     use 'dart-lang/dart-vim-plugin'             -- Dart support
+
     -- Aesthetic/Appearance
     use {                                       -- File tree
       'kyazdani42/nvim-tree.lua',
