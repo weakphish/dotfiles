@@ -23,10 +23,3 @@ require("nvim-tree").setup({
   },
 })
 
--- Toggle tree
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>nt",
-    ":NvimTreeToggle<cr>",
-    { noremap = true}
-)
