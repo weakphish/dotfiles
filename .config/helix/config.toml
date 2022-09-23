@@ -6,6 +6,7 @@ mouse = true
 rulers = [100]
 auto-format = true
 cursorline = true
+color-modes = true
 
 [editor.indent-guides]
 render = true

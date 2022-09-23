@@ -408,6 +408,7 @@ language-server = { command = "pyright-langserver", args = ["--stdio"] }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 config = {}
+formatter = { command = "black", args = ["--quiet", "-"] }
 
 [[grammar]]
 name = "python"
