@@ -18,7 +18,7 @@ vim.g.sonokai_style = "shusia"
 vim.g.vscode_style = "dark"
 
 vim.cmd [[
-  colorscheme sonokai 
+  colorscheme gruvbox-material
 ]]
 --require('onedark').load()
 --require('solarized').set()
