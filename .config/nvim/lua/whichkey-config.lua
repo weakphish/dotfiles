@@ -96,7 +96,7 @@ which_key.register({
     name = "Code", -- Group name
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action(s)" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
   }
 }, {prefix = "<leader>"})
 
@@ -116,4 +116,5 @@ which_key.register({
   ["<leader>t"] = { name = "+Toggle" },
   ['<leader>tb']= {'<cmd>AerialToggle<cr>', "Aerial"},
   ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
+  ['<leader>tg'] = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
 })

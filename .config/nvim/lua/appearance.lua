@@ -18,10 +18,14 @@ vim.g.sonokai_style = "shusia"
 vim.g.vscode_style = "dark"
 
 vim.cmd [[
-  colorscheme gruvbox-material
+  colorscheme sonokai 
 ]]
 --require('onedark').load()
 --require('solarized').set()
+
+-- Set up bufferline
+vim.opt.termguicolors = true
+require("bufferline").setup{}
 
 -- Add extra Go highlights
 vim.g.go_highlight_types = 1

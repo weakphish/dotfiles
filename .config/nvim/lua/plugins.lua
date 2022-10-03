@@ -31,6 +31,8 @@ return require('packer').startup(function()
         require("which-key").setup {}
       end
     }
+    use 'mfussenegger/nvim-dap'                 -- Society has advanced past the need for Pycharm
+    use 'tpope/vim-surround'                    -- TPope can do no wrong
 
     -- Languages
     use 'sheerun/vim-polyglot'                  -- Works for most languages
@@ -48,6 +50,7 @@ return require('packer').startup(function()
       },
       tag = 'nightly'                           -- optional, updated every week. (see issue #1193)
     }
+    use 'rcarriga/nvim-notify'                  -- At least my errors will look nice
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'shaunsingh/solarized.nvim'             -- Buttery smooth on the eyes
@@ -55,5 +58,14 @@ return require('packer').startup(function()
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim"   -- Indent guides
     use {'stevearc/dressing.nvim'}              -- Make things generally prettier
-    use 'airblade/vim-gitgutter'                -- Git gutter indicators
+    use {                                       -- So I can see who to blame
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+    use {                                       -- Get lost in the (tab) sauce
+        'akinsho/bufferline.nvim', tag = "v2.*", 
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
 end)
