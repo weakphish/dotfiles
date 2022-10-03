@@ -10,4 +10,4 @@ vim.o.expandtab = true
 vim.o.mouse = 'a'
 vim.o.autoindent = true
 vim.notify = require("notify")
-
+vim.g.spell = true

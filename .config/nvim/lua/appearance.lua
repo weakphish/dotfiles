@@ -1,6 +1,9 @@
 -- Ruler at 100
 vim.o.cc = '100'
 
+-- Make command input only appear in usage
+vim.o.ch = 0
+
 -- Numbering
 vim.o.relativenumber = true
 vim.o.number = true

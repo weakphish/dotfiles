@@ -22,6 +22,21 @@
         },
         "distance" : 3
       }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 1,
+        "speed" : 0.0689655172413792768,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "USB Receiver",
+          "productID" : "0xc52b",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      }
     }
   ]
 }
