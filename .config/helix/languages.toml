@@ -408,6 +408,20 @@ language-server = { command = "pyright-langserver", args = ["--stdio"] }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 config = {}
+formatter = { command = "black", args = ["--quiet", "-"] }
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+# args consisting of cmd (node) and path to adapter should be added to user's configuration
+quirks = { absolute-paths = true }
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "main", completion = "filename", default = "main.py" } ]
+args = { program = "{0}" }
+
 
 [[grammar]]
 name = "python"
