@@ -55,6 +55,7 @@ return require('packer').startup(function()
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'shaunsingh/solarized.nvim'             -- Buttery smooth on the eyes
     use 'navarasu/onedark.nvim'                 -- I never really got over atom being sunset
+    use 'Mofiqul/vscode.nvim'                   -- Microsoft got a *few* things right
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim"   -- Indent guides
     use {'stevearc/dressing.nvim'}              -- Make things generally prettier
