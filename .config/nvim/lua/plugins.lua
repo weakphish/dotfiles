@@ -31,7 +31,8 @@ return require('packer').startup(function()
         require("which-key").setup {}
       end
     }
-    use 'mfussenegger/nvim-dap'                 -- Society has advanced past the need for Pycharm
+    use 'mfussenegger/nvim-dap'                 -- Society has advanced past the need for...
+    use 'mfussenegger/nvim-dap-python'          -- PyCharm
     use 'tpope/vim-surround'                    -- TPope can do no wrong
 
     -- Languages
