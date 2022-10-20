@@ -124,12 +124,3 @@ which_key.register({
   ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
   ['<leader>tg'] = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
 })
-
--- Debugging
-which_key.register({
-  ["<leader>d"] = { name = "+Debug" },
-  ['<leader>db']= {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Set Breakpoint"},
-  ['<leader>dc']= {"<cmd>lua require'dap'.continue()<cr>", "Launch/Continue"},
-  ['<leader>di']= {"<cmd>lua require'dap'.step_into()<cr>", "Step Into"},
-  ['<leader>do']= {"<cmd>lua require'dap'.step_over()<cr>", "Step Over"},
-})

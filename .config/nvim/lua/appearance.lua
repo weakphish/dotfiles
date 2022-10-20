@@ -20,22 +20,6 @@ vim.g.vscode_style = "dark"
 vim.cmd [[
   colorscheme sonokai 
 ]]
---require('onedark').load()
---require('solarized').set()
-
---local c = require('vscode.colors')
---require('vscode').setup({
---    -- Enable italic comment
---    italic_comments = true,
---
---    -- Override highlight groups (see ./lua/vscode/theme.lua)
---    group_overrides = {
---        -- this supports the same val table as vim.api.nvim_set_hl
---        -- use colors from this colorscheme by requiring vscode.colors!
---        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
---    }
---})
-
 -- Set up bufferline
 require("bufferline").setup{}
 

@@ -31,9 +31,8 @@ return require('packer').startup(function()
         require("which-key").setup {}
       end
     }
-    use 'mfussenegger/nvim-dap'                 -- Society has advanced past the need for...
-    use 'mfussenegger/nvim-dap-python'          -- PyCharm
-    use 'tpope/vim-surround'                    -- TPope can do no wrong
+    use 'tpope/vim-surround'                   -- TPope can do no wrong
+    use 'jose-elias-alvarez/null-ls.nvim'      -- Let non-LSP formatters like autopep8 do their work
 
     -- Languages
     use 'sheerun/vim-polyglot'                  -- Works for most languages
@@ -54,9 +53,6 @@ return require('packer').startup(function()
     use 'rcarriga/nvim-notify'                  -- At least my errors will look nice
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
-    use 'shaunsingh/solarized.nvim'             -- Buttery smooth on the eyes
-    use 'navarasu/onedark.nvim'                 -- I never really got over atom being sunset
-    use 'Mofiqul/vscode.nvim'                   -- Microsoft got a *few* things right
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim"   -- Indent guides
     use {'stevearc/dressing.nvim'}              -- Make things generally prettier
