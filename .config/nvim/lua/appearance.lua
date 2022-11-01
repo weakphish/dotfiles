@@ -18,7 +18,7 @@ vim.g.vscode_style = "dark"
 
 -- Set colorscheme
 vim.cmd [[
-  colorscheme sonokai 
+  colorscheme gruvbox-material
 ]]
 -- Set up bufferline
 require("bufferline").setup{}
