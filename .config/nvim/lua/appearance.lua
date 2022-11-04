@@ -20,8 +20,6 @@ vim.g.vscode_style = "dark"
 vim.cmd [[
   colorscheme gruvbox-material
 ]]
--- Set up bufferline
-require("bufferline").setup{}
 
 -- Add extra Go highlights
 vim.g.go_highlight_types = 1
