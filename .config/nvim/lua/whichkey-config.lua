@@ -73,12 +73,6 @@ which_key.setup(setup)
 --------------------------------------------------------------------------------------------------
 -- BINDINGS --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
--- Bufferline stuff
-which_key.register({
-  ["<leader>l"] = {'<cmd>BufferLineCycleNext<cr>', "Next Buffer"},
-  ["<leader>h"] = {'<cmd>BufferLineCyclePrev<cr>', "Previous Buffer"}
-})
-
 -- FIND Group
 which_key.register({
   f = {

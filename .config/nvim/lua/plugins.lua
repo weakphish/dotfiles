@@ -62,8 +62,4 @@ return require('packer').startup(function()
             require('gitsigns').setup()
         end
     }
-    use {                                       -- Get lost in the (tab) sauce
-        'akinsho/bufferline.nvim', tag = "v2.*", 
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
 end)
