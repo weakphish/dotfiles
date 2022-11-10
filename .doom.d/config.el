@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Iosevka" :size 12 :weight 'normal)
+(setq doom-font (font-spec :family "Iosevka" :size 13 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Iosevka" :size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -74,3 +74,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Customize Org mode to look prettier
+;; Reference: https://grszkth.fr/blog/doom-config/#font-and-appearance
+;; Start org with folded headings
+(after! org
+  (setq org-startup-folded t))
