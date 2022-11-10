@@ -2,9 +2,9 @@
 My dots.
 Run `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Formerly Neovim, currently Helix.
+**Current editor**: Formerly Neovim, currently Doom Emacs with some dabbling in Helix
 
-**Shell:** Zsh. See .zshrc - it's just stock oh-my-zsh with the prompt switched to Bira.
+**Shell:** Zsh. See .zshrc - it's just stock oh-my-zsh with the prompt switched to Powerlevel10k.
 
 **Terminal:** iTerm2, see `itermcolors` for the colorschemes I like.
 
