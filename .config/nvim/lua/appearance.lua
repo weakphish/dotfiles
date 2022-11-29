@@ -18,7 +18,7 @@ vim.g.vscode_style = "dark"
 
 -- Set colorscheme
 vim.cmd [[
-  colorscheme gruvbox-material
+  colorscheme sonokai
 ]]
 
 -- Add extra Go highlights

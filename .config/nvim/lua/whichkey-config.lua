@@ -118,3 +118,8 @@ which_key.register({
   ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
   ['<leader>tg'] = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
 })
+
+-- Git Group (source control)
+which_key.register({
+  ["<leader>s"] = {'<cmd>Git<cr>', "Source Control"},
+})
