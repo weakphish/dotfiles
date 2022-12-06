@@ -7,7 +7,7 @@ rulers = [100]
 auto-format = true
 cursorline = true
 color-modes = true
-bufferline = "multiple"
+#bufferline = "multiple"
 
 [editor.indent-guides]
 render = true
@@ -15,8 +15,6 @@ character = "╎"
 
 [editor.cursor-shape]
 insert = "bar"
-normal = "block"
-select = "underline"
 
 [editor.file-picker]
 hidden = false
