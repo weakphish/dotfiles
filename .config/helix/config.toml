@@ -7,7 +7,7 @@ rulers = [100]
 auto-format = true
 cursorline = true
 color-modes = true
-#bufferline = "multiple"
+bufferline = "multiple"
 
 [editor.indent-guides]
 render = true
