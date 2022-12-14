@@ -11,14 +11,9 @@ vim.o.number = true
 -- Still not really sure what this is 
 vim.opt.termguicolors = true
 
--- Sonokai preferences
-vim.g.sonokai_better_performance = 1
-vim.g.sonokai_style = "shusia"
-vim.g.vscode_style = "dark"
-
 -- Set colorscheme
 vim.cmd [[
-  colorscheme sonokai
+  colorscheme gruvbox-material
 ]]
 
 -- Add extra Go highlights

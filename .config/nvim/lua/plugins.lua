@@ -4,7 +4,6 @@ return require('packer').startup(function()
 
     -- IDE-Features
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Make highlighting based on an AST, no Regex
-    use {'stevearc/aerial.nvim'}                -- Show outline of file's symbols
     use 'tpope/vim-fugitive'                    -- Git inside NeoVim
     use 'nvim-lua/plenary.nvim'                 -- Required by Telescope
     use 'nvim-telescope/telescope.nvim'         -- Nice interface for various menus (mostly grep)
@@ -13,12 +12,12 @@ return require('packer').startup(function()
     } 
     use {                                       -- Nicer installation for LSP servers
     'junnplus/lsp-setup.nvim',
-    requires = {
-        'neovim/nvim-lspconfig',
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        }
     }
-}
     use 'hrsh7th/nvim-cmp'                      -- Autocompletion plugin
     use 'hrsh7th/vim-vsnip'                     -- Dependency for above features
     use 'hrsh7th/cmp-nvim-lsp'                  -- LSP source for nvim-cmp
@@ -32,7 +31,6 @@ return require('packer').startup(function()
       end
     }
     use 'tpope/vim-surround'                   -- TPope can do no wrong
-    use 'jose-elias-alvarez/null-ls.nvim'      -- Let non-LSP formatters like autopep8 do their work
 
     -- Languages
     use 'sheerun/vim-polyglot'                  -- Works for most languages
@@ -43,19 +41,10 @@ return require('packer').startup(function()
     use 'dart-lang/dart-vim-plugin'             -- Dart support
 
     -- Aesthetic/Appearance
-    use {                                       -- File tree
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons',         -- optional, for file icons
-      },
-      tag = 'nightly'                           -- optional, updated every week. (see issue #1193)
-    }
-    use 'rcarriga/nvim-notify'                  -- At least my errors will look nice
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
     use "lukas-reineke/indent-blankline.nvim"   -- Indent guides
-    use {'stevearc/dressing.nvim'}              -- Make things generally prettier
     use {                                       -- So I can see who to blame
         'lewis6991/gitsigns.nvim',
         config = function()

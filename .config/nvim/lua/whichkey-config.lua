@@ -114,8 +114,6 @@ which_key.register({
 --Toggle 
 which_key.register({
   ["<leader>t"] = { name = "+Toggle" },
-  ['<leader>tb']= {'<cmd>AerialToggle<cr>', "Aerial"},
-  ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
   ['<leader>tg'] = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
 })
 
