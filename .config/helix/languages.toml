@@ -411,9 +411,10 @@ config = {}
 
 [language.debugger]
 name = "debugpy"
-transport = "stdio"
-# args consisting of cmd (node) and path to adapter should be added to user's configuration
-quirks = { absolute-paths = true }
+transport = "tcp"
+command = "python"
+args = ["-m", "debugpy"]
+port-arg = "-listen localhost:5678"
 
 [[language.debugger.templates]]
 name = "source"
