@@ -407,7 +407,7 @@ language-server = { command = "pylsp" }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 config = {}
-formatter = { command = "autopep8"}
+# formatter = { command = "autopep8"}
 
 [language.debugger]
 name = "debugpy"
