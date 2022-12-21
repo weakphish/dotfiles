@@ -11,6 +11,10 @@ vim.o.number = true
 -- Still not really sure what this is 
 vim.opt.termguicolors = true
 
+-- Sonokai preferences
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_style = "shusia"
+
 -- Set colorscheme
 vim.cmd [[
   colorscheme gruvbox-material

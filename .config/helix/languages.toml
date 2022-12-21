@@ -407,13 +407,14 @@ language-server = { command = "pylsp" }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 config = {}
-formatter = { command = "autopep8"}
+# formatter = { command = "autopep8"}
 
 [language.debugger]
 name = "debugpy"
-transport = "stdio"
-# args consisting of cmd (node) and path to adapter should be added to user's configuration
-quirks = { absolute-paths = true }
+transport = "tcp"
+command = "python"
+args = ["-m", "debugpy"]
+port-arg = "-listen localhost:5678"
 
 [[language.debugger.templates]]
 name = "source"

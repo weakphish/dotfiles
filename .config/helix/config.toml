@@ -3,7 +3,7 @@ theme = "dark_plus"
 [editor]
 line-number = "relative"
 mouse = true
-rulers = [100]
+rulers = [80, 120]
 auto-format = true
 cursorline = true
 color-modes = true
