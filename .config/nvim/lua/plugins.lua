@@ -50,7 +50,6 @@ return require('packer').startup(function()
       },
       tag = 'nightly'                           -- optional, updated every week. (see issue #1193)
     }
-    use 'rcarriga/nvim-notify'                  -- At least my errors will look nice
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
