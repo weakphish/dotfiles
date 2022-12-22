@@ -17,7 +17,6 @@ require('editor')
 -- Plugin Configurations
 require('aerial-config')
 require('cmp-config')
-require('dressing-config')
 require('indent-config')
 require('lualine-config')
 require('null-ls-config')
