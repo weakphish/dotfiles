@@ -12,15 +12,10 @@ To get started, clone the contents here to your `~/.config/nvim/` and run `:Pack
 
 Here's a brief description of each file and it's purpose.
 
-- `aerial-config.lua`: Configuration for the Aerial plugin, which shows an outline of the current file.
 - `appearance.lua`: Configure the appearance of Neovim, mostly theming and syntax highlighting configuration.
-- `cmp-config.lua`: Configure cmp, a completion plugin
 - `editor.lua`: General editor behavior. Pretty brief, kind of a catch-all for stuff that doesn't fit elsewhere.
-- `indent-config.lua`: Configuration for the `indent-blankline` plugin.
-- `lualine-config.lua`: Configuration for `lualine` plugin.
-- `packer-setup.lua`: Code that bootstraps packer.
 - `plugins.lua`: Declares my plugins for packer.
-- `telescope-config.lua`: Configuration for `telescope` plugin.
+- `*-config.lua`: Configuration for different plugins.
 
 ## Telescope vs. LSP
 You may notice that the bindings for some LSP features are defined in `telescope-config` rather than
