@@ -28,5 +28,6 @@ require('lsp-setup').setup({
         -- LSP server configuration please see: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
         gopls = {},
         pyright = {},
+        tsserver = {},
     },
 })
