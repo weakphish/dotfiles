@@ -15,6 +15,9 @@ lvim.colorscheme = "darkplus"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
+-- Relative line numbers
+vim.opt.relativenumber = true
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -49,16 +52,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.builtin.theme.options.style = "storm"
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -165,6 +159,53 @@ lvim.builtin.treesitter.highlight.enable = true
 -- Additional Plugins
 lvim.plugins = {
     {"lunarvim/colorschemes"},
+    {
+      "echasnovski/mini.map",
+      branch = "stable",
+      config = function()
+        require('mini.map').setup()
+        local map = require('mini.map')
+        map.setup({
+          integrations = {
+            map.gen_integration.builtin_search(),
+            map.gen_integration.diagnostic({
+              error = 'DiagnosticFloatingError',
+              warn  = 'DiagnosticFloatingWarn',
+              info  = 'DiagnosticFloatingInfo',
+              hint  = 'DiagnosticFloatingHint',
+            }),
+          },
+          symbols = {
+            encode = map.gen_encode_symbols.dot('4x2'),
+          },
+          window = {
+            side = 'right',
+            width = 20, -- set to 1 for a pure scrollbar :)
+            winblend = 15,
+            show_integration_count = false,
+          },
+        })
+      end
+    },
+    {
+      "tpope/vim-fugitive",
+      cmd = {
+        "G",
+        "Git",
+        "Gdiffsplit",
+        "Gread",
+        "Gwrite",
+        "Ggrep",
+        "GMove",
+        "GDelete",
+        "GBrowse",
+        "GRemove",
+        "GRename",
+        "Glgrep",
+        "Gedit"
+      },
+      ft = {"fugitive"}
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
