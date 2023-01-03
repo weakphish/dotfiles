@@ -2,7 +2,7 @@
 My dots.
 Run `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: A mix of JetBrains and Neovim for different usecases.
+**Current editor**: A mix of JetBrains and (Lunar) Neovim for different usecases.
 
 **Shell:** Zsh. See .zshrc - it's just stock oh-my-zsh with the prompt switched to Powerlevel10k.
 
