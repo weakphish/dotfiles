@@ -12,12 +12,13 @@ return require('packer').startup(function()
         'nvim-telescope/telescope-ui-select.nvim' 
     } 
     use {                                       -- Nicer installation for LSP servers
-    'junnplus/lsp-setup.nvim',
-    requires = {
-        'neovim/nvim-lspconfig',
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-    }
+        'neovim/nvim-lspconfig',                -- Configurations for Nvim LSP
+
+        requires = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        }
 }
     use 'hrsh7th/nvim-cmp'                      -- Autocompletion plugin
     use 'hrsh7th/vim-vsnip'                     -- Dependency for above features
@@ -50,6 +51,7 @@ return require('packer').startup(function()
       },
       tag = 'nightly'                           -- optional, updated every week. (see issue #1193)
     }
+    use "lunarvim/darkplus.nvim"                -- VS Code in Vim
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr
