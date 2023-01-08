@@ -183,6 +183,10 @@ lvim.plugins = {
         },
         ft = { "fugitive" }
     },
+    {
+        'stevearc/aerial.nvim',
+        config = function() require('aerial').setup() end
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
