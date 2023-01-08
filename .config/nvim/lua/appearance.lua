@@ -17,7 +17,7 @@ vim.g.sonokai_style = "shusia"
 
 -- Set colorscheme
 vim.cmd [[
-  colorscheme darkplus
+  colorscheme gruvbox-material
 ]]
 
 -- Add extra Go highlights
