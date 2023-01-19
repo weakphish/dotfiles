@@ -2,8 +2,8 @@
 My dots.
 Run `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: A mix between Helix and VS Code depending on my mood.
-
+**Current editor**: A mix of VS Code and JetBrains tools (GoLand and PyCharm, usually)
+ 
 **Shell:** Zsh. See .zshrc - it's just stock oh-my-zsh with the prompt switched to Powerlevel10k.
 
 **Terminal:** iTerm2, see `itermcolors` for the colorschemes I like.
