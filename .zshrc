@@ -112,3 +112,5 @@ export GIT_EDITOR=hx
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /Users/weakphish/.config/broot/launcher/bash/br
