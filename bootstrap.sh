@@ -16,5 +16,6 @@ chsh -s /opt/homebrew/bin/fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 brew install fzf
+brew install ripgrep
 brew install helix
 brew install tldr
