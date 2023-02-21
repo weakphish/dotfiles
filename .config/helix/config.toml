@@ -1,4 +1,4 @@
-theme = "everforest_dark"
+theme = "sonokai"
 
 [editor]
 line-number = "relative"
