@@ -1,5 +1,7 @@
 -- Wild menu
-vim.o.wildmenu = true
+vim.o.wildchar = '<tab>'
+vim.o.wildmode = 'list:longest,list:full' --C-d: possible completions, C-n|p cycle results
+
 
 -- Tabs
 vim.o.tabstop = 4

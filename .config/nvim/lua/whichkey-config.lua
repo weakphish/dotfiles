@@ -85,10 +85,16 @@ which_key.register({
     h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     r = { "<cmd>Telescope lsp_references<cr>", "Symbol References" },
-    r = { "<cmd>Telescope registers<cr>", "Registers" },
+    x = { "<cmd>Telescope registers<cr>", "Registers" },
     t = { "<cmd>TodoTelescope<cr>", "TODO" },
   }
 }, {prefix = "<leader>"})
+
+-- BUFFER Group
+which_key.register({
+  ['<leader>bn'] = {'<cmd>bnext<cr>', "Next Buffer"},
+  ['<leader>bb'] = {'<cmd>bprev<cr>', "Previous Buffer"},
+}, {prefix="<leader>"})
 
 -- CODE Group
 which_key.register({

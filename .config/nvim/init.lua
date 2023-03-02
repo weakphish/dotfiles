@@ -14,6 +14,7 @@ require('plugins')
 -- Editor appearance / behavior
 require('appearance')
 require('editor')
+require("bufferline").setup{}
 -- Plugin Configurations
 require('aerial-config')
 require('indent-config')
