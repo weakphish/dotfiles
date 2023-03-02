@@ -51,7 +51,6 @@ return require('packer').startup(function()
       },
       tag = 'nightly'                           -- optional, updated every week. (see issue #1193)
     }
-    use "lunarvim/darkplus.nvim"                -- VS Code in Vim
     use 'sainnhe/gruvbox-material'              -- A refresh on a classic
     use 'sainnhe/sonokai'                       -- Monokai Pro, but free
     use 'nvim-lualine/lualine.nvim'             -- Statusbar go brrrr

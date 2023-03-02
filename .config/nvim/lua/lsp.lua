@@ -10,9 +10,11 @@ require'lspconfig'.gopls.setup{
 require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
+
 require('lspconfig')['tsserver'].setup{
     flags = lsp_flags,
 }
+
 require('lspconfig')['rust_analyzer'].setup{
     flags = lsp_flags,
     -- Server-specific settings...
