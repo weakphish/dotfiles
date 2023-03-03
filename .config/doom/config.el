@@ -76,4 +76,5 @@
 ;; they are implemented.
 
 ;; Group centaur tabs by project
-(centaur-tabs-group-by-projectile-project)
+(after! centaur-tabs
+        (centaur-tabs-group-by-projectile-project))
