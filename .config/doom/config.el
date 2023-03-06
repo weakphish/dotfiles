@@ -165,7 +165,7 @@
 ;; - The footer (github link)
 (setq +doom-dashboard-functions
       (list #'doom-dashboard-widget-banner
-            #'doom-dashboard-widget-shortmenu
+            ;; #'doom-dashboard-widget-shortmenu
             #'+doom-dashboard-benchmark-line
             #'splash-phrase-dashboard-insert))
 ;; At this point there are just a few minor tweaks I’d still like to make to the dashboard.
