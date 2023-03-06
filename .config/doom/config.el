@@ -81,6 +81,15 @@
 (after! centaur-tabs
         (centaur-tabs-group-by-projectile-project))
 
+;; FIXME Use doom-serif-font for Org mode
+;; reference: https://emacs.stackexchange.com/questions/3038/using-a-different-font-for-each-major-mode
+;;(defun org-mode-use-serif-font ()
+;;   "Set font to a variable width (proportional) fonts in current buffer"
+;;   (interactive)
+;;   (setq buffer-face-mode-face 'doom-serif-font)
+;;   (buffer-face-mode))
+;;(add-hook 'org-mode-hook 'org-mode-use-serif-font)
+
 ;; Add a fortune to our splash screen. Adapted from Tecosaur's literate config.
 ;; https://github.com/tecosaur/emacs-config/blob/master/config.org#org-development-profile
 (defun splash-phrase-dashboard-formatted ()
@@ -152,11 +161,11 @@
 ;; - The “widget banner” (splash image)
 ;; - The benchmark line
 ;; - A random phrase
-;; This gets rid of two segments I’m not particularly interested in seeing
-;; - The shortmenu
+;; This gets rid of segment(s) I’m not particularly interested in seeing
 ;; - The footer (github link)
 (setq +doom-dashboard-functions
       (list #'doom-dashboard-widget-banner
+            #'doom-dashboard-widget-shortmenu
             #'+doom-dashboard-benchmark-line
             #'splash-phrase-dashboard-insert))
 ;; At this point there are just a few minor tweaks I’d still like to make to the dashboard.
