@@ -11,10 +11,9 @@ vim.g.mapleader = " "
 -- Load plugins
 require('packer_setup')
 require('plugins')
--- Editor appearance / behavior
-require('appearance')
-require('editor')
-require("bufferline").setup{}
+-- Completion
+require('lsp')
+require('cmp-config')
 -- Plugin Configurations
 require('aerial-config')
 require('indent-config')
@@ -23,6 +22,8 @@ require('null-ls-config')
 require('telescope-config')
 require('tree-config')
 require('whichkey-config')
--- Completion
-require('lsp')
-require('cmp-config')
+-- Editor appearance / behavior
+require('appearance')
+require('editor')
+require("bufferline").setup{}
+

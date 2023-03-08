@@ -92,8 +92,11 @@ which_key.register({
 
 -- BUFFER Group
 which_key.register({
-  ['<leader>bn'] = {'<cmd>bnext<cr>', "Next Buffer"},
-  ['<leader>bb'] = {'<cmd>bprev<cr>', "Previous Buffer"},
+  b = {
+    name = "Buffer",
+    n = {'<cmd>bnext<cr>', "Next Buffer"},
+    b = {'<cmd>bprev<cr>', "Previous Buffer"},
+  }
 }, {prefix="<leader>"})
 
 -- CODE Group
@@ -112,18 +115,22 @@ which_key.register({
 
 -- GOTO Group
 which_key.register({
-  ["<leader>g"] = { name = "+Go to" },
-  ['<leader>gD']= {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
-  ['<leader>gd'] = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+  g = {
+    D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
+    g = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+  }, {prefix = "<leader>"}
 })
 
---Toggle 
+--TOGGLE group
 which_key.register({
-  ["<leader>t"] = { name = "+Toggle" },
-  ['<leader>tb']= {'<cmd>AerialToggle<cr>', "Aerial"},
-  ['<leader>tn'] = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
-  ['<leader>tg'] = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
-})
+  t = {
+    name = "Toggle",
+    b = {'<cmd>AerialToggle<cr>', "Aerial"},
+    n = {'<cmd>NvimTreeToggle<cr>', "NvimTree"},
+    g = {'<cmd>Gitsigns toggle_current_line_blame<cr>', "Git Blame"},
+    t = {"<cmd>term<cr>", "Terminal"}
+  }
+}, {prefix = "<leader>"})
 
 -- Git Group (source control)
 which_key.register({
