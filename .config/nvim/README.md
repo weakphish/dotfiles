@@ -1,50 +1,130 @@
-# WeakVim
-I _love_ Neovim. However, I think many parts of it could be easier to configure or understand, especially when it comes to LSPs. There's a ton of plugins that fill the gap, but some of them are sparse in documentation. There's also distributions like LunarVim that attempt to add a Doom Emacs-like layer above.
+# kickstart.nvim
 
-My approach is a bit different, simply giving an opinionated, modular, and documented configuration that an interested user can easily modify to their needs. It makes use of the most helpful plugins I've encountered to create the best experience I could muster while retaining an air of simplicity. 
+### Introduction
 
-I hope this is helpful to someone out there!
+A starting point for Neovim that is:
 
-# Contents
-All lua files in `lua/` are pulled into the `init.lua` which I tried to keep fairly minimal, mostly just bootstrapping packer and then pulling in each 'module' I've written.
+* Small
+* Single-file (with examples of moving to multi-file)
+* Documented
+* Modular
 
-To get started, clone the contents here to your `~/.config/nvim/` and run `:PackerInstall`. You can also use the `install.sh` to move the files. 
+This repo is meant to be used as by **YOU** to begin your Neovim journey; remove the things you don't use and add what you miss.
 
-Here's a brief description of each file and it's purpose.
+Distribution Alternatives:
+- [LazyVim](https://www.lazyvim.org/): A delightful distribution maintained by @folke (the author of lazy.nvim, the package manager used here)
 
-- `appearance.lua`: Configure the appearance of Neovim, mostly theming and syntax highlighting configuration.
-- `editor.lua`: General editor behavior. Pretty brief, kind of a catch-all for stuff that doesn't fit elsewhere.
-- `plugins.lua`: Declares my plugins for packer.
-- `*-config.lua`: Configuration for different plugins.
+### Installation
 
-## Telescope vs. LSP
-You may notice that the bindings for some LSP features are defined in `telescope-config` rather than
-`completion` and use Telescope to call them. This is because Telescope provides some nice menus 
-for various LSP features such as `show references`. Therefore, I decided to split off any LSP 
-commands that provide a 'menu' to be handled by Telescope, since it generally looks nice than a 
-buffer pop-up at the bottom.
+Kickstart.nvim targets *only* the latest ['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest ['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim. If you are experiencing issues, please make sure you have the latest versions.
 
-# Default Bindings
-Most bindings use the default leader key, SPC. A major factor in selecting bindings was to try and keep
-them mnemonic.
+* Backup your previous configuration
+* (Recommended) Fork this repo (so that you have your own copy that you can modify).
+* Clone the kickstart repo into `$HOME/.config/nvim/` (Linux/Mac) or `~/AppData/Local/nvim/` (Windows)
+  * If you don't want to include it as a git repo, you can just clone it and then move the files to this location
+* Start Neovim (`nvim`) and allow `lazy.nvim` to complete installation.
+* Restart Neovim
+* **You're ready to go!**
 
-## Telescope
-- `<leader>ff` to open a file finder.
-- `<leader>fg` to open a fuzzy finder (ripgrep).
-- `<leader>fb` to open a buffer list.
-- `<leader>fs` to search the document's symbols.
-- `<leader>fh` to open a searchable help menu.
-- `<leader>gr` to search references to the symbol under the cursor.
+Additional system requirements:
+- Make sure to review the readmes of the plugins if you are experiencing errors. In particular:
+  - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
+- See as well [Windows Installation](#Windows-Installation)
 
-## Aerial (file outline)
-- `<leader>tb` to toggle Aerial outline of symbols.
+### Configuration And Extension
 
-## LSP / Completion
-My configuration uses the default `nvim-lsp-setup` bindings. Copied below:
+* Inside of your fork, feel free to modify any file you like! It's your fork!
+* Then there are two primary configuration options available:
+  * Include the `lua/kickstart/plugins/*` files in your configuration.
+  * Add new configuration in `lua/custom/plugins/*` files, which will be auto sourced using `lazy.nvim`
+    * NOTE: To enable this, you need to uncomment `{ import = 'custom.plugins' }` in your `init.lua`
 
-- `<leader>k` = Show pop-up of symbol under the cursor (generally, documentation).
-- `<leader>gd` = Go to symbol definition.
-- `<leader>gD` = Go to symbol declaration.
-- `<leader>rn` = Rename symbol.
-- `<leader>ca` = Show code actions in a hover window.
-- `<leader>fo` = Format selection.
+You can also merge updates/changes from the repo back into your fork, to keep up-to-date with any changes for the default configuration
+
+#### Example: Adding an autopairs plugin
+
+In the file: `lua/custom/plugins/autopairs.lua`, add:
+
+```lua
+-- File: lua/custom/plugins/autopairs.lua
+
+return {
+  "windwp/nvim-autopairs",
+  config = function()
+    require("nvim-autopairs").setup {}
+  end,
+}
+```
+
+
+This will automatically install `nvim-autopairs` and enable it on startup. For more information, see documentation for [lazy.nvim](https://github.com/folke/lazy.nvim).
+
+#### Example: Adding a file tree plugin
+
+In the file: `lua/custom/plugins/filetree.lua`, add:
+
+```lua
+-- Unless you are still migrating, remove the deprecated commands from v1.x
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  version = "*",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
+  },
+  config = function ()
+    require('neo-tree').setup {}
+  end,
+}
+```
+
+This will install the tree plugin and add the command `:NeoTree` for you. You can explore the documentation at [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) for more information.
+
+#### Example: Adding a file to change default options
+
+To change default options, you can add a file in the `/after/plugin/` folder (see `:help load-plugins`) to include your own options, keymaps, autogroups, and more. The following is an example `defaults.lua` file (located at `$HOME/.config/nvim/after/plugin/defaults.lua`).
+
+```lua
+vim.opt.relativenumber = true
+
+vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+```
+
+### Contribution
+
+Pull-requests are welcome. The goal of this repo is not to create a Neovim configuration framework, but to offer a starting template that shows, by example, available features in Neovim. Some things that will not be included:
+
+* Custom language server configuration (null-ls templates)
+* Theming beyond a default colorscheme necessary for LSP highlight groups
+
+Each PR, especially those which increase the line count, should have a description as to why the PR is necessary.
+
+### FAQ
+
+* What should I do if I already have a pre-existing neovim configuration?
+  * You should back it up, then delete all files associated with it.
+  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
+  * You may also want to look at the [migration guide for lazy.nvim](https://github.com/folke/lazy.nvim#-migration-guide)
+* What if I want to "uninstall" this configuration:
+  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
+* Are there any cool videos about this plugin?
+  * Current iteration of kickstart (coming soon)
+  * Here is one about the previous iteration of kickstart: [video introduction to Kickstart.nvim](https://youtu.be/stqUbv-5u2s).
+
+### Windows Installation
+
+Installation may require installing build tools, and updating the run command for `telescope-fzf-native`
+
+See `telescope-fzf-native` documention for [more details](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation)
+
+This requires:
+
+- Install CMake, and the Microsoft C++ Build Tools on Windows
+
+```lua
+{'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+```
+
