@@ -59,7 +59,7 @@ require('lazy').setup({
   },
 
   -- Neotree - file tree browser
-  { 
+  {
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
       "nvim-lua/plenary.nvim",
