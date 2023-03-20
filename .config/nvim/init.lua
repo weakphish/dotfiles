@@ -223,7 +223,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- Git Toggle / Push
 vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = '[G]it' })
-vim.keymap.set('n', '<leader>gp', '<cmd>Git<CR>', { desc = '[G]it [P]ush' })
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = '[G]it [P]ush' })
 
 -- Toggle NeoTree
 vim.keymap.set('n', '<leader>tn', '<cmd>NeoTreeShowToggle<CR>', { desc = '[T]oggle [N]eotree' })
