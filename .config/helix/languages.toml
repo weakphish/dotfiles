@@ -50,7 +50,7 @@ args = { attachCommands = [ "platform select remote-gdb-server", "platform conne
 
 [[grammar]]
 name = "rust"
-source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "a360da0a29a19c281d08295a35ecd0544d2da211" }
+source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "fbf9e507d09d8b3c0bb9dfc4d46c31039a47dc4a" }
 
 [[language]]
 name = "toml"
