@@ -61,8 +61,7 @@ require('lazy').setup({
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
 
-  -- Neotree - file tree browser
-  {
+  { -- Neotree - file tree browser
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -71,8 +70,7 @@ require('lazy').setup({
     }
   },
 
-  -- Document symbols
-  {
+  { -- Document symbols
     'stevearc/aerial.nvim',
   },
 
@@ -92,11 +90,19 @@ require('lazy').setup({
     },
   },
 
-  { -- Theme
-    'sainnhe/gruvbox-material',
+  -- { -- Theme
+  --   'sainnhe/gruvbox-material',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'gruvbox-material'
+  --   end,
+  -- },
+
+  { -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruvbox-material'
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 
@@ -106,7 +112,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox-material',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -124,7 +130,15 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      toggler = {
+        line = '<leader>cc',
+        block = '<leader>cb'
+      }
+    }
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
