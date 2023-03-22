@@ -167,7 +167,7 @@ require('lazy').setup({
   require 'custom.plugins.debug',
 }, {})
 
--- [[ Setting options ]]
+-- [[ Setting general options ]]
 -- See `:help vim.o`
 
 -- Set highlight on search
@@ -179,11 +179,6 @@ vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -219,13 +214,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Git Toggle / Push
-vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = '[G]it' })
-vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = '[G]it [P]ush' })
-
--- Toggle NeoTree
-vim.keymap.set('n', '<leader>tn', '<cmd>NeoTreeShowToggle<CR>', { desc = '[T]oggle [N]eotree' })
-
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -236,6 +224,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- [[ Git ]]
+-- Git Toggle / Push
+vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = '[G]it' })
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = '[G]it [P]ush' })
+
+-- [[ NeoTree ]]
+-- Toggle NeoTree
+vim.keymap.set('n', '<leader>tn', '<cmd>NeoTreeShowToggle<CR>', { desc = '[T]oggle [N]eotree' })
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -358,7 +355,7 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- Diagnostic keymaps
+-- [[ Diagnostic keymaps ]]
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
@@ -411,7 +408,6 @@ end
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
@@ -428,18 +424,6 @@ local servers = {
     },
   },
 }
-
--- [[ Null LS setup ]]
-local null_ls = require("null-ls")
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.autopep8,
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.completion.spell,
-  },
-})
 
 -- Setup neovim lua configuration
 require('neodev').setup()
@@ -512,6 +496,18 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- Null LS setup (part of LSP block)
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.autopep8,
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.completion.spell,
+  },
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
