@@ -19,3 +19,12 @@ brew install fzf
 brew install ripgrep
 brew install helix
 brew install tldr
+
+# doom emacs
+brew tap railwaycat/emacsmacport
+brew install --cask emacs-mac
+
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
+echo "fish_add_path ~/.emacs.d/bin/" | fish
