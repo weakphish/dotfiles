@@ -118,6 +118,11 @@ require('lazy').setup({
     },
   },
 
+  {
+    'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -300,6 +305,11 @@ require("lualine").setup({
   }
 })
 
+-- [[ Setup Bufferline ]]
+require("bufferline").setup {}
+vim.keymap.set('n', '<leader>bn', '<cmd>bn<CR>', { desc = "[B]uffer [N]ext" })
+vim.keymap.set('n', '<leader>bb', '<cmd>bp<CR>', { desc = "[B]uffer [B]ack" })
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
@@ -370,7 +380,6 @@ require('nvim-treesitter.configs').setup {
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- [[ LSP settings. ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -398,6 +407,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
   nmap('<leader>ws', require('telescope.builtin').lsp_document_symbols, '[W]orkspace Document [S]ymbols')
   nmap('<leader>wS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('<leader>wd', require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics list")
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
