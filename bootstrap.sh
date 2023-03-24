@@ -19,6 +19,7 @@ brew install fzf
 brew install ripgrep
 brew install helix
 brew install tldr
+brew install lazygit
 
 # doom emacs
 brew tap railwaycat/emacsmacport
