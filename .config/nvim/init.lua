@@ -29,8 +29,7 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
+  'kdheepak/lazygit.nvim',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -240,9 +239,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Git ]]
--- Git Toggle / Push
-vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = '[G]it' })
-vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = '[G]it [P]ush' })
+vim.keymap.set('n', '<leader>G', '<cmd>LazyGit<CR>', { desc = 'Lazy[G]it' })
 
 -- [[ NeoTree ]]
 -- Toggle NeoTree
