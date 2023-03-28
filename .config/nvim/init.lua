@@ -36,7 +36,8 @@ require('lazy').setup({
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
-  { -- LSP Configuration & Plugins
+  {
+    -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
@@ -55,12 +56,14 @@ require('lazy').setup({
   -- Let non-lsp stuff hook into LSP client (formatting, mostly)
   { 'jose-elias-alvarez/null-ls.nvim' },
 
-  { -- Autocompletion
+  {
+    -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
 
-  { -- Neotree - file tree browser
+  {
+    -- Neotree - file tree browser
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -74,8 +77,9 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-  { -- Adds git releated signs to the gutter, as well as utilities for managing changes
+  { 'folke/which-key.nvim',           opts = {} },
+  {
+    -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       -- See `:help gitsigns.txt`
@@ -97,7 +101,8 @@ require('lazy').setup({
   --   end,
   -- },
 
-  { -- Theme inspired by Atom
+  {
+    -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
@@ -105,7 +110,8 @@ require('lazy').setup({
     end,
   },
 
-  { -- Set lualine as statusline
+  {
+    -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
@@ -123,7 +129,8 @@ require('lazy').setup({
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
 
-  { -- Add indentation guides even on blank lines
+  {
+    -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
@@ -164,7 +171,8 @@ require('lazy').setup({
     "nvim-telescope/telescope-dap.nvim"
   },
 
-  { -- Highlight, edit, and navigate code
+  {
+    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -401,10 +409,9 @@ local on_attach = function(_, bufnr)
   nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode Re[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('<leader>gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>ws', require('telescope.builtin').lsp_document_symbols, '[W]orkspace Document [S]ymbols')
   nmap('<leader>wS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
   nmap('<leader>wd', require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics list")
@@ -437,7 +444,6 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
