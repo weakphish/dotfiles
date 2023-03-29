@@ -21,7 +21,7 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name", "version-control"]
+center = ["file-name"]
 right = ["diagnostics", "selections", "position-percentage", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
