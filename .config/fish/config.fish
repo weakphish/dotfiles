@@ -3,3 +3,4 @@ if status is-interactive
 end
 
 set -Ux EDITOR hx
+alias lg lazygit
