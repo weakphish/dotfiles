@@ -28,4 +28,4 @@ brew install --cask emacs-mac
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
-echo "fish_add_path ~/.emacs.d/bin/" | fish
+echo "fish_add_path -U ~/.emacs.d/bin/" | fish
