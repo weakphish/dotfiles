@@ -9,6 +9,10 @@ cursorline = true
 color-modes = true
 bufferline = "multiple"
 
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
 [editor.indent-guides]
 render = true
 character = "|"
@@ -21,7 +25,7 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name"]
+center = ["file-name", "version-control"]
 right = ["diagnostics", "selections", "position-percentage", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
