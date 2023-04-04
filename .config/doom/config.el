@@ -23,8 +23,8 @@
 ;;
 (setq doom-font (font-spec :family "Iosevka" :size 12 :weight 'regular)
       doom-big-font (font-spec :family "Iosevka" :size 26)
-      doom-variable-pitch-font (font-spec :family "SF Pro" :size 13)
-      doom-serif-font (font-spec :family "New York" :size 13 :weight 'light))
+      doom-variable-pitch-font (font-spec :family "ETBembo" :size 13 :weight 'light))
+      ;; doom-serif-font (font-spec :family "New York" :size 13 :weight 'light))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -81,14 +81,11 @@
 (after! centaur-tabs
   (centaur-tabs-group-by-projectile-project))
 
-;; FIXME Use doom-serif-font for Org mode
-;; reference: https://emacs.stackexchange.com/questions/3038/using-a-different-font-for-each-major-mode
-;;(defun org-mode-use-serif-font ()
-;;   "Set font to a variable width (proportional) fonts in current buffer"
-;;   (interactive)
-;;   (setq buffer-face-mode-face 'doom-serif-font)
-;;   (buffer-face-mode))
-;;(add-hook 'org-mode-hook 'org-mode-use-serif-font)
+;; Beautify Org Mode
+(after! org
+  (setq org-hide-emphasis-markers t)
+  (add-hook 'org-mode-hook 'writeroom-mode)
+  )
 
 ;; Messing around with fortune
 (defun fortune ()
@@ -106,7 +103,7 @@
 ;; width back to the actual window width.
 ;; Fixes: https://github.com/jaypei/emacs-neotree/issues/262
 (after! neotree
-    (setq neo-window-fixed-size nil))
+  (setq neo-window-fixed-size nil))
 (after! neotree
   '(add-to-list 'window-size-change-functions
     (lambda (frame)
