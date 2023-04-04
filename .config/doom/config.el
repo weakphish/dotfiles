@@ -23,8 +23,8 @@
 ;;
 (setq doom-font (font-spec :family "Iosevka" :size 12 :weight 'regular)
       doom-big-font (font-spec :family "Iosevka" :size 26)
-      doom-variable-pitch-font (font-spec :family "ETBembo" :size 13 :weight 'light))
-      ;; doom-serif-font (font-spec :family "New York" :size 13 :weight 'light))
+      doom-variable-pitch-font (font-spec :family "SF Pro" :size 13 :weight 'regular)
+      doom-serif-font (font-spec :family "New York" :size 13 :weight 'light))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -85,6 +85,7 @@
 (after! org
   (setq org-hide-emphasis-markers t)
   (add-hook 'org-mode-hook 'writeroom-mode)
+  (add-hook 'org-agenda-mode-hook 'writeroom-mode)
   )
 
 ;; Messing around with fortune
