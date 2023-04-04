@@ -79,7 +79,7 @@
 
 ;; Group centaur tabs by project
 (after! centaur-tabs
-        (centaur-tabs-group-by-projectile-project))
+  (centaur-tabs-group-by-projectile-project))
 
 ;; FIXME Use doom-serif-font for Org mode
 ;; reference: https://emacs.stackexchange.com/questions/3038/using-a-different-font-for-each-major-mode
@@ -89,3 +89,27 @@
 ;;   (setq buffer-face-mode-face 'doom-serif-font)
 ;;   (buffer-face-mode))
 ;;(add-hook 'org-mode-hook 'org-mode-use-serif-font)
+
+;; Messing around with fortune
+(defun fortune ()
+  (interactive)
+  (message "%s"
+           (shell-command-to-string "fortune")))
+
+(map!
+ :leader
+ :desc "Tell a fortune."
+ "+" #'fortune)
+
+;; Set the neo-window-width to the current width of the
+;; neotree window, to trick neotree into resetting the
+;; width back to the actual window width.
+;; Fixes: https://github.com/jaypei/emacs-neotree/issues/262
+(after! neotree
+    (setq neo-window-fixed-size nil))
+(after! neotree
+  '(add-to-list 'window-size-change-functions
+    (lambda (frame)
+      (let ((neo-window (neo-global--get-window)))
+        (unless (null neo-window)
+          (setq neo-window-width (window-width neo-window)))))))
