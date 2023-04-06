@@ -77,7 +77,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',           opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -178,11 +178,21 @@ require('lazy').setup({
     'ckipp01/nvim-jenkinsfile-linter', dependencies = { "nvim-lua/plenary.nvim" }
   },
 
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  require 'custom.plugins.autoformat',
-  require 'custom.plugins.debug',
+  { -- Debugging??? In _MY_ Neovim??
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      -- Creates a beautiful debugger UI
+      'rcarriga/nvim-dap-ui',
+
+      -- Installs the debug adapters for you
+      'williamboman/mason.nvim',
+      'jay-babu/mason-nvim-dap.nvim',
+
+      -- Add your own debuggers here
+      'leoluz/nvim-dap-go',
+      'mfussenegger/nvim-dap-python',
+    },
+  },
 }, {})
 
 -- [[ Setting general options ]]
@@ -223,7 +233,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -243,13 +252,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[ Git ]]
-vim.keymap.set('n', '<leader>G', '<cmd>LazyGit<CR>', { desc = 'Lazy[G]it' })
-
--- [[ NeoTree ]]
--- Toggle NeoTree
-vim.keymap.set('n', '<leader>tn', '<cmd>NeoTreeShowToggle<CR>', { desc = '[T]oggle [N]eotree' })
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -268,35 +270,8 @@ pcall(require('telescope').load_extension, 'fzf')
 -- Enable telescope dap if installed
 pcall(require('telescope').load_extension, 'dap')
 
--- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
-vim.keymap.set('n', '<leader>B', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = 'Fuzzily search in current buffer' })
-
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
-
 -- [[ Configure Aerial ]]
-require('aerial').setup({
-  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
-  on_attach = function(bufnr)
-    -- Jump forwards/backwards with '{' and '}'
-    vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
-    vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
-  end
-})
--- You probably also want to set a keymap to toggle aerial
-vim.keymap.set('n', '<leader>ta', '<cmd>AerialToggle!<CR>', { desc = "[T]oggle [A]erial" })
+require('aerial').setup()
 
 -- [[ Configure LuaLine ]]
 require("lualine").setup({
@@ -304,11 +279,6 @@ require("lualine").setup({
     lualine_x = { "aerial" },
   }
 })
-
--- [[ Setup Bufferline ]]
-require("bufferline").setup {}
-vim.keymap.set('n', '<leader>bn', '<cmd>bn<CR>', { desc = "[B]uffer [N]ext" })
-vim.keymap.set('n', '<leader>bb', '<cmd>bp<CR>', { desc = "[B]uffer [B]ack" })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -376,50 +346,9 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- [[ Diagnostic keymaps ]]
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-
 -- [[ LSP settings. ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
-  -- to define small helper and utility functions so you don't have to repeat yourself
-  -- many times.
-  --
-  -- In this case, we create a function that lets us more easily define mappings specific
-  -- for LSP related items. It sets the mode, buffer and description for us each time.
-  local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
-
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-  end
-
-  nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode Re[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-  nmap('<leader>gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-  nmap('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('<leader>gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>ws', require('telescope.builtin').lsp_document_symbols, '[W]orkspace Document [S]ymbols')
-  nmap('<leader>wS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-  nmap('<leader>wd', require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics list")
-
-  -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-  -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-  nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, '[W]orkspace [L]ist Folders')
-
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
@@ -530,3 +459,125 @@ null_ls.setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- [[ DAP ]]
+local dap = require 'dap'
+local dapui = require 'dapui'
+
+require('mason-nvim-dap').setup {
+  -- Makes a best effort to setup the various debuggers with
+  -- reasonable debug configurations
+  automatic_setup = true,
+
+  -- You'll need to check that you have the required things installed
+  -- online, please don't ask me how to install them :)
+  ensure_installed = {
+    -- Update this to ensure that you have the debuggers for the langs you want
+    'delve',
+    'debugpy',
+  },
+}
+
+-- You can provide additional configuration to the handlers,
+-- see mason-nvim-dap README for more information
+require('mason-nvim-dap').setup_handlers()
+
+-- Dap UI setup
+-- For more information, see |:help nvim-dap-ui|
+dapui.setup {
+  -- Set icons to characters that are more likely to work in every terminal.
+  --    Feel free to remove or use ones that you like more! :)
+  --    Don't feel like these are good choices.
+  icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+  controls = {
+    icons = {
+      pause = '⏸',
+      play = '▶',
+      step_into = '⏎',
+      step_over = '⏭',
+      step_out = '⏮',
+      step_back = 'b',
+      run_last = '▶▶',
+      terminate = '⏹',
+    },
+  },
+}
+
+dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+-- Install golang specific config
+require('dap-go').setup()
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+-- [[ Keybindings ]]
+-- See `:help K` for why this keymap
+vim.keymap.set({ "n" }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+vim.keymap.set({ "n" }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
+
+local wk = require("which-key")
+-- As an example, we will create the following mappings:
+wk.register({
+  b = {
+    name = "Buffer",
+    b = { require('telescope.builtin').buffers, "Find Buffer" },
+    n = { "<cmd>bn<CR>", "Next Buffer" },
+    p = { "<cmd>bp<CR>", "Prev Buffer" }
+  },
+
+  c = {
+    name = "Code",
+    a = { vim.lsp.buf.code_action, 'Code Action' },
+    d = { vim.lsp.buf.definition, "Go To Definition" },
+    D = { vim.lsp.buf.declaration, "Go to Declaration" },
+    i = { vim.lsp.buf.implementation, "Go to Implementation" },
+    f = { "<cmd>Format<CR>", "Format" }, -- We defined this function above
+    r = { vim.lsp.buf.rename, 'Code Rename' },
+    R = { require('telescope.builtin').lsp_references, "Go to References" },
+  },
+
+  d = {
+    name = "Debug",
+    b = { dap.toggle_breakpoint, "Toggle breakpoint" },
+    B = { function() dap.set_breakpoint(vim.fn.input '[B]reakpoint condition: ') end,
+      "Breakpoint condition" },
+    c = { dap.continue, "Continue" },
+    i = { dap.step_into, "Step into" },
+    o = { dap.step_over, "Step over" },
+    u = { dap.step_out, "Step up (out)" },
+  },
+
+  f = {
+    name = "File",
+    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    r = { "<cmd>Telejcope oldfiles<cr>", "Open Recent File" },
+  },
+
+  g = {
+    name = "Git",
+    g = { "<cmd>LazyGit<CR>", "LazyGit" }
+  },
+
+  s = {
+    name = "Search",
+    b = { require('telescope.builtin').current_buffer_fuzzy_find, "Fuzzily search current buffer" },
+    d = { require('telescope.builtin').diagnostics, 'Search Diagnostics' },
+    g = { require('telescope.builtin').live_grep, "Search with Grep" },
+    h = { require('telescope.builtin').help_tags, 'Search Help' },
+    s = { require('telescope.builtin').lsp_document_symbols, "Workspace Document Symbols" },
+    w = { require('telescope.builtin').grep_string, 'Search current Word' },
+  },
+
+  t = {
+    name = "Toggle",
+    a = { "<cmd>AerialToggle<CR>", "Aerial" },
+    n = { "<cmd>NeoTreeShowToggle<CR>", "NeoTree" },
+  },
+
+  w = {
+    name = "Workspace",
+    d = { require('telescope.builtin').diagnostics, "Workspace Diagnostics" },
+    s = { require('telescope.builtin').lsp_dynamic_workspace_symbols, "Workspace Symbols" },
+  }
+}, { prefix = "<leader>" })
