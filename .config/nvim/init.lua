@@ -551,7 +551,7 @@ wk.register({
   f = {
     name = "File",
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    r = { "<cmd>Telejcope oldfiles<cr>", "Open Recent File" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
   },
 
   g = {
