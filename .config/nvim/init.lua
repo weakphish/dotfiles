@@ -280,7 +280,7 @@ require("lualine").setup({
   }
 })
 
--- [[ Configure Setup ]]
+-- [[ Configure Bufferline ]]
 require("bufferline").setup{}
 
 -- [[ Configure Treesitter ]]
@@ -559,7 +559,8 @@ wk.register({
 
   g = {
     name = "Git",
-    g = { "<cmd>LazyGit<CR>", "LazyGit" }
+    g = { "<cmd>LazyGit<CR>", "LazyGit" },
+    b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Current Line Blame" }
   },
 
   s = {
