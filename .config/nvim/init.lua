@@ -280,6 +280,9 @@ require("lualine").setup({
   }
 })
 
+-- [[ Configure Setup ]]
+require("bufferline").setup{}
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
