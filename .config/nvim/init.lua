@@ -116,11 +116,12 @@ else
     }, ]] 
 
     { -- Gruvbox
-      "ellisonleao/gruvbox.nvim",
+      "sainnhe/gruvbox-material",
       priority = 1000,
       config = function()
-        vim.o.background = "dark" -- or "light" for light mode
-        vim.cmd([[colorscheme gruvbox]])
+        vim.g.gruvbox_material_background = "medium"
+        vim.g.gruvbox_material_foreground = "original"
+        vim.cmd([[colorscheme gruvbox-material]])
       end
     },
 
@@ -131,7 +132,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'gruvbox',
+          theme = 'gruvbox-material',
           component_separators = '|',
           section_separators = '',
         },
