@@ -1,6 +1,22 @@
 if vim.g.vscode then
   -- VSCode extension
 else
+  if vim.g.neovide then
+    vim.o.guifont = "JetBrains Mono:12"
+    vim.g.neovide_input_use_logo = 1            -- enable use of the logo (cmd) key
+    vim.keymap.set('n', '<D-s>', ':w<CR>')      -- Save
+    vim.keymap.set('v', '<D-c>', '"+y')         -- Copy
+    vim.keymap.set('n', '<D-v>', '"+P')         -- Paste normal mode
+    vim.keymap.set('v', '<D-v>', '"+P')         -- Paste visual mode
+    vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
+    vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+    -- Allow clipboard copy paste in neovim
+    vim.g.neovide_input_use_logo = 1
+    vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+  end
   -- ordinary Neovim
   -- Set <space> as the leader key
   -- See `:help mapleader`
@@ -88,16 +104,6 @@ else
     {
       -- Adds git releated signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
-      opts = {
-        -- See `:help gitsigns.txt`
-        signs = {
-          add = { text = '+' },
-          change = { text = '~' },
-          delete = { text = '_' },
-          topdelete = { text = '‾' },
-          changedelete = { text = '~' },
-        },
-      },
     },
 
     {
@@ -186,7 +192,7 @@ else
     },
 
     {
-    -- Debugging??? In _MY_ Neovim??
+      -- Debugging??? In _MY_ Neovim??
       'mfussenegger/nvim-dap',
       dependencies = {
         -- Creates a beautiful debugger UI
@@ -290,6 +296,9 @@ else
 
   -- [[ Configure Bufferline ]]
   require("bufferline").setup {}
+
+  -- [[ Configure Gitsigns ]]
+  require('gitsigns').setup()
 
   -- [[ Configure Treesitter ]]
   -- See `:help nvim-treesitter`
