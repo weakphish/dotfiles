@@ -106,13 +106,22 @@ else
       'lewis6991/gitsigns.nvim',
     },
 
-    {
+    --[[ {
       -- Theme inspired by Atom
       'navarasu/onedark.nvim',
       priority = 1000,
       config = function()
         vim.cmd.colorscheme 'onedark'
       end,
+    }, ]] 
+
+    { -- Gruvbox
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000,
+      config = function()
+        vim.o.background = "dark" -- or "light" for light mode
+        vim.cmd([[colorscheme gruvbox]])
+      end
     },
 
     {
