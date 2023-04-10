@@ -106,35 +106,24 @@ else
       'lewis6991/gitsigns.nvim',
     },
 
-    --[[ {
+    {
       -- Theme inspired by Atom
       'navarasu/onedark.nvim',
       priority = 1000,
       config = function()
         vim.cmd.colorscheme 'onedark'
       end,
-    }, ]] 
-
-    { -- Gruvbox
-      "sainnhe/gruvbox-material",
-      priority = 1000,
-      config = function()
-        vim.g.gruvbox_material_background = "medium"
-        vim.g.gruvbox_material_foreground = "original"
-        vim.cmd([[colorscheme gruvbox-material]])
-      end
     },
 
-    {
-      -- Set lualine as statusline
-      'nvim-lualine/lualine.nvim',
-      -- See `:help lualine.txt`
-      opts = {
-        options = {
-          icons_enabled = false,
-          theme = 'gruvbox-material',
-          component_separators = '|',
-          section_separators = '',
+    { -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = false,
+        theme = 'onedark',
+        component_separators = '|',
+        section_separators = '',
         },
       },
     },
