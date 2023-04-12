@@ -1,6 +1,10 @@
 """ Map leader to space ---------------------
 let mapleader=" "
 
+""" Numbers
+set relativenumber
+set number
+
 """ Plugins  --------------------------------
 set surround
 set multiple-cursors
