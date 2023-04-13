@@ -108,11 +108,11 @@ else
 
     {
       -- -- Theme inspired by Atom
-      -- 'navarasu/onedark.nvim',
-      "ellisonleao/gruvbox.nvim",
+      'navarasu/onedark.nvim',
+      -- "ellisonleao/gruvbox.nvim",
       priority = 1000,
       config = function()
-        vim.cmd.colorscheme 'gruvbox'
+        vim.cmd.colorscheme 'onedark'
       end,
     },
 
@@ -123,7 +123,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'gruvbox',
+          theme = 'onedark',
           component_separators = '|',
           section_separators = '',
         },
