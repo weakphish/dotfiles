@@ -77,17 +77,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Group centaur tabs by project
-(after! centaur-tabs
-  (centaur-tabs-group-by-projectile-project))
-
-;; Beautify Org Mode
-(after! org
-  (setq org-hide-emphasis-markers t)
-  (add-hook 'org-mode-hook 'writeroom-mode)
-  (add-hook 'org-agenda-mode-hook 'writeroom-mode)
-  )
-
 ;; Messing around with fortune
 (defun fortune ()
   (interactive)
