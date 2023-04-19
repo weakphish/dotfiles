@@ -49,4 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+;; Fun
 (package! parrot)
+
+;; Ruff linter for python
+(package! flymake-ruff)

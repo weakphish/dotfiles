@@ -99,3 +99,7 @@
 
 ;; Warn when opening 200mb+ files instead of 10mb
 (setq large-file-warning-threshold 200000000)
+
+;; Load Ruff for python lints
+(require 'flymake-ruff)
+(add-hook 'python-mode-hook #'flymake-ruff-load)
