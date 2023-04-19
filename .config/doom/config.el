@@ -88,4 +88,14 @@
  :desc "Tell a fortune."
  "+" #'fortune)
 
+;; Fun!
 (parrot-mode)
+
+;; Allow 20mb of memory before GC kicks in
+(setq gc-cons-threshold 20000000)
+
+;; Don't make backup files
+(setq make-backup-files nil)
+
+;; Warn when opening 200mb+ files instead of 10mb
+(setq large-file-warning-threshold 200000000)
