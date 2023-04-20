@@ -198,6 +198,12 @@ else
     -- Zen mode for writing markdown
     { "folke/zen-mode.nvim", config = function() require("zen-mode").setup {} end },
 
+    -- Dim inactive portions of code
+    { "folke/twilight.nvim", config = function() require("twilight").setup {} end },
+
+    -- Highlight / search TODO
+    { "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
+
     {
       -- Debugging??? In _MY_ Neovim??
       'mfussenegger/nvim-dap',
@@ -587,6 +593,7 @@ else
       c = { "<cmd>Glow!<CR>", "Close Preview" },
       f = { "<cmd>ZenMode<CR>", "Focus" },
       m = { "<cmd>Glow<CR>", "Open Preview" },
+      t = { "<cmd>Twilight<CR>", "Toggle Dim Inactive Code" },
     },
     s = {
       name = "Search",
@@ -595,6 +602,7 @@ else
       g = { require('telescope.builtin').live_grep, "Search with Grep" },
       h = { require('telescope.builtin').help_tags, 'Search Help' },
       s = { require('telescope.builtin').lsp_document_symbols, "Workspace Document Symbols" },
+      t = { "<cmd>TodoTelescope<CR>", "Search TODO" },
       w = { require('telescope.builtin').grep_string, 'Search current Word' },
     },
     t = {
