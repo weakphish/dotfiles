@@ -192,6 +192,12 @@ else
       'ckipp01/nvim-jenkinsfile-linter', dependencies = { "nvim-lua/plenary.nvim" }
     },
 
+    -- Markdown preview with Glow
+    { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+
+    -- Zen mode for writing markdown
+    { "folke/zen-mode.nvim", config = function() require("zen-mode").setup {} end },
+
     {
       -- Debugging??? In _MY_ Neovim??
       'mfussenegger/nvim-dap',
@@ -575,6 +581,12 @@ else
       name = "Git",
       g = { "<cmd>LazyGit<CR>", "LazyGit" },
       b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Current Line Blame" }
+    },
+    m = {
+      name = "Markdown",
+      c = { "<cmd>Glow!<CR>", "Close Preview" },
+      f = { "<cmd>ZenMode<CR>", "Focus" },
+      m = { "<cmd>Glow<CR>", "Open Preview" },
     },
     s = {
       name = "Search",
