@@ -586,7 +586,9 @@ else
     b = {
       name = 'Buffer',
       b = { require('telescope.builtin').buffers, 'Find Buffer' },
+      d = { '<cmd>bd<CR>', 'Delete Buffer' },
       n = { '<cmd>bn<CR>', 'Next Buffer' },
+      o = { '<cmd>BufferLinePick<CR>', 'Pick Buffer From Line' },
       p = { '<cmd>bp<CR>', 'Prev Buffer' },
     },
     c = {
