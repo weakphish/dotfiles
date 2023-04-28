@@ -65,8 +65,6 @@ else
     pattern = '*',
   })
 
-
-
   -- Install package manager
   --    https://github.com/folke/lazy.nvim
   --    `:help lazy.nvim.txt` for more info
@@ -224,13 +222,12 @@ else
             null_ls.builtins.formatting.stylua,
             null_ls.builtins.formatting.autopep8,
             null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.completion.spell,
           },
         }
 
         vim.keymap.set({ 'n' }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
         vim.keymap.set({ 'n' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
-      end
+      end,
     },
 
     -- Let non-lsp stuff hook into LSP client (formatting, mostly)
@@ -252,99 +249,20 @@ else
       },
     },
 
-    { -- Document symbols
+    {
+      -- Document symbols
       'stevearc/aerial.nvim',
       config = function()
         require('aerial').setup()
-      end
+      end,
     },
 
-    -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim',
-      opts = {},
-      config = function()
-        local wk = require 'which-key'
-        local dap = require 'dap'
-        -- As an example, we will create the following mappings:
-        wk.register({
-          b = {
-            name = 'Buffer',
-            b = { require('telescope.builtin').buffers, 'Find Buffer' },
-            d = { '<cmd>bd<CR>', 'Delete Buffer' },
-            n = { '<cmd>bn<CR>', 'Next Buffer' },
-            o = { '<cmd>BufferLinePick<CR>', 'Pick Buffer From Line' },
-            p = { '<cmd>bp<CR>', 'Prev Buffer' },
-          },
-          c = {
-            name = 'Code',
-            a = { vim.lsp.buf.code_action, 'Code Action' },
-            d = { vim.lsp.buf.definition, 'Go To Definition' },
-            D = { vim.lsp.buf.declaration, 'Go to Declaration' },
-            i = { vim.lsp.buf.implementation, 'Go to Implementation' },
-            f = { '<cmd>Format<CR>', 'Format' }, -- We defined this function above
-            r = { vim.lsp.buf.rename, 'Code Rename' },
-            R = { require('telescope.builtin').lsp_references, 'Go to References' },
-          },
-          d = {
-            name = 'Debug',
-            b = { dap.toggle_breakpoint, 'Toggle breakpoint' },
-            B = {
-              function()
-                dap.set_breakpoint(vim.fn.input '[B]reakpoint condition: ')
-              end,
-              'Breakpoint condition',
-            },
-            c = { dap.continue, 'Continue' },
-            i = { dap.step_into, 'Step into' },
-            o = { dap.step_over, 'Step over' },
-            u = { dap.step_out, 'Step up (out)' },
-          },
-          f = {
-            name = 'File',
-            f = { '<cmd>Telescope find_files<cr>', 'Find File' },
-            r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
-          },
-          g = {
-            name = 'Git',
-            g = { '<cmd>LazyGit<CR>', 'LazyGit' },
-            b = { '<cmd>Gitsigns toggle_current_line_blame<CR>', 'Current Line Blame' },
-          },
-          m = {
-            name = 'Markdown',
-            c = { '<cmd>Glow!<CR>', 'Close Preview' },
-            f = { '<cmd>ZenMode<CR>', 'Focus' },
-            m = { '<cmd>Glow<CR>', 'Open Preview' },
-            t = { '<cmd>Twilight<CR>', 'Toggle Dim Inactive Code' },
-          },
-          s = {
-            name = 'Search',
-            b = { require('telescope.builtin').current_buffer_fuzzy_find, 'Fuzzily search current buffer' },
-            d = { require('telescope.builtin').diagnostics, 'Search Diagnostics' },
-            g = { require('telescope.builtin').live_grep, 'Search with Grep' },
-            h = { require('telescope.builtin').help_tags, 'Search Help' },
-            s = { require('telescope.builtin').lsp_document_symbols, 'Workspace Document Symbols' },
-            t = { '<cmd>TodoTelescope<CR>', 'Search TODO' },
-            w = { require('telescope.builtin').grep_string, 'Search current Word' },
-          },
-          t = {
-            name = 'Toggle',
-            a = { '<cmd>AerialToggle<CR>', 'Aerial' },
-            n = { '<cmd>NeoTreeShowToggle<CR>', 'NeoTree' },
-          },
-          w = {
-            name = 'Workspace',
-            d = { require('telescope.builtin').diagnostics, 'Workspace Diagnostics' },
-            s = { require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols' },
-          },
-        }, { prefix = '<leader>' })
-      end
-    },
     {
       -- Adds git releated signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
       config = function()
         require('gitsigns').setup()
-      end
+      end,
     },
 
     {
@@ -355,7 +273,7 @@ else
       config = function()
         -- vim.cmd.colorscheme 'onedark'
         -- vim.cmd.colorscheme 'gruvbox'
-        require("kanagawa").load("wave")
+        require('kanagawa').load 'wave'
       end,
     },
 
@@ -366,7 +284,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'onedark',
+          theme = 'kanagawa',
           component_separators = '|',
           section_separators = '',
         },
@@ -381,7 +299,7 @@ else
       dependencies = 'nvim-tree/nvim-web-devicons',
       config = function()
         require('bufferline').setup {}
-      end
+      end,
     },
 
     {
@@ -522,13 +440,10 @@ else
             },
           },
         }
-
-
       end,
     },
-
+    -- Linter for Jenkinsfiles
     {
-      -- Linter for Jenkinsfiles
       'ckipp01/nvim-jenkinsfile-linter',
       dependencies = { 'nvim-lua/plenary.nvim' },
     },
@@ -560,8 +475,8 @@ else
       end,
     },
 
+    -- Debugging??? In _MY_ Neovim??
     {
-      -- Debugging??? In _MY_ Neovim??
       'mfussenegger/nvim-dap',
       dependencies = {
         -- Creates a beautiful debugger UI
@@ -623,9 +538,7 @@ else
         dap.listeners.after.event_initialized['dapui_config'] = dapui.open
         dap.listeners.before.event_terminated['dapui_config'] = dapui.close
         dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
-
-      end
+      end,
     },
 
     -- Use wiki links in markdown
@@ -635,9 +548,90 @@ else
         require('mkdnflow').setup()
       end,
     },
+
+    -- Show key options when using shortcuts
+    {
+      'folke/which-key.nvim',
+      opts = {},
+      config = function()
+        local wk = require 'which-key'
+        local dap = require 'dap'
+        -- As an example, we will create the following mappings:
+        wk.register({
+          b = {
+            name = 'Buffer',
+            b = { require('telescope.builtin').buffers, 'Find Buffer' },
+            d = { '<cmd>bd<CR>', 'Delete Buffer' },
+            n = { '<cmd>bn<CR>', 'Next Buffer' },
+            o = { '<cmd>BufferLinePick<CR>', 'Pick Buffer From Line' },
+            p = { '<cmd>bp<CR>', 'Prev Buffer' },
+          },
+          c = {
+            name = 'Code',
+            a = { vim.lsp.buf.code_action, 'Code Action' },
+            d = { vim.lsp.buf.definition, 'Go To Definition' },
+            D = { vim.lsp.buf.declaration, 'Go to Declaration' },
+            i = { vim.lsp.buf.implementation, 'Go to Implementation' },
+            f = { '<cmd>Format<CR>', 'Format' }, -- We defined this function above
+            r = { vim.lsp.buf.rename, 'Code Rename' },
+            R = { require('telescope.builtin').lsp_references, 'Go to References' },
+          },
+          d = {
+            name = 'Debug',
+            b = { dap.toggle_breakpoint, 'Toggle breakpoint' },
+            B = {
+              function()
+                dap.set_breakpoint(vim.fn.input '[B]reakpoint condition: ')
+              end,
+              'Breakpoint condition',
+            },
+            c = { dap.continue, 'Continue' },
+            i = { dap.step_into, 'Step into' },
+            o = { dap.step_over, 'Step over' },
+            u = { dap.step_out, 'Step up (out)' },
+          },
+          f = {
+            name = 'File',
+            f = { '<cmd>Telescope find_files<cr>', 'Find File' },
+            r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
+          },
+          g = {
+            name = 'Git',
+            g = { '<cmd>LazyGit<CR>', 'LazyGit' },
+            b = { '<cmd>Gitsigns toggle_current_line_blame<CR>', 'Current Line Blame' },
+          },
+          m = {
+            name = 'Markdown',
+            c = { '<cmd>Glow!<CR>', 'Close Preview' },
+            f = { '<cmd>ZenMode<CR>', 'Focus' },
+            m = { '<cmd>Glow<CR>', 'Open Preview' },
+            t = { '<cmd>Twilight<CR>', 'Toggle Dim Inactive Code' },
+          },
+          s = {
+            name = 'Search',
+            b = { require('telescope.builtin').current_buffer_fuzzy_find, 'Fuzzily search current buffer' },
+            d = { require('telescope.builtin').diagnostics, 'Search Diagnostics' },
+            g = { require('telescope.builtin').live_grep, 'Search with Grep' },
+            h = { require('telescope.builtin').help_tags, 'Search Help' },
+            s = { require('telescope.builtin').lsp_document_symbols, 'Workspace Document Symbols' },
+            t = { '<cmd>TodoTelescope<CR>', 'Search TODO' },
+            w = { require('telescope.builtin').grep_string, 'Search current Word' },
+          },
+          t = {
+            name = 'Toggle',
+            a = { '<cmd>AerialToggle<CR>', 'Aerial' },
+            n = { '<cmd>NeoTreeShowToggle<CR>', 'NeoTree' },
+          },
+          w = {
+            name = 'Workspace',
+            d = { require('telescope.builtin').diagnostics, 'Workspace Diagnostics' },
+            s = { require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols' },
+          },
+        }, { prefix = '<leader>' })
+      end,
+    },
   }, {})
 
   -- [[ Keybindings ]]
   -- See `:help K` for why this keymap
-
 end
