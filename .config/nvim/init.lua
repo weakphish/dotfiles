@@ -266,14 +266,14 @@ else
     },
 
     {
-      -- 'navarasu/onedark.nvim',
+      'navarasu/onedark.nvim',
       -- "ellisonleao/gruvbox.nvim",
-      'rebelot/kanagawa.nvim',
+      -- 'rebelot/kanagawa.nvim',
       priority = 1000,
       config = function()
-        -- vim.cmd.colorscheme 'onedark'
+        vim.cmd.colorscheme 'onedark'
         -- vim.cmd.colorscheme 'gruvbox'
-        require('kanagawa').load 'wave'
+        -- require('kanagawa').load 'wave'
       end,
     },
 
@@ -284,7 +284,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'kanagawa',
+          theme = 'one',
           component_separators = '|',
           section_separators = '',
         },
