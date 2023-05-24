@@ -330,6 +330,7 @@ else
       version = '*',
       dependencies = {
         'nvim-lua/plenary.nvim',
+        "debugloop/telescope-undo.nvim",
       },
     },
 
@@ -374,6 +375,8 @@ else
         pcall(require('telescope').load_extension, 'fzf')
         -- Enable telescope dap if installed
         pcall(require('telescope').load_extension, 'dap')
+        -- Enable telescope undo
+        pcall(require('telescope').load_extension, 'undo')
 
         -- [[ Configure Treesitter ]]
         -- See `:help nvim-treesitter`
@@ -615,6 +618,7 @@ else
             h = { require('telescope.builtin').help_tags, 'Search Help' },
             s = { require('telescope.builtin').lsp_document_symbols, 'Workspace Document Symbols' },
             t = { '<cmd>TodoTelescope<CR>', 'Search TODO' },
+            u = { '<cmd>Telescope undo<CR>', 'Search Undo' },
             w = { require('telescope.builtin').grep_string, 'Search current Word' },
           },
           t = {
