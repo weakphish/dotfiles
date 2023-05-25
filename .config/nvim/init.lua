@@ -134,6 +134,7 @@ else
           pylsp = {},
           rust_analyzer = {},
           tsserver = {},
+          html = {},
           lua_ls = {
             Lua = {
               workspace = { checkThirdParty = false },
