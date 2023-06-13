@@ -1,8 +1,19 @@
 [[language]]
 name = "python"
-language-server = { command = "pylsp" }
 auto-format = true
 formatter = { command = "black", args = ["-"]}
+
+[language.config.pylsp.plugins]
+flake8 = {enabled = false}
+autopep8 = {enabled = false}
+mccabe = {enabled = false}
+pycodestyle = {enabled = false}
+pyflakes = {enabled = false}
+pylint = {enabled = false}
+yapf = {enabled = false}
+ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
+rope = { enabled = true }
+pydocstyle = { enabled = true }
 
 [language.debugger]
 name = "debugpy"
