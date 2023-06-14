@@ -84,19 +84,7 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
-
-  -- Git related plugins
-  'kdheepak/lazygit.nvim',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-  -- Make things generally prettier
-  'stevearc/dressing.nvim',
-
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
+  -- NOTE: === LSP / COMPETION ===
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -252,6 +240,14 @@ require('lazy').setup({
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
 
+  -- NOTE: === VISUAL / AESTHETIC ---
+
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
+  -- Make things generally prettier
+  'stevearc/dressing.nvim',
+
   {
     -- Neotree - file tree browser
     'nvim-neo-tree/neo-tree.nvim',
@@ -281,7 +277,7 @@ require('lazy').setup({
   {
     -- Pretty colors
     -- 'navarasu/onedark.nvim',
-    "ellisonleao/gruvbox.nvim",
+    'ellisonleao/gruvbox.nvim',
     -- 'rebelot/kanagawa.nvim',
     priority = 1000,
     config = function()
@@ -328,6 +324,68 @@ require('lazy').setup({
     },
   },
 
+  -- NOTE: === LANGUAGE SUPPORT ===
+  -- Linter for Jenkinsfiles
+  {
+    'ckipp01/nvim-jenkinsfile-linter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+
+  -- Extra Golang Goodies
+  {
+    'ray-x/go.nvim',
+    dependencies = { -- optional packages
+      'ray-x/guihua.lua',
+      'neovim/nvim-lspconfig',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require('go').setup()
+    end,
+    event = { 'CmdlineEnter' },
+    ft = { 'go', 'gomod' },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+
+  -- NOTE: === MARKDOWN ===
+  -- Markdown preview with Glow
+  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
+
+  {
+    -- Zen mode for writing markdown
+    'folke/zen-mode.nvim',
+    config = function()
+      require('zen-mode').setup {}
+    end,
+  },
+
+  {
+    -- Dim inactive portions of code
+    'folke/twilight.nvim',
+    config = function()
+      require('twilight').setup {}
+    end,
+  },
+
+  {
+    -- Use wiki links in markdown
+    'jakewvincent/mkdnflow.nvim',
+    config = function()
+      require('mkdnflow').setup()
+    end,
+  },
+
+  -- NOTE: === TOOLS ===
+
+  -- Git Porcelain
+  {
+    'kdheepak/lazygit.nvim',
+    -- optional for floating window border decoration
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+
   {
     -- "gc" to comment visual regions/lines
     'numToStr/Comment.nvim',
@@ -338,7 +396,6 @@ require('lazy').setup({
       },
     },
   },
-
   {
     -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -462,31 +519,6 @@ require('lazy').setup({
     end,
   },
   {
-    -- Linter for Jenkinsfiles
-    'ckipp01/nvim-jenkinsfile-linter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-
-  -- Markdown preview with Glow
-  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
-
-  {
-    -- Zen mode for writing markdown
-    'folke/zen-mode.nvim',
-    config = function()
-      require('zen-mode').setup {}
-    end,
-  },
-
-  {
-    -- Dim inactive portions of code
-    'folke/twilight.nvim',
-    config = function()
-      require('twilight').setup {}
-    end,
-  },
-
-  {
     -- Highlight / search TODO
     'folke/todo-comments.nvim',
     config = function()
@@ -560,14 +592,7 @@ require('lazy').setup({
     end,
   },
 
-  {
-    -- Use wiki links in markdown
-    'jakewvincent/mkdnflow.nvim',
-    config = function()
-      require('mkdnflow').setup()
-    end,
-  },
-
+  -- NOTE: === BINDINGS ===
   {
     -- Show key options when using shortcuts
     'folke/which-key.nvim',
