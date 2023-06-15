@@ -141,6 +141,14 @@ require('lazy').setup({
             telemetry = { enable = false },
           },
         },
+        eslint = {
+          on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = bufnr,
+              command = 'EslintFixAll',
+            })
+          end,
+        },
       }
 
       -- Setup neovim lua configuration
@@ -243,8 +251,8 @@ require('lazy').setup({
   {
     -- Auto pairs for paired characters
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+    event = 'InsertEnter',
+    opts = {}, -- this is equalent to setup({}) function
   },
 
   -- NOTE: === VISUAL / AESTHETIC ---
@@ -356,7 +364,7 @@ require('lazy').setup({
 
   -- NOTE: === MARKDOWN ===
   -- Markdown preview with Glow
-  { 'ellisonleao/glow.nvim',          config = true, cmd = 'Glow' },
+  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
 
   {
     -- Zen mode for writing markdown
