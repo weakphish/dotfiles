@@ -257,6 +257,14 @@ require('lazy').setup({
     end,
   },
 
+  {
+    -- Auto tag closing
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  },
+
   -- NOTE: === VISUAL / AESTHETIC ---
 
   -- Detect tabstop and shiftwidth automatically
