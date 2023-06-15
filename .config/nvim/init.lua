@@ -151,6 +151,14 @@ require('lazy').setup({
         },
       }
 
+      -- Add in specific instructions to integrate go.nvim with mason
+      require('go').setup {
+        lsp_cfg = false,
+        -- other setups...
+      }
+      local cfg = require('go.lsp').config() -- config() return the go.nvim gopls setup
+      require('lspconfig').gopls.setup(cfg)
+
       -- Setup neovim lua configuration
       require('neodev').setup()
 
@@ -231,8 +239,21 @@ require('lazy').setup({
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.autopep8,
           null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.formatting.golines.with {
+            extra_args = {
+              '--max-len=180',
+              '--base-formatter=gofumpt',
+            },
+          },
         },
       }
+      -- for go.nvim
+      local gotest = require("go.null_ls").gotest()
+      local gotest_codeaction = require('go.null_ls').gotest_action()
+      local golangci_lint = require('go.null_ls').golangci_lint()
+      null_ls.register(gotest)
+      null_ls.register(gotest_codeaction)
+      null_ls.register(golangci_lint)
 
       vim.keymap.set({ 'n' }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
       vim.keymap.set({ 'n' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
