@@ -235,9 +235,16 @@ require('lazy').setup({
   { 'jose-elias-alvarez/null-ls.nvim' },
 
   {
-    -- Autocompletion
+    -- Autocompletion Engine
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+  },
+
+  {
+    -- Auto pairs for paired characters
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
   },
 
   -- NOTE: === VISUAL / AESTHETIC ---
@@ -349,7 +356,7 @@ require('lazy').setup({
 
   -- NOTE: === MARKDOWN ===
   -- Markdown preview with Glow
-  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
+  { 'ellisonleao/glow.nvim',          config = true, cmd = 'Glow' },
 
   {
     -- Zen mode for writing markdown
