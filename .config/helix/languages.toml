@@ -1,19 +1,10 @@
+# === Language Configs ===
+# Python
 [[language]]
 name = "python"
 auto-format = true
 formatter = { command = "black", args = ["-"]}
-
-[language.config.pylsp.plugins]
-flake8 = {enabled = false}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
-rope = { enabled = true }
-pydocstyle = { enabled = true }
+language-servers = [ "pylsp" ]
 
 [language.debugger]
 name = "debugpy"
@@ -27,3 +18,20 @@ name = "source"
 request = "launch"
 completion = [ { name = "main", completion = "filename", default = "main.py" } ]
 args = { program = "{0}" }
+
+# TypeScript
+[[language]]
+name = "typescript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ]
+
+# === LSP Configs ===
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+
+[language-server.efm-lsp-prettier.config]
+documentFormatting = true
+languages = { typescript = [ { formatCommand ="prettier --stdin-filepath ${INPUT}", formatStdin = true } ] }
+
+[language-server.typescript-language-server]
+# pass format options according to https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration omitting the "[language].format." prefix.
+config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
