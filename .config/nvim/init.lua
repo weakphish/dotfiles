@@ -249,10 +249,12 @@ require('lazy').setup({
   },
 
   {
-    -- Auto pairs for paired characters
+    -- Autopair
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
-    opts = {}, -- this is equalent to setup({}) function
+    config = function()
+      require('nvim-autopairs').setup {}
+    end,
   },
 
   -- NOTE: === VISUAL / AESTHETIC ---
