@@ -322,13 +322,13 @@ require('lazy').setup({
 
   {
     -- Pretty colors
-    -- 'navarasu/onedark.nvim',
-    'ellisonleao/gruvbox.nvim',
+    'navarasu/onedark.nvim',
+    -- 'ellisonleao/gruvbox.nvim',
     -- 'rebelot/kanagawa.nvim',
     priority = 1000,
     config = function()
-      -- require('onedark').load()
-      vim.cmd.colorscheme 'gruvbox'
+      require('onedark').load()
+      -- vim.cmd.colorscheme 'gruvbox'
       -- require('kanagawa').load 'wave'
     end,
   },
@@ -340,7 +340,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        -- theme = 'gruvbox',
+        theme = 'one',
         component_separators = '|',
         section_separators = '',
       },
