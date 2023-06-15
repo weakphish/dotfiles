@@ -1,3 +1,22 @@
+# === LSP Configs ===
+[language-server.pylsp.config]
+plugins.autopep8.enabled = true
+plugins.pycodestyle.enabled = true
+plugins.pydocstyle.enabled = true
+plugins.rope_completion.enabled = true
+plugins.rope_autoimport.enabled = true
+
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+
+[language-server.efm-lsp-prettier.config]
+documentFormatting = true
+languages = { typescript = [ { formatCommand ="prettier --stdin-filepath ${INPUT}", formatStdin = true } ] }
+
+[language-server.typescript-language-server]
+# pass format options according to https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration omitting the "[language].format." prefix.
+config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
+
 # === Language Configs ===
 # Python
 [[language]]
@@ -23,15 +42,3 @@ args = { program = "{0}" }
 [[language]]
 name = "typescript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ]
-
-# === LSP Configs ===
-[language-server.efm-lsp-prettier]
-command = "efm-langserver"
-
-[language-server.efm-lsp-prettier.config]
-documentFormatting = true
-languages = { typescript = [ { formatCommand ="prettier --stdin-filepath ${INPUT}", formatStdin = true } ] }
-
-[language-server.typescript-language-server]
-# pass format options according to https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration omitting the "[language].format." prefix.
-config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
