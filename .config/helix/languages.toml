@@ -1,4 +1,5 @@
 # === LSP Configs ===
+# Python
 [language-server.pylsp.config]
 plugins.autopep8.enabled = true
 plugins.pycodestyle.enabled = true
@@ -6,6 +7,7 @@ plugins.pydocstyle.enabled = true
 plugins.rope_completion.enabled = true
 plugins.rope_autoimport.enabled = true
 
+# JS/TS
 [language-server.efm-lsp-prettier]
 command = "efm-langserver"
 
