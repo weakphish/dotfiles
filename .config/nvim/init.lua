@@ -129,6 +129,10 @@ require('lazy').setup({
                 enabled = true,
                 eager = true,
               },
+              ruff = {
+                enabled = true,
+                extendSelect = { "I" },
+              },
             },
           },
         },
