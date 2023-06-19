@@ -5,8 +5,40 @@
 
 -- Custom plugins
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
+  { 'navarasu/onedark.nvim' },
+
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  }
 }
 
+-- General Vim settings
+vim.opt.relativenumber = true -- relative line numbers
+
 -- Colorscheme
-lvim.colorscheme = "darkplus"
+lvim.colorscheme = "onedark"
+
+-- Trouble config
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Diagnostics",
+  t = { "<cmd>TroubleToggle<cr>", "trouble" },
+  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
+
+-- Aerial config
+lvim.builtin.which_key.mappings["a"] = { "<cmd>AerialToggle<cr>", "Aerial" }
