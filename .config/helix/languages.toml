@@ -5,7 +5,6 @@ plugins.autopep8.enabled = true
 plugins.pycodestyle.enabled = true
 plugins.pydocstyle.enabled = true
 plugins.ruff.enabled = true
-plugins.ruff.extendSelect = { "I" }
 plugins.rope_completion.enabled = true
 plugins.rope_autoimport.enabled = true
 
