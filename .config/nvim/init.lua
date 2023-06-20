@@ -107,6 +107,25 @@ require('lazy').setup({
         vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
+
+        -- Show line diagnostics in hover window
+        -- Source: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#show-line-diagnostics-automatically-in-hover-window
+        vim.o.updatetime = 250
+        vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+        vim.api.nvim_create_autocmd('CursorHold', {
+          buffer = bufnr,
+          callback = function()
+            local opts = {
+              focusable = false,
+              close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+              border = 'rounded',
+              source = 'always',
+              prefix = ' ',
+              scope = 'cursor',
+            }
+            vim.diagnostic.open_float(nil, opts)
+          end,
+        })
       end
 
       -- Enable the following language servers
@@ -128,6 +147,9 @@ require('lazy').setup({
               rope_completion = {
                 enabled = true,
                 eager = true,
+              },
+              pylint = {
+                enabled = false, -- disable pylint in pylsp in favor of using ruff from nullls
               },
             },
           },
