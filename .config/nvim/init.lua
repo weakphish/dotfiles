@@ -129,10 +129,6 @@ require('lazy').setup({
                 enabled = true,
                 eager = true,
               },
-              ruff = {
-                enabled = true,
-                extendSelect = { "I" },
-              },
             },
           },
         },
@@ -241,18 +237,19 @@ require('lazy').setup({
       null_ls.setup {
         sources = {
           null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.autopep8,
-          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.golines.with {
             extra_args = {
               '--max-len=180',
               '--base-formatter=gofumpt',
             },
           },
+          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.diagnostics.ruff,
         },
       }
       -- for go.nvim
-      local gotest = require("go.null_ls").gotest()
+      local gotest = require('go.null_ls').gotest()
       local gotest_codeaction = require('go.null_ls').gotest_action()
       local golangci_lint = require('go.null_ls').golangci_lint()
       null_ls.register(gotest)
