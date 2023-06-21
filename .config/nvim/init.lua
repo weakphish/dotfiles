@@ -148,6 +148,9 @@ require('lazy').setup({
         pylsp = {
           pylsp = {
             plugins = {
+              autopep8 = {
+                enabled = false,
+              },
               pydocstyle = {
                 enabled = true,
               },
@@ -158,8 +161,8 @@ require('lazy').setup({
                 enabled = true,
                 eager = true,
               },
-              pylint = {
-                enabled = false, -- disable pylint in pylsp in favor of using ruff from nullls
+              pyflakes = {
+                enabled = false, -- disable diagnostics from pylsp in favor of using ruff in null_ls
               },
             },
           },
@@ -355,13 +358,16 @@ require('lazy').setup({
 
   {
     -- Pretty colors
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
     -- 'ellisonleao/gruvbox.nvim',
     -- 'rebelot/kanagawa.nvim',
+    'sainnhe/everforest',
     priority = 1000,
     config = function()
-      require('onedark').load()
+      -- require('onedark').load()
       -- vim.cmd.colorscheme 'gruvbox'
+      vim.g.everforest_better_performance = 1
+      vim.cmd.colorscheme 'everforest'
       -- require('kanagawa').load 'wave'
     end,
   },
@@ -373,8 +379,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        -- theme = 'gruvbox',
-        theme = 'one',
+        theme = 'everforest',
         component_separators = '|',
         section_separators = '',
       },
