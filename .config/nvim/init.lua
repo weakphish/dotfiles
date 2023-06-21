@@ -148,7 +148,25 @@ require('lazy').setup({
         pylsp = {
           pylsp = {
             plugins = {
+              -- disable defaults in favor of third party
               autopep8 = {
+                enabled = false,
+              },
+              yapf = {
+                enabled = false,
+              },
+              jedi = {
+                completion = {
+                  enabled = false,
+                },
+              },
+              mccabe = {
+                enabled = false,
+              },
+              pycodestyle = {
+                enabled = false,
+              },
+              pyflakes = {
                 enabled = false,
               },
               pydocstyle = {
@@ -161,8 +179,9 @@ require('lazy').setup({
                 enabled = true,
                 eager = true,
               },
-              pyflakes = {
-                enabled = false, -- disable diagnostics from pylsp in favor of using ruff in null_ls
+              ruff = {
+                enabled = true,
+                extendSelect = { 'I' },
               },
             },
           },
@@ -209,6 +228,7 @@ require('lazy').setup({
 
       mason_lspconfig.setup {
         ensure_installed = vim.tbl_keys(servers),
+        automatic_installation = true,
       }
 
       mason_lspconfig.setup_handlers {
@@ -280,7 +300,6 @@ require('lazy').setup({
             },
           },
           null_ls.builtins.diagnostics.eslint,
-          null_ls.builtins.diagnostics.ruff,
         },
       }
       -- for go.nvim
