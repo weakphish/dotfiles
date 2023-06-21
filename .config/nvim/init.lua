@@ -111,6 +111,13 @@ require('lazy').setup({
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
 
+        -- Format on save
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          callback = function()
+            vim.lsp.buf.format { async = false }
+          end,
+        })
+
         -- Show line diagnostics in hover window
         -- Source: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#show-line-diagnostics-automatically-in-hover-window
         vim.o.updatetime = 250
