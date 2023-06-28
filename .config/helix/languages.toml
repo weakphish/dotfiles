@@ -1,7 +1,6 @@
 # === LSP Configs ===
 # Python
-[language-server.pylsp.config]
-plugins.autopep8.enabled = true
+[language-server.pylsp.config.pylsp]
 plugins.pycodestyle.enabled = true
 plugins.pydocstyle.enabled = true
 plugins.ruff.enabled = true
