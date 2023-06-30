@@ -44,3 +44,8 @@ args = { program = "{0}" }
 [[language]]
 name = "typescript"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ]
+
+# Groovy / Java
+[[language]]
+name = "java"
+file-types = ["java", "groovy", "Jenkinsfile", "jenkinsfile"]
