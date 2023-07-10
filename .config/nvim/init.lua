@@ -380,13 +380,16 @@ require('lazy').setup({
     -- 'navarasu/onedark.nvim',
     -- 'ellisonleao/gruvbox.nvim',
     -- 'rebelot/kanagawa.nvim',
-    'sainnhe/everforest',
+    -- 'sainnhe/everforest',
+    'sainnhe/gruvbox-material',
     priority = 1000,
     config = function()
       -- require('onedark').load()
       -- vim.cmd.colorscheme 'gruvbox'
-      vim.g.everforest_better_performance = 1
-      vim.cmd.colorscheme 'everforest'
+      -- vim.g.everforest_better_performance = 1
+      -- vim.cmd.colorscheme 'everforest'
+      vim.g.gruvbox_material_better_performance = 1
+      vim.cmd.colorscheme 'gruvbox-material'
       -- require('kanagawa').load 'wave'
     end,
   },
@@ -398,7 +401,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'everforest',
+        theme = 'gruvbox-material',
         component_separators = '|',
         section_separators = '',
       },
