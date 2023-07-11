@@ -102,4 +102,5 @@
 
 ;; Load Ruff for python lints
 (require 'flymake-ruff)
+(add-hook 'python-mode-hook 'flymake-mode)
 (add-hook 'python-mode-hook #'flymake-ruff-load)
