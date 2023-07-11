@@ -487,6 +487,9 @@ else
 
     -- NOTE: === TOOLS ===
 
+    -- Easy toggling of terminals
+    { 'akinsho/toggleterm.nvim', version = '*', config = true },
+
     -- Git Porcelain
     {
       'kdheepak/lazygit.nvim',
@@ -776,6 +779,7 @@ else
             name = 'Toggle',
             a = { '<cmd>AerialToggle<CR>', 'Aerial' },
             n = { '<cmd>NeoTreeShowToggle<CR>', 'NeoTree' },
+            t = { '<cmd>:ToggleTerm size=40  direction=float<CR>', 'Floating Terminal' },
           },
           w = {
             name = 'Workspace',
