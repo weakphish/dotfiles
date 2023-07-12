@@ -198,14 +198,6 @@ else
               telemetry = { enable = false },
             },
           },
-          eslint = {
-            on_attach = function(client, bufnr)
-              vim.api.nvim_create_autocmd('BufWritePre', {
-                buffer = bufnr,
-                command = 'EslintFixAll',
-              })
-            end,
-          },
         }
 
         -- Add in specific instructions to integrate go.nvim with mason
