@@ -1,4 +1,4 @@
-fish_vi_keybindings
+fish_vi_key_bindings
 set -Ux EDITOR nvim
 alias lg lazygit
 
