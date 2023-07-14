@@ -65,6 +65,15 @@ else
     pattern = '*',
   })
 
+  -- [[ Filetype Detection ]]
+  -- Detect Jenkinsfile as a Groovy Filetype
+  vim.filetype.add {
+    filename = {
+      ['Jenkinsfile'] = 'groovy',
+      ['jenkinsfile'] = 'groovy',
+    },
+  }
+
   -- Install package manager
   --    https://github.com/folke/lazy.nvim
   --    `:help lazy.nvim.txt` for more info
