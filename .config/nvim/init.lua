@@ -345,6 +345,10 @@ else
       end,
     },
 
+    {
+      'github/copilot.vim',
+    },
+
     -- NOTE: === VISUAL / AESTHETIC ---
 
     -- Detect tabstop and shiftwidth automatically
@@ -381,19 +385,19 @@ else
 
     {
       -- Pretty colors
-      -- 'navarasu/onedark.nvim',
+      'navarasu/onedark.nvim',
       -- 'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
       -- 'sainnhe/everforest',
-      'sainnhe/gruvbox-material',
+      -- 'sainnhe/gruvbox-material',
       priority = 1000,
       config = function()
-        -- require('onedark').load()
+        require('onedark').load()
         -- vim.cmd.colorscheme 'gruvbox'
         -- vim.g.everforest_better_performance = 1
         -- vim.cmd.colorscheme 'everforest'
-        vim.g.gruvbox_material_better_performance = 1
-        vim.cmd.colorscheme 'gruvbox-material'
+        -- vim.g.gruvbox_material_better_performance = 1
+        -- vim.cmd.colorscheme 'gruvbox-material'
         -- require('kanagawa').load 'wave'
       end,
     },
@@ -405,7 +409,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'gruvbox-material',
+          theme = 'one',
           component_separators = '|',
           section_separators = '',
         },
