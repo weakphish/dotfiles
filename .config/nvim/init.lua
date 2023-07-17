@@ -182,7 +182,7 @@ else
                   enabled = false,
                 },
                 pydocstyle = {
-                  enabled = true,
+                  enabled = false,
                 },
                 rope_autoimport = {
                   enabled = true,
