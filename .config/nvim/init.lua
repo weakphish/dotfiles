@@ -117,7 +117,7 @@ else
       },
       config = function()
         --  This function gets run when an LSP connects to a particular buffer.
-        local on_attach = function(_, bufnr)
+        local on_attach = function(client, bufnr)
           -- Create a command `:Format` local to the LSP buffer
           vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
             vim.lsp.buf.format()
@@ -355,11 +355,50 @@ else
 
     -- NOTE: === VISUAL / AESTHETIC ---
 
+    -- Dashboard like Doom Emacs
+    {
+      'goolord/alpha-nvim',
+      event = 'VimEnter',
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      config = function()
+        local alpha = require 'alpha'
+        local dashboard = require 'alpha.themes.dashboard'
+
+        dashboard.section.header.val = 'weakphish'
+        dashboard.section.buttons.val = {
+          dashboard.button('e', '  New file', ':ene <BAR> startinsert <CR>'),
+          dashboard.button('q', '  Quit NVIM', ':qa<CR>'),
+        }
+
+        -- Read a fortune :)
+        local handle = io.popen 'fortune'
+        local fortune = handle:read '*a'
+        handle:close()
+        dashboard.section.footer.val = fortune
+        alpha.setup(dashboard.opts)
+      end,
+    },
+
+    -- Better popups
+    {
+      'nvim-lua/popup.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+
+    -- Pretty Icons
+    'nvim-tree/nvim-web-devicons',
+
+    -- Highlight the current symbol in the buffer
+    'RRethy/vim-illuminate',
+
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
 
     -- Make things generally prettier
-    'stevearc/dressing.nvim',
+    {
+      'stevearc/dressing.nvim',
+      opts = {},
+    },
 
     {
       -- Neotree - file tree browser
