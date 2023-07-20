@@ -720,6 +720,13 @@ else
       end,
     },
 
+    -- Search for Trouble ;)
+    {
+      'folke/trouble.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {},
+    },
+
     {
       -- Debugging??? In _MY_ Neovim??
       'mfussenegger/nvim-dap',
@@ -859,6 +866,7 @@ else
           t = {
             name = 'Toggle',
             a = { '<cmd>AerialToggle<CR>', 'Aerial' },
+            b = { '<cmd>TroubleToggle<CR>', 'Trouble' },
             n = { '<cmd>NeoTreeShowToggle<CR>', 'NeoTree' },
             t = { '<cmd>:ToggleTerm size=40  direction=float<CR>', 'Floating Terminal' },
           },
