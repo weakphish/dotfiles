@@ -43,6 +43,7 @@ args = { program = "{0}" }
 # TypeScript
 [[language]]
 name = "typescript"
+auto-format = true
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ]
 
 # Groovy / Java
