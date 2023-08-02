@@ -45,6 +45,16 @@ else
   -- NOTE: You should make sure your terminal supports this
   vim.o.termguicolors = true
 
+  -- Setup folds
+  vim.opt.foldmethod = 'expr'
+  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+  -- Automatically open folds on file open
+  vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+    pattern = { '*' },
+    command = 'normal zR',
+  })
+
   -- [[ Basic Keymaps ]]
   -- Keymaps for better default experience
   -- See `:help vim.keymap.set()`
