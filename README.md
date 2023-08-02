@@ -2,7 +2,7 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Helix
+**Current editor**: Doom Emacs, with some JetBrains for heavy refactoring / debugging
  
 **Shell:** Fish shell with omf to manage prompts, etc.
 
