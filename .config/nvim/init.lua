@@ -469,19 +469,19 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
+      -- 'navarasu/onedark.nvim',
       -- 'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
       -- 'sainnhe/everforest',
-      -- 'sainnhe/gruvbox-material',
+      'sainnhe/gruvbox-material',
       priority = 1000,
       config = function()
-        require('onedark').load()
+        -- require('onedark').load()
         -- vim.cmd.colorscheme 'gruvbox'
         -- vim.g.everforest_better_performance = 1
         -- vim.cmd.colorscheme 'everforest'
-        -- vim.g.gruvbox_material_better_performance = 1
-        -- vim.cmd.colorscheme 'gruvbox-material'
+        vim.g.gruvbox_material_better_performance = 1
+        vim.cmd.colorscheme 'gruvbox-material'
         -- require('kanagawa').load 'wave'
       end,
     },
@@ -659,10 +659,10 @@ else
         -- See `:help nvim-treesitter`
         require('nvim-treesitter.configs').setup {
           -- Add languages to be installed here that you want installed for treesitter
-          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vim' },
+          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vim', 'markdown', 'markdown_inline' },
 
           -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-          auto_install = false,
+          auto_install = true,
 
           highlight = { enable = true },
           indent = { enable = true, disable = { 'python' } },
