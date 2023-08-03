@@ -77,7 +77,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Messing around with fortune
+;; Show a fortune :)
 (defun fortune ()
   (interactive)
   (message "%s"
@@ -99,8 +99,3 @@
 
 ;; Warn when opening 200mb+ files instead of 10mb
 (setq large-file-warning-threshold 200000000)
-
-;; Load Ruff for python lints
-(require 'flymake-ruff)
-(add-hook 'python-mode-hook 'flymake-mode)
-(add-hook 'python-mode-hook #'flymake-ruff-load)
