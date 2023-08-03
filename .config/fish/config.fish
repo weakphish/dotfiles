@@ -1,5 +1,8 @@
-fish_vi_key_bindings
-set -Ux EDITOR nvim
-alias lg lazygit
+set -Ux EDITOR hx
 
+# Aliases
+alias lg lazygit
+alias tf terraform
+
+# iTerm integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
