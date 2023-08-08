@@ -2,11 +2,11 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Helix
+**Current editor**: Neovim
  
 **Shell:** Fish shell with omf to manage prompts, etc.
 
-**Terminal:** iTerm2, see `itermcolors` for the colorschemes I like. Usually, with Iosevka 14.
+**Terminal:** iTerm2, see `itermcolors` for the colorschemes I like. Usually, with Iosevka 14 or JetBrains Mono 12.
 
 **Git Porcelain:** LazyGit
 
