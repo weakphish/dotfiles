@@ -469,14 +469,16 @@ else
       -- 'navarasu/onedark.nvim',
       -- 'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
-      'sainnhe/everforest',
+      'rockyzhang24/arctic.nvim',
+      dependencies = { 'rktjmp/lush.nvim' },
       --'sainnhe/gruvbox-material',
       priority = 1000,
       config = function()
+        vim.cmd 'colorscheme arctic'
         -- require('onedark').load()
         -- vim.cmd.colorscheme 'gruvbox'
-        vim.g.everforest_better_performance = 1
-        vim.cmd.colorscheme 'everforest'
+        -- vim.g.everforest_better_performance = 1
+        -- vim.cmd.colorscheme 'everforest'
         --vim.g.gruvbox_material_better_performance = 1
         --vim.cmd.colorscheme 'gruvbox-material'
         -- require('kanagawa').load 'wave'
