@@ -44,14 +44,14 @@ else
   vim.o.termguicolors = true
 
   -- Setup folds
-  vim.opt.foldmethod = 'expr'
-  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+  -- vim.opt.foldmethod = 'expr'
+  -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
   -- Automatically open folds on file open
-  vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-    pattern = { '*' },
-    command = 'normal zR',
-  })
+  -- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  -- pattern = { '*' },
+  -- command = 'normal zR',
+  -- })
 
   -- [[ Basic Keymaps ]]
   -- Keymaps for better default experience
@@ -466,16 +466,16 @@ else
 
     {
       -- Pretty colors
-      -- 'navarasu/onedark.nvim',
+      'navarasu/onedark.nvim',
       -- 'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
-      'rockyzhang24/arctic.nvim',
+      -- 'rockyzhang24/arctic.nvim',
       dependencies = { 'rktjmp/lush.nvim' },
       --'sainnhe/gruvbox-material',
       priority = 1000,
       config = function()
         vim.cmd 'colorscheme arctic'
-        -- require('onedark').load()
+        require('onedark').load()
         -- vim.cmd.colorscheme 'gruvbox'
         -- vim.g.everforest_better_performance = 1
         -- vim.cmd.colorscheme 'everforest'
@@ -492,7 +492,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'arctic',
+          theme = 'one',
           component_separators = '|',
           section_separators = '',
         },
