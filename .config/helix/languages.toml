@@ -6,6 +6,7 @@ plugins.pydocstyle.enabled = true
 plugins.ruff.enabled = true
 plugins.rope_completion.enabled = true
 plugins.rope_autoimport.enabled = true
+plugins.mypy.enabled = true
 
 # JS/TS
 [language-server.efm-lsp-prettier]
