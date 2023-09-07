@@ -191,16 +191,19 @@ else
                 pydocstyle = {
                   enabled = false,
                 },
-                rope_autoimport = {
-                  enabled = true,
-                },
+                -- Plugins to match style I use at work
                 rope_completion = {
                   enabled = true,
                   eager = true,
                 },
-                ruff = {
+                pylint = {
                   enabled = true,
-                  extendSelect = { 'I' },
+                },
+                isort = {
+                  enabled = true,
+                },
+                mypy = {
+                  enabled = true,
                 },
               },
             },
