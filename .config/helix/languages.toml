@@ -1,12 +1,12 @@
 # === LSP Configs ===
 # Python
 [language-server.pylsp.config.pylsp]
-plugins.pycodestyle.enabled = true
-plugins.pydocstyle.enabled = true
 plugins.ruff.enabled = true
 plugins.rope_completion.enabled = true
 plugins.rope_autoimport.enabled = true
 plugins.mypy.enabled = true
+plugins.isort.enabled = true
+plugins.pylint.enabled = true
 
 # JS/TS
 [language-server.efm-lsp-prettier]
