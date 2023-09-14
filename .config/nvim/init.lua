@@ -197,7 +197,11 @@ else
                   eager = true,
                 },
                 pylint = {
+                  enabled = false, -- Temp
+                },
+                ruff = {
                   enabled = true,
+                  extendSelect = { 'I' },
                 },
                 isort = {
                   enabled = true,
