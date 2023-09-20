@@ -203,12 +203,6 @@ else
                   enabled = true,
                   extendSelect = { 'I' },
                 },
-                isort = {
-                  enabled = true,
-                },
-                mypy = {
-                  enabled = true,
-                },
               },
             },
           },
@@ -310,13 +304,18 @@ else
         null_ls.setup {
           sources = {
             null_ls.builtins.formatting.stylua,
+            -- Python
             null_ls.builtins.formatting.black,
+            null_ls.builtins.formatting.isort,
+            null_ls.builtins.diagnostics.mypy,
+            -- Go
             null_ls.builtins.formatting.golines.with {
               extra_args = {
                 '--max-len=180',
                 '--base-formatter=gofumpt',
               },
             },
+            -- JS / TS
             null_ls.builtins.diagnostics.eslint,
           },
         }
