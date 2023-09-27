@@ -470,21 +470,21 @@ else
 
     {
       -- Pretty colors
-      --'navarasu/onedark.nvim',
-      --'ellisonleao/gruvbox.nvim',
+      'navarasu/onedark.nvim',
+      -- 'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
       -- 'rockyzhang24/arctic.nvim',
       -- dependencies = { 'rktjmp/lush.nvim' },
-      'sainnhe/gruvbox-material',
+      -- 'sainnhe/gruvbox-material',
       priority = 1000,
       config = function()
         -- vim.cmd 'colorscheme arctic'
-        -- require('onedark').load()
+        require('onedark').load()
         -- vim.cmd.colorscheme 'gruvbox'
         -- vim.g.everforest_better_performance = 1
         -- vim.cmd.colorscheme 'everforest'
-        vim.g.gruvbox_material_better_performance = 1
-        vim.cmd.colorscheme 'gruvbox-material'
+        -- vim.g.gruvbox_material_better_performance = 1
+        -- vim.cmd.colorscheme 'gruvbox-material'
         -- require('kanagawa').load 'wave'
       end,
     },
@@ -496,7 +496,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'gruvbox-material',
+          theme = 'gruvbox',
           component_separators = '|',
           section_separators = '',
         },
