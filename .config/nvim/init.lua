@@ -43,6 +43,8 @@ else
   -- NOTE: You should make sure your terminal supports this
   vim.o.termguicolors = true
 
+  vim.o.guifont = 'JetBrains Mono:h14' -- text below applies for VimScript
+
   -- Setup folds
   -- vim.opt.foldmethod = 'expr'
   -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
@@ -850,7 +852,7 @@ else
           },
           f = {
             name = 'File',
-            f = { '<cmd>Telescope find_files<cr>', 'Find File' },
+            f = { '<cmd>Telescope find_files hidden=true<cr>', 'Find File' },
             r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
           },
           g = {
