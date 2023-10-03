@@ -6,7 +6,6 @@ roots = ["pyproject.toml"]
 language-servers = ["pyright", "ruff"]
 auto-format = true
 formatter = { command = "black", args = ["-"]}
-language-servers = [ "pylsp" ]
 
 [language-server.pyright]
 command = "pyright-langserver"
