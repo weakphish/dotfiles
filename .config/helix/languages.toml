@@ -33,7 +33,9 @@ args = { program = "{0}" }
 [[language]]
 name = "typescript"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ][language-server.efm-lsp-prettier]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "efm-lsp-prettier" ]
+
+[language-server.efm-lsp-prettier]
 command = "efm-langserver"
 
 [language-server.efm-lsp-prettier.config]
