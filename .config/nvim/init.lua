@@ -472,8 +472,8 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
-      -- 'ellisonleao/gruvbox.nvim',
+      -- 'navarasu/onedark.nvim',
+      'ellisonleao/gruvbox.nvim',
       -- 'rebelot/kanagawa.nvim',
       -- 'rockyzhang24/arctic.nvim',
       -- dependencies = { 'rktjmp/lush.nvim' },
@@ -481,8 +481,8 @@ else
       priority = 1000,
       config = function()
         -- vim.cmd 'colorscheme arctic'
-        require('onedark').load()
-        -- vim.cmd.colorscheme 'gruvbox'
+        -- require('onedark').load()
+        vim.cmd.colorscheme 'gruvbox'
         -- vim.g.everforest_better_performance = 1
         -- vim.cmd.colorscheme 'everforest'
         -- vim.g.gruvbox_material_better_performance = 1
