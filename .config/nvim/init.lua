@@ -821,7 +821,6 @@ else
             i = { vim.lsp.buf.implementation, 'Go to Implementation' },
             f = { '<cmd>Format<CR>', 'Format' }, -- We defined this function above
             r = { vim.lsp.buf.rename, 'Code Rename' },
-            R = { require('telescope.builtin').lsp_references, 'Go to References' },
           },
           d = {
             name = 'Debug',
@@ -860,6 +859,7 @@ else
             d = { require('telescope.builtin').diagnostics, 'Search Diagnostics' },
             g = { require('telescope.builtin').live_grep, 'Search with Grep' },
             h = { require('telescope.builtin').help_tags, 'Search Help' },
+            r = { require('telescope.builtin').lsp_references, 'Search References' },
             s = { require('telescope.builtin').lsp_document_symbols, 'Workspace Document Symbols' },
             t = { '<cmd>TodoTelescope<CR>', 'Search TODO' },
             u = { '<cmd>Telescope undo<CR>', 'Search Undo' },
