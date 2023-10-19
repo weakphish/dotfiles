@@ -16,6 +16,9 @@ else
   vim.wo.number = true
   vim.wo.relativenumber = true
 
+  -- Add a ruler (color column) at 120
+  vim.opt.colorcolumn = '120'
+
   -- Enable mouse mode
   vim.o.mouse = 'a'
 
