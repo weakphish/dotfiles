@@ -171,7 +171,8 @@ else
                 },
                 jedi = {
                   completion = {
-                    enabled = false,
+                    enabled = true,
+                    fuzzy = true,
                   },
                 },
                 mccabe = {
@@ -187,12 +188,17 @@ else
                   enabled = false,
                 },
                 -- Plugins to match style I use at work
-                rope_completion = {
-                  enabled = true,
-                  eager = true,
-                },
                 pylint = {
-                  enabled = false, -- Temp
+                  enabled = true, -- Temp
+                },
+                pylsp_mypy = {
+                  enabled = true,
+                },
+                pyls_isort = {
+                  enabled = true,
+                },
+                black = {
+                  enabled = true,
                 },
               },
             },
@@ -288,45 +294,8 @@ else
             { name = 'luasnip' },
           },
         }
-
-        -- Null LS setup (part of LSP block)
-        local null_ls = require 'null-ls'
-
-        null_ls.setup {
-          sources = {
-            null_ls.builtins.formatting.stylua,
-            -- Python
-            null_ls.builtins.formatting.black,
-            null_ls.builtins.formatting.isort,
-            null_ls.builtins.diagnostics.mypy,
-            null_ls.builtins.formatting.ruff,
-            null_ls.builtins.diagnostics.ruff,
-            -- Go
-            null_ls.builtins.formatting.golines.with {
-              extra_args = {
-                '--max-len=180',
-                '--base-formatter=gofumpt',
-              },
-            },
-            -- JS / TS
-            null_ls.builtins.diagnostics.eslint,
-          },
-        }
-        -- for go.nvim
-        local gotest = require('go.null_ls').gotest()
-        local gotest_codeaction = require('go.null_ls').gotest_action()
-        local golangci_lint = require('go.null_ls').golangci_lint()
-        null_ls.register(gotest)
-        null_ls.register(gotest_codeaction)
-        null_ls.register(golangci_lint)
-
-        vim.keymap.set({ 'n' }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
-        vim.keymap.set({ 'n' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
       end,
     },
-
-    -- Let non-lsp stuff hook into LSP client (formatting, mostly)
-    { 'jose-elias-alvarez/null-ls.nvim' },
 
     {
       -- Autocompletion Engine
