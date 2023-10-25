@@ -3,7 +3,7 @@ theme = "onedark"
 [editor]
 line-number = "relative"
 mouse = true
-rulers = [80, 120]
+rulers = [120]
 auto-format = true
 cursorline = true
 color-modes = true
