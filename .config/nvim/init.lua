@@ -214,6 +214,9 @@ else
           },
         }
 
+        vim.keymap.set({ 'n' }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+        vim.keymap.set({ 'n' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
+
         -- Add in specific instructions to integrate go.nvim with mason
         require('go').setup {
           lsp_cfg = false,
