@@ -3,23 +3,26 @@
 [[language]]
 name = "python"
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-language-servers = ["pylsp"]
+language-servers = ["pyright", "ruff"]
 auto-format = true
 formatter = { command = "black", args = ["-"]}
 
-[language-server.pylsp.config.pylsp.plugins]
-# disabled
-flake8 = { enabled = false }
-autopep8 = { enabled = false }
-mccabe = { enabled = false }
-pycodestyle = { enabled = false, maxLineLength = 120 }
-pyflakes = { enabled = false }
-yapf = { enabled = false }
-# enabled
-pylint = { enabled = true }
-black = { enabled = true }
-pylsp_mypy = { enabled = true, strict = true }
-pyls_isort = { enabled = true }
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "strict"
+autoImportCompletions = true
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config]
+settings = {args = []}
 
 [language.debugger]
 name = "debugpy"
