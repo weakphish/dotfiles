@@ -110,6 +110,9 @@ else
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
 
+        -- Use non-LSP as an LSP (linters, etc)
+        'nvimtools/none-ls.nvim',
+
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
         { 'j-hui/fidget.nvim', opts = {}, tag = 'legacy' },
@@ -159,50 +162,7 @@ else
         local servers = {
           clangd = {},
           gopls = {},
-          pylsp = {
-            pylsp = {
-              plugins = {
-                -- disable defaults in favor of third party
-                autopep8 = {
-                  enabled = false,
-                },
-                yapf = {
-                  enabled = false,
-                },
-                jedi = {
-                  completion = {
-                    enabled = true,
-                    fuzzy = true,
-                  },
-                },
-                mccabe = {
-                  enabled = false,
-                },
-                pycodestyle = {
-                  enabled = false,
-                },
-                pyflakes = {
-                  enabled = false,
-                },
-                pydocstyle = {
-                  enabled = false,
-                },
-                -- Plugins to match style I use at work
-                pylint = {
-                  enabled = true, -- Temp
-                },
-                pylsp_mypy = {
-                  enabled = true,
-                },
-                pyls_isort = {
-                  enabled = true,
-                },
-                black = {
-                  enabled = true,
-                },
-              },
-            },
-          },
+          pyright = {},
           rust_analyzer = {},
           tsserver = {},
           html = {},
@@ -252,6 +212,19 @@ else
             }
           end,
         }
+
+        -- Null / None Setup
+        local null_ls = require("null-ls")
+
+        null_ls.setup({
+          sources = {
+            null_ls.builtins.formatting.stylua,
+            null_ls.builtins.formatting.isort,
+            null_ls.builtins.formatting.black,
+            null_ls.builtins.diagnostics.eslint,
+            null_ls.builtins.completion.spell,
+          },
+        })
 
         -- nvim-cmp setup
         local cmp = require 'cmp'
@@ -437,10 +410,12 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
+      'sainnhe/everforest',
       priority = 1000,
       config = function()
-        require('onedark').load()
+        vim.g.everforest_background = 'soft'
+        vim.g.everforest_better_performance = 1
+        vim.cmd('colorscheme everforest')
       end,
     },
 
@@ -451,7 +426,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'onedark',
+          theme = 'everforest',
           component_separators = '|',
           section_separators = '',
         },
