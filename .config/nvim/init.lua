@@ -425,7 +425,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'everforest',
+          theme = 'gruvbox',
           component_separators = '|',
           section_separators = '',
         },
