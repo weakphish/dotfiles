@@ -3,6 +3,7 @@ set -Ux EDITOR hx
 # Aliases
 alias lg lazygit
 alias tf terraform
+alias phx "poetry run hx"
 
 # Vim mode
 fish_vi_key_bindings
