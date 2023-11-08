@@ -2,7 +2,7 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Neovim, with JetBrains for large refactors/debugging
+**Current editor**: Helix, with JetBrains for large refactors/debugging
  
 **Shell:** Fish shell with omf to manage prompts, etc.
 
