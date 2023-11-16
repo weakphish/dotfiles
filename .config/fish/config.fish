@@ -4,6 +4,7 @@ set -Ux EDITOR hx
 alias lg lazygit
 alias tf terraform
 alias phx "poetry run hx"
+alias dc "docker compose"
 
 # Vim mode
 fish_vi_key_bindings
