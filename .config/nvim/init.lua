@@ -222,7 +222,7 @@ else
             null_ls.builtins.formatting.isort,
             null_ls.builtins.formatting.black,
             null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.completion.spell,
+            -- null_ls.builtins.completion.spell,
           },
         }
 
@@ -410,11 +410,10 @@ else
 
     {
       -- Pretty colors
-      'ellisonleao/gruvbox.nvim',
+      'navarasu/onedark.nvim',
       priority = 1000,
       config = function()
-        vim.o.background = 'dark' -- or "light" for light mode
-        vim.cmd [[colorscheme gruvbox]]
+        require('onedark').load()
       end,
     },
 
@@ -425,7 +424,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'gruvbox',
+          theme = 'onedark',
           component_separators = '|',
           section_separators = '',
         },

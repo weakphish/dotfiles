@@ -1,9 +1,10 @@
-set -Ux EDITOR hx
+set -Ux EDITOR nvim
 
 # Aliases
 alias lg lazygit
 alias tf terraform
 alias phx "poetry run hx"
+alias pnv "poetry run nvim"
 alias dc "docker compose"
 
 # Vim mode
