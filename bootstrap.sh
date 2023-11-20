@@ -15,17 +15,9 @@ chsh -s /opt/homebrew/bin/fish
 # install omf
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
+# Install stuff I like
 brew install fzf
 brew install ripgrep
-brew install helix
+brew install neovim
 brew install tldr
 brew install lazygit
-
-# doom emacs
-brew tap railwaycat/emacsmacport
-brew install --cask emacs-mac
-
-git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-
-echo "fish_add_path -U ~/.emacs.d/bin/" | fish
