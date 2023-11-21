@@ -450,7 +450,17 @@ else
         require('ibl').setup()
       end,
     },
-
+    {
+      -- Better showing if diagnostics
+      'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+      config = function()
+        require('lsp_lines').setup()
+        -- Disable virtual_text since it's redundant due to lsp_lines.
+        vim.diagnostic.config {
+          virtual_text = false,
+        }
+      end,
+    },
     -- NOTE: === LANGUAGE SUPPORT ===
     -- Linter for Jenkinsfiles
     {
