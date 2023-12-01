@@ -98,7 +98,7 @@ else
   --  You can also configure plugins after the setup call,
   --    as they will be available in your neovim runtime.
   require('lazy').setup({
-    -- NOTE: === LSP / COMPETION ===
+    -- NOTE: === LSP / COMPLETION ===
     {
       -- LSP Configuration & Plugins
       'neovim/nvim-lspconfig',
@@ -123,18 +123,6 @@ else
       config = function()
         --  This function gets run when an LSP connects to a particular buffer.
         local on_attach = function(client, bufnr)
-          -- Create a command `:Format` local to the LSP buffer
-          vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-            vim.lsp.buf.format()
-          end, { desc = 'Format current buffer with LSP' })
-
-          -- Format on save
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            callback = function()
-              vim.lsp.buf.format { async = false }
-            end,
-          })
-
           -- Show line diagnostics in hover window
           -- Source: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#show-line-diagnostics-automatically-in-hover-window
           vim.o.updatetime = 250
@@ -218,11 +206,7 @@ else
 
         null_ls.setup {
           sources = {
-            null_ls.builtins.formatting.stylua,
-            null_ls.builtins.formatting.isort,
-            null_ls.builtins.formatting.black,
             null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.formatting.prettier,
             -- null_ls.builtins.completion.spell,
           },
         }
@@ -269,6 +253,7 @@ else
           sources = {
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
+            { name = 'path' },
           },
         }
       end,
@@ -277,7 +262,7 @@ else
     {
       -- Autocompletion Engine
       'hrsh7th/nvim-cmp',
-      dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+      dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-path' },
     },
 
     {
@@ -294,6 +279,28 @@ else
       'windwp/nvim-ts-autotag',
       config = function()
         require('nvim-ts-autotag').setup()
+      end,
+    },
+
+    {
+      -- Formatting
+      'stevearc/conform.nvim',
+      opts = {},
+      config = function()
+        require('conform').setup {
+          formatters_by_ft = {
+            lua = { 'stylua' },
+            -- Conform will run multiple formatters sequentially
+            python = { 'isort', 'black' },
+            -- Use a sub-list to run only the first available formatter
+            javascript = { { 'prettierd', 'prettier' } },
+          },
+          format_on_save = {
+            -- These options will be passed to conform.format()
+            timeout_ms = 500,
+            lsp_fallback = true,
+          },
+        }
       end,
     },
 
@@ -451,17 +458,7 @@ else
         require('ibl').setup()
       end,
     },
-    {
-      -- Better showing if diagnostics
-      'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-      config = function()
-        require('lsp_lines').setup()
-        -- Disable virtual_text since it's redundant due to lsp_lines.
-        vim.diagnostic.config {
-          virtual_text = false,
-        }
-      end,
-    },
+
     -- NOTE: === LANGUAGE SUPPORT ===
     -- Linter for Jenkinsfiles
     {
@@ -514,6 +511,13 @@ else
     },
 
     -- NOTE: === TOOLS ===
+    {
+      'echasnovski/mini.surround',
+      version = false,
+      config = function()
+        require('mini.surround').setup()
+      end,
+    },
 
     -- Easy toggling of terminals
     { 'akinsho/toggleterm.nvim', version = '*', config = true },
@@ -766,7 +770,7 @@ else
             d = { vim.lsp.buf.definition, 'Go To Definition' },
             D = { vim.lsp.buf.declaration, 'Go to Declaration' },
             i = { vim.lsp.buf.implementation, 'Go to Implementation' },
-            f = { '<cmd>Format<CR>', 'Format' }, -- We defined this function above
+            f = { require('conform').format, 'Format Buffer' },
             r = { vim.lsp.buf.rename, 'Code Rename' },
           },
           d = {
