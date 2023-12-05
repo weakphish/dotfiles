@@ -216,6 +216,7 @@ else
         local luasnip = require 'luasnip'
 
         luasnip.config.setup {}
+        require('cmp_git').setup()
 
         cmp.setup {
           snippet = {
@@ -254,6 +255,7 @@ else
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
             { name = 'path' },
+            { name = 'git' },
           },
         }
       end,
@@ -262,7 +264,7 @@ else
     {
       -- Autocompletion Engine
       'hrsh7th/nvim-cmp',
-      dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-path' },
+      dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-path', 'petertriho/cmp-git' },
     },
 
     {
@@ -512,6 +514,36 @@ else
 
     -- NOTE: === TOOLS ===
     {
+      -- GitHub interactions
+      'pwntester/octo.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+        'nvim-tree/nvim-web-devicons',
+      },
+      config = function()
+        require('octo').setup()
+      end,
+    },
+
+    {
+      -- Test interactions
+      'nvim-neotest/neotest',
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'nvim-neotest/neotest-python',
+        'antoinemadec/FixCursorHold.nvim',
+      },
+      config = function()
+        require('neotest').setup {
+          adapters = {
+            require 'neotest-python',
+          },
+        }
+      end,
+    },
+
+    {
       'echasnovski/mini.surround',
       version = false,
       config = function()
@@ -570,12 +602,19 @@ else
     },
 
     {
+      -- See local (adjacent) files
+      'MaximilianLloyd/adjacent.nvim',
+    },
+
+    {
       -- Highlight, edit, and navigate code
       'nvim-treesitter/nvim-treesitter',
       dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
       },
       config = function()
+        vim.treesitter.language.register('markdown', 'octo')
+
         pcall(require('nvim-treesitter.install').update { with_sync = true })
         -- See `:help telescope` and `:help telescope.setup()`
         require('telescope').setup {
@@ -597,6 +636,8 @@ else
         pcall(require('telescope').load_extension, 'undo')
         -- Enable telescope with Noice
         require('telescope').load_extension 'noice'
+        -- Enable telescope with adjacanet
+        require('telescope').load_extension 'adjacent'
 
         -- [[ Configure Treesitter ]]
         -- See `:help nvim-treesitter`
@@ -789,6 +830,7 @@ else
           },
           f = {
             name = 'File',
+            a = { '<cmd>Telescope adjacent<CR>', 'Addjacent Files' },
             f = { '<cmd>Telescope find_files hidden=true<cr>', 'Find File' },
             r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
           },
