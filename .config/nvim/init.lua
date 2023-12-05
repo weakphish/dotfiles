@@ -420,10 +420,10 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
+      'rebelot/kanagawa.nvim',
       priority = 1000,
       config = function()
-        require('onedark').load()
+        vim.cmd("colorscheme kanagawa")
       end,
     },
 
@@ -434,7 +434,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'onedark',
+          theme = 'kanagawa',
           component_separators = '|',
           section_separators = '',
         },
