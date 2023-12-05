@@ -514,6 +514,15 @@ else
 
     -- NOTE: === TOOLS ===
     {
+      'ggandor/leap.nvim',
+      dependencies = {
+        'tpope/vim-repeat',
+      },
+      config = function()
+        require('leap').add_default_mappings()
+      end,
+    },
+    {
       -- GitHub interactions
       'pwntester/octo.nvim',
       requires = {
@@ -554,7 +563,20 @@ else
       'echasnovski/mini.surround',
       version = false,
       config = function()
-        require('mini.surround').setup()
+        require('mini.surround').setup {
+          mappings = {
+            add = '', -- Add surrounding in Normal and Visual modes
+            delete = '', -- Delete surrounding
+            find = '', -- Find surrounding (to the right)
+            find_left = '', -- Find surrounding (to the left)
+            highlight = '', -- Highlight surrounding
+            replace = '', -- Replace surrounding
+            update_n_lines = '', -- Update `n_lines`
+
+            suffix_last = '', -- Suffix to search with "prev" method
+            suffix_next = '', -- Suffix to search with "next" method
+          },
+        }
       end,
     },
 
@@ -834,6 +856,16 @@ else
             i = { dap.step_into, 'Step into' },
             o = { dap.step_over, 'Step over' },
             u = { dap.step_out, 'Step up (out)' },
+          },
+          e = {
+            name = 'Surround',
+            a = { require('mini.surround').add, 'Add Surrounding' },
+            d = { require('mini.surround').delete, 'Delete Surrounding' },
+            f = { require('mini.surround').find, 'Find Surrounding Right' },
+            F = { require('mini.surround').find_left, 'Find Surrounding Left' },
+            h = { require('mini.surround').highlight, 'Highlight Surrounding' },
+            r = { require('mini.surround').replace, 'Replace Surrounding' },
+            n = { require('mini.surround').update_n_lines, 'Update Surrounding N Lines' },
           },
           f = {
             name = 'File',
