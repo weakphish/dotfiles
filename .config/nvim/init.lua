@@ -846,6 +846,15 @@ else
             m = { '<cmd>Glow<CR>', 'Open Preview' },
             t = { '<cmd>Twilight<CR>', 'Toggle Dim Inactive Code' },
           },
+          n = {
+            name = 'Neotest',
+            r = {
+              name = 'Run',
+              f = { '<cmd>Neotest run file<CR>', 'Run File' },
+            },
+            s = { '<cmd>Neotest summary<CR>', 'Summary' },
+            o = { '<cmd>Neotest output<CR>', 'Output' },
+          },
           s = {
             name = 'Search',
             b = { require('telescope.builtin').current_buffer_fuzzy_find, 'Fuzzily search current buffer' },
