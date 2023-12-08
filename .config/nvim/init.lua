@@ -535,10 +535,10 @@ else
       },
       opts = {
         workspaces = {
-          { {
+          {
             name = 'work',
             path = '~/Obsidian',
-          } },
+          },
         },
       },
     },
