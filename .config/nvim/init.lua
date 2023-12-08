@@ -151,6 +151,7 @@ else
           clangd = {},
           gopls = {},
           pyright = {},
+          ruff_lsp = {},
           rust_analyzer = {},
           tsserver = {},
           html = {},
@@ -293,7 +294,7 @@ else
           formatters_by_ft = {
             lua = { 'stylua' },
             -- Conform will run multiple formatters sequentially
-            python = { 'isort', 'black' },
+            python = { 'isort', 'black', 'ruff_fix' },
             -- Use a sub-list to run only the first available formatter
             javascript = { { 'prettierd', 'prettier' } },
           },
@@ -423,7 +424,7 @@ else
       'rebelot/kanagawa.nvim',
       priority = 1000,
       config = function()
-        vim.cmd("colorscheme kanagawa")
+        vim.cmd 'colorscheme kanagawa'
       end,
     },
 
@@ -514,6 +515,35 @@ else
 
     -- NOTE: === TOOLS ===
     {
+      -- Obsidian in Neovim
+      'epwalsh/obsidian.nvim',
+      version = '*', -- recommended, use latest release instead of latest commit
+      lazy = true,
+      ft = 'markdown',
+      -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+      -- event = {
+      --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+      --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+      --   "BufReadPre path/to/my-vault/**.md",
+      --   "BufNewFile path/to/my-vault/**.md",
+      -- },
+      dependencies = {
+        -- Required.
+        'nvim-lua/plenary.nvim',
+
+        -- see below for full list of optional dependencies 👇
+      },
+      opts = {
+        workspaces = {
+          { {
+            name = 'work',
+            path = '~/Obsidian',
+          } },
+        },
+      },
+    },
+
+    {
       'ggandor/leap.nvim',
       dependencies = {
         'tpope/vim-repeat',
@@ -522,6 +552,7 @@ else
         require('leap').add_default_mappings()
       end,
     },
+
     {
       -- GitHub interactions
       'pwntester/octo.nvim',
