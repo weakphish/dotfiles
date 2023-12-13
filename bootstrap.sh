@@ -18,6 +18,7 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 # Install stuff I like
 brew install fzf
 brew install ripgrep
+brew install helix
 brew install neovim
 brew install tldr
 brew install lazygit
