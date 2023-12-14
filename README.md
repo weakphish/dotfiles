@@ -2,7 +2,7 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Helix, with JetBrains for large refactors/debugging
+**Current editor**: Neovim, with JetBrains for large refactors/debugging
  
 **Shell:** Fish shell with omf to manage prompts, etc.
 
@@ -14,4 +14,4 @@ Also included is...
 - a bare `.vimrc` that enables lines and syntax, as well as a setup script for Mac systems
 - A Neovim configuration based on kickstart.nvim
 - A Doom Emacs config, because org-mode is cool
-- a helix config
+- a Helix config, because I think Helix is awesome (and patched once ;) )

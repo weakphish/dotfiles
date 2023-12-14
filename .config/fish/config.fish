@@ -1,4 +1,4 @@
-set -Ux EDITOR hx
+set -Ux EDITOR nvim
 
 # Aliases
 alias lg lazygit

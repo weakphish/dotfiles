@@ -421,10 +421,10 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
+      'sainnhe/everforest',
       priority = 1000,
       config = function()
-        require('onedark').load()
+        vim.cmd [[colorscheme everforest]]
       end,
     },
 
@@ -435,7 +435,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'onedark',
+          theme = 'everforest',
           component_separators = '|',
           section_separators = '',
         },
