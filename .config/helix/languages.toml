@@ -4,7 +4,6 @@
 name = "python"
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 language-servers = ["pylsp"]
-auto-format = true
 
 [language-server.pylsp.config.pylsp.plugins]
 pylint = { enabled = true }
@@ -42,7 +41,6 @@ args =  { program = "uvicorn {0}.{1}:{2} --debug --reload"}
 # TypeScript
 [[language]]
 name = "typescript"
-auto-format = true
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, { name = "efm", only-features = [ "diagnostics", "format" ] }]
 
 [language-server.efm]
@@ -56,6 +54,16 @@ config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenth
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "    " }
+
+# CSS
+[[language]]
+name = "css"
+scope = "source.css"
+injection-regex = "css"
+file-types = ["css", "scss"]
+language-servers = [ "vscode-css-language-server" ]
+auto-format = false
+indent = { tab-width = 2, unit = "  " }
 
 # Groovy / Java
 [[language]]

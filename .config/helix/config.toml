@@ -4,7 +4,6 @@ theme = "everforest_dark"
 line-number = "relative"
 mouse = true
 rulers = [120]
-auto-format = true
 cursorline = true
 color-modes = true
 bufferline = "multiple"
