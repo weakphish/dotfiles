@@ -10,5 +10,10 @@ alias dc "docker compose"
 # iTerm integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+# VS Code integration
+string match -q "$TERM_PROGRAM" "vscode"
+and . (code --locate-shell-integration-path fish)
+
 # Pyenv 
 pyenv init - | source
+rvm default
