@@ -98,7 +98,10 @@ else
   --  You can also configure plugins after the setup call,
   --    as they will be available in your neovim runtime.
   require('lazy').setup({
-    -- NOTE: === LSP / COMPLETION ===
+
+    -- NOTE: =========================================================================================================
+    -- ========= LSP / COMPLETION ====================================================================================
+    -- ===============================================================================================================
     {
       -- LSP Configuration & Plugins
       'neovim/nvim-lspconfig',
@@ -151,7 +154,9 @@ else
           clangd = {},
           gopls = {},
           pyright = {},
-          ruff_lsp = {},
+          ruff_lsp = {
+            organizeImports = false,
+          },
           rust_analyzer = {},
           tsserver = {},
           html = {},
@@ -173,6 +178,15 @@ else
         }
         local cfg = require('go.lsp').config() -- config() return the go.nvim gopls setup
         require('lspconfig').gopls.setup(cfg)
+
+        -- Disable Ruff's hover in favor of Pyright
+        local ruff_on_attach = function(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+        end
+
+        require('lspconfig').ruff_lsp.setup {
+          on_attach = ruff_on_attach,
+        }
 
         -- Setup neovim lua configuration
         require('neodev').setup()
@@ -294,7 +308,7 @@ else
           formatters_by_ft = {
             lua = { 'stylua' },
             -- Conform will run multiple formatters sequentially
-            python = { 'isort', 'black', 'ruff_fix' },
+            python = { 'isort', 'black' },
             -- Use a sub-list to run only the first available formatter
             javascript = { { 'prettierd', 'prettier' } },
           },
@@ -315,7 +329,9 @@ else
       end,
     },
 
-    -- NOTE: === VISUAL / AESTHETIC ---
+    -- NOTE: =========================================================================================================
+    -- === VISUAL / AESTHETIC ========================================================================================
+    -- ===============================================================================================================
 
     -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
     {
@@ -462,7 +478,10 @@ else
       end,
     },
 
-    -- NOTE: === LANGUAGE SUPPORT ===
+    -- NOTE: =========================================================================================================
+    -- === LANGUAGE SUPPORT ==========================================================================================
+    -- ===============================================================================================================
+
     -- Linter for Jenkinsfiles
     {
       'ckipp01/nvim-jenkinsfile-linter',
@@ -485,7 +504,10 @@ else
       build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
     },
 
-    -- NOTE: === MARKDOWN ===
+    -- NOTE: =========================================================================================================
+    -- === MARKDOWN ==================================================================================================
+    -- ===============================================================================================================
+
     -- Markdown preview with Glow
     { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
 
@@ -513,7 +535,10 @@ else
       end,
     },
 
-    -- NOTE: === TOOLS ===
+    -- NOTE: =========================================================================================================
+    -- === TOOLS =====================================================================================================
+    -- ===============================================================================================================
+
     {
       -- Obsidian in Neovim
       'epwalsh/obsidian.nvim',
@@ -847,7 +872,10 @@ else
       end,
     },
 
-    -- NOTE: === BINDINGS ===
+    -- NOTE: =========================================================================================================
+    -- === BINDINGS ==================================================================================================
+    -- ===============================================================================================================
+
     {
       -- Show key options when using shortcuts
       'folke/which-key.nvim',
