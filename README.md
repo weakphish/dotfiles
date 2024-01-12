@@ -5,7 +5,7 @@ Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 **Current editor**: Helix, with JetBrains IDEs for large refactors/debugging. 
 - I use [helix.vim](https://github.com/chtenb/helix.vim) as a bastardized way to get Helix emulation inside of JetBrains IDEs.
  
-**Shell:** Fish shell with omf to manage prompts, etc.
+**Shell:** Fish shell with omf to manage prompts, etc. I also like to use [Zellij](https://zellij.dev/) for workspace / pane / tab management in the terminal.
 
 **Terminal:** iTerm2, see `itermcolors` for the colorschemes I like. Usually, with Iosevka 14 or JetBrains Mono 12.
 
