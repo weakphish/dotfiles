@@ -40,7 +40,6 @@ scope = "source.css"
 injection-regex = "css"
 file-types = ["css", "scss"]
 language-servers = [ "vscode-css-language-server" ]
-auto-format = false
 indent = { tab-width = 2, unit = "  " }
 
 # Groovy / Java

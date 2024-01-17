@@ -7,6 +7,7 @@ rulers = [120]
 cursorline = true
 color-modes = true
 bufferline = "multiple"
+auto-format = true
 
 [editor.lsp]
 display-messages = true
