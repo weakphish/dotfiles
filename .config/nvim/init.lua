@@ -300,6 +300,15 @@ else
     },
 
     {
+      -- Incremental renaming of stuff
+      'smjonas/inc-rename.nvim',
+      config = function()
+        require('inc_rename').setup()
+        vim.keymap.set('n', '<leader>crn', ':IncRename ') -- I can't figure out how to make which-key work with IncRename
+      end,
+    },
+
+    {
       -- Formatting
       'stevearc/conform.nvim',
       opts = {},
@@ -337,16 +346,15 @@ else
     {
       'folke/noice.nvim',
       event = 'VeryLazy',
-      opts = function(_, opts)
-        -- Filter out LSP 'no information available' messages
-        table.insert(opts.routes, {
-          filter = {
-            event = 'notify',
-            find = 'No information available',
+      opts = {
+        lsp = {
+          hover = {
+            -- Set not show a message if hover is not available
+            -- ex: shift+k on Typescript code
+            silent = true,
           },
-          opts = { skip = true },
-        })
-      end,
+        },
+      },
       dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         'MunifTanjim/nui.nvim',
@@ -370,7 +378,7 @@ else
             bottom_search = true, -- use a classic bottom cmdline for search
             command_palette = true, -- position the cmdline and popupmenu together
             long_message_to_split = true, -- long messages will be sent to a split
-            inc_rename = false, -- enables an input dialog for inc-rename.nvim
+            inc_rename = true, -- enables an input dialog for inc-rename.nvim
             lsp_doc_border = true, -- add a border to hover docs and signature help
           },
         }
@@ -907,7 +915,9 @@ else
             D = { vim.lsp.buf.declaration, 'Go to Declaration' },
             i = { vim.lsp.buf.implementation, 'Go to Implementation' },
             f = { require('conform').format, 'Format Buffer' },
-            r = { vim.lsp.buf.rename, 'Code Rename' },
+            r = {
+              r = { vim.lsp.buf.rename, 'Code Rename' },
+            },
           },
           d = {
             name = 'Debug',
