@@ -11,6 +11,11 @@ Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
 **Git Porcelain:** LazyGit
 
+**Other Software:**
+Other software that I use as a developer on a regular basis:
+- [Raycast](https://www.raycast.com/), a Spotlight/Alfred replacement
+- [Dash](https://kapeli.com/dash), an offline documentation browser
+
 Also included is...
 - a bare `.vimrc` that enables lines and syntax, as well as a setup script for Mac systems
 - A Neovim configuration based on kickstart.nvim
