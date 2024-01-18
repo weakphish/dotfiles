@@ -945,7 +945,7 @@ else
           },
           f = {
             name = 'File',
-            a = { '<cmd>Telescope adjacent<CR>', 'Addjacent Files' },
+            a = { '<cmd>Telescope adjacent<CR>', 'Adjacent Files' },
             f = { '<cmd>Telescope find_files hidden=true<cr>', 'Find File' },
             r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
           },
