@@ -171,23 +171,6 @@ else
         vim.keymap.set({ 'n' }, 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
         vim.keymap.set({ 'n' }, '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
 
-        -- Add in specific instructions to integrate go.nvim with mason
-        require('go').setup {
-          lsp_cfg = false,
-          -- other setups...
-        }
-        local cfg = require('go.lsp').config() -- config() return the go.nvim gopls setup
-        require('lspconfig').gopls.setup(cfg)
-
-        -- Disable Ruff's hover in favor of Pyright
-        local ruff_on_attach = function(client, bufnr)
-          client.server_capabilities.hoverProvider = false
-        end
-
-        require('lspconfig').ruff_lsp.setup {
-          on_attach = ruff_on_attach,
-        }
-
         -- Setup neovim lua configuration
         require('neodev').setup()
 
@@ -212,6 +195,24 @@ else
               capabilities = capabilities,
               on_attach = on_attach,
               settings = servers[server_name],
+            }
+          end,
+          ['gopls'] = function()
+            -- Add in specific instructions to integrate go.nvim with mason
+            require('go').setup {
+              lsp_cfg = false,
+              -- other setups...
+            }
+            local cfg = require('go.lsp').config() -- config() return the go.nvim gopls setup
+            require('lspconfig').gopls.setup(cfg)
+          end,
+          ['ruff_lsp'] = function()
+            -- Disable Ruff's hover in favor of Pyright
+            local on_attach = function(client, bufnr)
+              client.server_capabilities.hoverProvider = false
+            end
+            require('lspconfig').ruff_lsp.setup {
+              on_attach = on_attach,
             }
           end,
         }
