@@ -448,10 +448,10 @@ else
 
     {
       -- Pretty colors
-      'sainnhe/everforest',
+      'rebelot/kanagawa.nvim',
       priority = 1000,
       config = function()
-        vim.cmd [[colorscheme everforest]]
+        vim.cmd("colorscheme kanagawa")
       end,
     },
 
@@ -462,7 +462,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'everforest',
+          theme = 'kanagawa',
           component_separators = '|',
           section_separators = '',
         },
