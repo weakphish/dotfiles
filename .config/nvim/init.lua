@@ -554,7 +554,7 @@ else
       -- Obsidian in Neovim
       'epwalsh/obsidian.nvim',
       version = '*', -- recommended, use latest release instead of latest commit
-      lazy = true,
+      lazy = false,
       ft = 'markdown',
       -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
       -- event = {
@@ -965,6 +965,15 @@ else
             },
             s = { '<cmd>Neotest summary<CR>', 'Summary' },
             o = { '<cmd>Neotest output<CR>', 'Output' },
+          },
+          o = {
+            name = "Obsidian",
+            o = { '<cmd>Obsidian<CR>', 'Open Obsidian' },
+            s = { '<cmd>ObsidianQuickSwitch<CR>', 'Quick Switch' },
+            t = { '<cmd>ObsidianToday<CR>', 'Today' },
+            T = { '<cmd>ObsidianTomorrow<CR>', 'Tomorrow' },
+            y = { '<cmd>ObsidianYesterday<CR>', 'Yesterday' },
+
           },
           s = {
             name = 'Search',
