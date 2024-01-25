@@ -972,6 +972,7 @@ else
             d = { require('telescope.builtin').diagnostics, 'Search Diagnostics' },
             g = { require('telescope.builtin').live_grep, 'Search with Grep' },
             h = { require('telescope.builtin').help_tags, 'Search Help' },
+            j = { require('telescope.builtin').jumplist, 'Search Jumplist' },
             r = { require('telescope.builtin').lsp_references, 'Search References' },
             s = { require('telescope.builtin').lsp_document_symbols, 'Workspace Document Symbols' },
             t = { '<cmd>TodoTelescope<CR>', 'Search TODO' },
