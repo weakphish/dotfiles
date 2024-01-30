@@ -12,6 +12,7 @@ Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
 **Other Software:**
 Other software that I use as a developer on a regular basis:
+- [Logseq](https://logseq.com/), for taking notes / task management
 - [Raycast](https://www.raycast.com/), a Spotlight/Alfred replacement
 - [Dash](https://kapeli.com/dash), an offline documentation browser
 
