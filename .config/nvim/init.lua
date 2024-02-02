@@ -860,6 +860,7 @@ else
             r = {
               r = { vim.lsp.buf.rename, 'Code Rename' },
             },
+            t = { vim.lsp.buf.type_definition, 'Go To Type Definition' },
           },
           d = {
             name = 'Debug',
