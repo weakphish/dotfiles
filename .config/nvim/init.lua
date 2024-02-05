@@ -448,10 +448,10 @@ else
 
     {
       -- Pretty colors
-      'navarasu/onedark.nvim',
+      'sainnhe/sonokai',
       priority = 1000,
       config = function()
-        require('onedark').load()
+        vim.cmd 'colorscheme sonokai'
       end,
     },
 
@@ -462,7 +462,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'onedark',
+          theme = 'sonokai',
           component_separators = '|',
           section_separators = '',
         },
