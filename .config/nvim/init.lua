@@ -448,10 +448,10 @@ else
 
     {
       -- Pretty colors
-      'sainnhe/sonokai',
+      'sainnhe/everforest',
       priority = 1000,
       config = function()
-        vim.cmd 'colorscheme sonokai'
+        vim.cmd 'colorscheme everforest'
       end,
     },
 
@@ -462,7 +462,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'sonokai',
+          theme = 'everforest',
           component_separators = '|',
           section_separators = '',
         },
