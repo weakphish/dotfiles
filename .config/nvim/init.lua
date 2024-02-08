@@ -446,13 +446,15 @@ else
       end,
     },
 
+    -- Pretty colors
     {
-      -- Pretty colors
-      'sainnhe/everforest',
+      'ellisonleao/gruvbox.nvim',
       priority = 1000,
       config = function()
-        vim.cmd 'colorscheme everforest'
+        vim.o.background = 'dark' -- or "light" for light mode
+        vim.cmd [[colorscheme gruvbox]]
       end,
+      opts = ...,
     },
 
     {
@@ -462,7 +464,7 @@ else
       opts = {
         options = {
           icons_enabled = false,
-          theme = 'everforest',
+          theme = 'gruvbox',
           component_separators = '|',
           section_separators = '',
         },
