@@ -3,7 +3,10 @@
 [[language]]
 name = "python"
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-language-servers = ["pyright", "ruff"]
+language-servers = [
+  { name = "ruff-lsp", only-features = [ "diagnostics", "code-action" ] },
+  { name = "pyright", except-features = [ "format", "diagnostics" ] }
+]
 auto-format = false
 formatter = { command = 'black', args = ["--quiet", "-"] }
 
@@ -11,7 +14,7 @@ formatter = { command = 'black', args = ["--quiet", "-"] }
 command = "pyright-langserver"
 args = ["--stdio"]
 
-[language-server.ruff]
+[language-server.ruff-lsp]
 command = "ruff-lsp"
 config = { settings = { run = "onSave" } }
 
