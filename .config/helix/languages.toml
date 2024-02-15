@@ -4,7 +4,7 @@
 name = "python"
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 language-servers = [
-  { name = "ruff-lsp", except-features = [ "format" ] },
+  { name = "ruff-lsp", only-features = [ "diagnostics", "code-action" ] },
   { name = "pyright", except-features = [ "format" ] }
 ]
 auto-format = false
