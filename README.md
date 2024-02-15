@@ -2,11 +2,11 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Helix, with JetBrains IDEs for large refactors/debugging. 
+**Current editor**: Neovim, with JetBrains IDEs for large refactors/debugging. 
  
 **Shell:** Fish shell with omf to manage prompts, etc. I also like to use [Zellij](https://zellij.dev/) for workspace / pane / tab management in the terminal.
 
-**Terminal:** iTerm2, see `itermcolors` for the colorschemes I like. Usually, with Iosevka 14 or JetBrains Mono 12.
+**Terminal:** Currently trying out Alacritty.
 
 **Git Porcelain:** LazyGit
 
