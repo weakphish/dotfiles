@@ -2,9 +2,9 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: VS Code, with JetBrains IDEs for large refactors/debugging. 
+**Current editor**: Neovim, with JetBrains IDEs for large refactors/debugging. 
  
-**Shell:** Fish shell with omf to manage prompts, etc. I also like to use [Zellij](https://zellij.dev/) for workspace / pane / tab management in the terminal.
+**Shell:** Fish shell with omf to manage prompts, etc.
 
 **Terminal:** iTerm2. See the `iterm` folder for a collection of colorschemes I've saved.
 
