@@ -1,4 +1,6 @@
-set -Ux EDITOR hx
+set -Ux EDITOR nvim
+
+fish_vi_key_bindings
 
 # Aliases
 alias lg lazygit
