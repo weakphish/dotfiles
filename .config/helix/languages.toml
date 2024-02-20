@@ -45,7 +45,7 @@ file-types = ["css", "scss"]
 language-servers = [ "vscode-css-language-server" ]
 indent = { tab-width = 2, unit = "  " }
 
-# Groovy / Java
+# Groovy
 [[language]]
-name = "java"
-file-types = ["java", "groovy", "Jenkinsfile", "jenkinsfile"]
+name = "groovy"
+file-types = ["groovy", "Jenkinsfile", "jenkinsfile"]
