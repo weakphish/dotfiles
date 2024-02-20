@@ -5,7 +5,8 @@ return {
   config = function()
     local wk = require 'which-key'
     local dap = require 'dap'
-    -- As an example, we will create the following mappings:
+
+    -- Normal mode
     wk.register({
       b = {
         name = 'Buffer',
@@ -52,6 +53,12 @@ return {
         g = { '<cmd>LazyGit<CR>', 'LazyGit' },
         b = { '<cmd>Gitsigns toggle_current_line_blame<CR>', 'Current Line Blame' },
       },
+      l = {
+        name = 'Leap',
+        s = { '<Plug>(leap-forward)', 'Leap Forward' },
+        S = { '<Plug>(leap-backward)', 'Leap Backward' },
+        gs = { '<Plug>(leap-from-window)', 'Leap From Window' },
+      },
       m = {
         name = 'Markdown',
         c = { '<cmd>Glow!<CR>', 'Close Preview' },
@@ -94,5 +101,13 @@ return {
         s = { require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols' },
       },
     }, { prefix = '<leader>' })
+
+    -- Visual mode bindings
+    wk.register({
+      -- Re-register the Leap bindings for visual mode, since adding custom normal bindings
+      -- will remove the default visual mode bindings.
+      x = { '<Plug>(leap-forward-till)', 'Leap Forward Till' },
+      X = { '<Plug>(leap-backward-till)', 'Leap Backward Till' },
+    }, { mode = 'v' })
   end,
 }

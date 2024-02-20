@@ -1,4 +1,9 @@
 return {
+  -- Leap around the screen
+  {
+    'ggandor/leap.nvim',
+  },
+
   {
     -- GitHub interactions
     'pwntester/octo.nvim',
