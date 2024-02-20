@@ -57,7 +57,10 @@ return {
         name = 'Leap',
         s = { '<Plug>(leap-forward)', 'Leap Forward' },
         S = { '<Plug>(leap-backward)', 'Leap Backward' },
-        gs = { '<Plug>(leap-from-window)', 'Leap From Window' },
+        g = {
+          name = "Window",
+          s = { '<Plug>(leap-from-window)', 'Leap From Window' },
+        }
       },
       m = {
         name = 'Markdown',
