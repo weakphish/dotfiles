@@ -21,9 +21,16 @@ return {
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 
-  -- NOTE: MARKDOWN 
+  -- NOTE: MARKDOWN
   -- Markdown preview with Glow
-  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
 
   {
     -- Zen mode for writing markdown

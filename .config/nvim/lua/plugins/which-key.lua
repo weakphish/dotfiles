@@ -64,9 +64,9 @@ return {
       },
       m = {
         name = 'Markdown',
-        c = { '<cmd>Glow!<CR>', 'Close Preview' },
+        c = { '<cmd>MarkdownPreviewStop<CR>', 'Close Preview' },
         f = { '<cmd>ZenMode<CR>', 'Focus' },
-        m = { '<cmd>Glow<CR>', 'Open Preview' },
+        m = { '<cmd>MarkdownPreview<CR>', 'Open Preview' },
         t = { '<cmd>Twilight<CR>', 'Toggle Dim Inactive Code' },
       },
       n = {
