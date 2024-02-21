@@ -1,4 +1,4 @@
-set -Ux EDITOR nvim
+set -Ux EDITOR hx
 
 fish_vi_key_bindings
 

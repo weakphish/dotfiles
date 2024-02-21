@@ -109,11 +109,10 @@ return {
 
   -- Pretty colors
   {
-    'ellisonleao/gruvbox.nvim',
+    "rebelot/kanagawa.nvim",
     priority = 1000,
     config = function()
-      vim.o.background = 'dark' -- or "light" for light mode
-      vim.cmd [[colorscheme gruvbox]]
+      vim.cmd("colorscheme kanagawa")
     end,
     opts = ...,
   },
@@ -125,7 +124,7 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = 'kanagawa',
         component_separators = '|',
         section_separators = '',
       },

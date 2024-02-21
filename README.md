@@ -2,9 +2,9 @@
 My dots.
 Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
-**Current editor**: Neovim, with JetBrains IDEs for large refactors/debugging. 
+**Current editor**: Helix, with JetBrains IDEs for large refactors/debugging. 
  
-**Shell:** Fish shell with omf to manage prompts, etc.
+**Shell:** Fish shell with omf to manage prompts, etc. 
 
 **Terminal:** iTerm2. See the `iterm` folder for a collection of colorschemes I've saved.
 
@@ -12,6 +12,7 @@ Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 
 **Other Software:**
 Other software that I use as a developer on a regular basis:
+- Zellij, as a tmux alternative
 - [Raycast](https://www.raycast.com/), a Spotlight/Alfred replacement
 - Good ol' pen and paper for note-taking and to-do lists.
 
