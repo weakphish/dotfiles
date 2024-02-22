@@ -95,7 +95,7 @@ return {
         name = 'Toggle',
         a = { '<cmd>AerialToggle<CR>', 'Aerial' },
         b = { '<cmd>TroubleToggle<CR>', 'Trouble' },
-        n = { '<cmd>NeoTreeShowToggle<CR>', 'NeoTree' },
+        n = { '<cmd>Neotree<CR>', 'NeoTree' },
         t = { '<cmd>:ToggleTerm size=30<CR>', 'Toggle Terminal' },
       },
       w = {
