@@ -55,8 +55,8 @@ return {
       },
       l = {
         name = 'Leap',
-        s = { '<Plug>(leap-forward)', 'Leap Forward' },
-        S = { '<Plug>(leap-backward)', 'Leap Backward' },
+        f = { '<Plug>(leap-forward)', 'Leap Forward' },
+        b = { '<Plug>(leap-backward)', 'Leap Backward' },
         g = {
           name = "Window",
           s = { '<Plug>(leap-from-window)', 'Leap From Window' },
