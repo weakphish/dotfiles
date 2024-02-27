@@ -58,9 +58,9 @@ return {
         f = { '<Plug>(leap-forward)', 'Leap Forward' },
         b = { '<Plug>(leap-backward)', 'Leap Backward' },
         g = {
-          name = "Window",
+          name = 'Window',
           s = { '<Plug>(leap-from-window)', 'Leap From Window' },
-        }
+        },
       },
       m = {
         name = 'Markdown',
@@ -94,7 +94,8 @@ return {
       t = {
         name = 'Toggle',
         a = { '<cmd>AerialToggle<CR>', 'Aerial' },
-        b = { '<cmd>TroubleToggle<CR>', 'Trouble' },
+        b = { require('barbecue.ui').toggle, 'Barbecue (show code context winbar)' },
+        d = { '<cmd>TroubleToggle<CR>', 'Trouble (Diagnostics)' },
         n = { '<cmd>Neotree toggle<CR>', 'NeoTree' },
         t = { '<cmd>:ToggleTerm size=30<CR>', 'Toggle Terminal' },
       },

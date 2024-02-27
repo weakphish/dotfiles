@@ -109,10 +109,10 @@ return {
 
   -- Pretty colors
   {
-    "rebelot/kanagawa.nvim",
+    'rebelot/kanagawa.nvim',
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme kanagawa")
+      vim.cmd 'colorscheme kanagawa'
     end,
     opts = ...,
   },
@@ -142,12 +142,28 @@ return {
       require('bufferline').setup {}
     end,
   },
+
   {
+    -- Indent guides
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
     opts = {},
     config = function()
       require('ibl').setup()
     end,
+  },
+
+  {
+    -- Show current context in winbar
+    'utilyre/barbecue.nvim',
+    name = 'barbecue',
+    version = '*',
+    dependencies = {
+      'SmiteshP/nvim-navic',
+      'nvim-tree/nvim-web-devicons', -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
   },
 }
