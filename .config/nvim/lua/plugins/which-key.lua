@@ -97,7 +97,7 @@ return {
         b = { require('barbecue.ui').toggle, 'Barbecue (show code context winbar)' },
         d = { '<cmd>TroubleToggle<CR>', 'Trouble (Diagnostics)' },
         n = { '<cmd>Neotree toggle<CR>', 'NeoTree' },
-        t = { '<cmd>:ToggleTerm size=30<CR>', 'Toggle Terminal' },
+        t = { '<cmd>:ToggleTerm direction=float<CR>', 'Toggle Terminal' },
       },
       w = {
         name = 'Workspace',
