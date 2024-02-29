@@ -18,4 +18,3 @@ and . (code --locate-shell-integration-path fish)
 
 # Pyenv 
 pyenv init - | source
-rvm default
