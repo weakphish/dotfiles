@@ -53,15 +53,6 @@ return {
         g = { '<cmd>LazyGit<CR>', 'LazyGit' },
         b = { '<cmd>Gitsigns toggle_current_line_blame<CR>', 'Current Line Blame' },
       },
-      l = {
-        name = 'Leap',
-        f = { '<Plug>(leap-forward)', 'Leap Forward' },
-        b = { '<Plug>(leap-backward)', 'Leap Backward' },
-        g = {
-          name = 'Window',
-          s = { '<Plug>(leap-from-window)', 'Leap From Window' },
-        },
-      },
       m = {
         name = 'Markdown',
         c = { '<cmd>MarkdownPreviewStop<CR>', 'Close Preview' },
