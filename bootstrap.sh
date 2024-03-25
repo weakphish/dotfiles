@@ -25,3 +25,4 @@ brew install lazygit
 brew install zoxide
 brew install bat
 brew install lsd
+brew install git-delta
