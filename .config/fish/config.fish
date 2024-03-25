@@ -18,3 +18,6 @@ and . (code --locate-shell-integration-path fish)
 
 # Pyenv 
 pyenv init - | source
+
+# Set up Zoxide
+zoxide init fish | source

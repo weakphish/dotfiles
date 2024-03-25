@@ -13,6 +13,7 @@ Run `bootstrap.sh` `link-mac.sh` to symlink the configuration to your system.
 **Other Software:**
 Other software that I use as a developer on a regular basis:
 - Zellij, as a tmux alternative
+- [A few Rust utilities](https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a)
 - [Raycast](https://www.raycast.com/), a Spotlight/Alfred replacement
 - Good ol' pen and paper for note-taking and to-do lists.
 

@@ -22,3 +22,6 @@ brew install helix
 brew install neovim
 brew install tldr
 brew install lazygit
+brew install zoxide
+brew install bat
+brew install lsd
