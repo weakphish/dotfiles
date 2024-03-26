@@ -8,6 +8,8 @@ alias tf terraform
 alias phx "poetry run hx"
 alias pnv "poetry run nvim"
 alias dc "docker compose"
+alias k "kubectl"
+alias cdr "z"
 
 # iTerm integration
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
