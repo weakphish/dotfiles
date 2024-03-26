@@ -109,12 +109,12 @@ return {
 
   -- Pretty colors
   {
-    "navarasu/onedark.nvim",
-    priority = 1000,
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require('onedark').load()
+      vim.cmd 'colorscheme github_dark_dimmed'
     end,
-    opts = ...,
   },
 
   {
@@ -124,7 +124,6 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
